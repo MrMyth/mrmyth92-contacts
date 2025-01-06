@@ -12,7 +12,7 @@ const BoostySection = () => {
         rel="noopener noreferrer"
         className="w-full"
       >
-        <Button className="w-full bg-primary hover:bg-primary/90 text-white">
+        <Button className="w-full bg-[#F15B3D] hover:bg-[#F15B3D]/90 text-white border-0" variant="outline">
           <ExternalLink className="mr-2 h-4 w-4" />
           Поддержать на Boosty
         </Button>

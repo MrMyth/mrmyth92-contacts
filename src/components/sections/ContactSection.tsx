@@ -13,7 +13,7 @@ const ContactSection = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Button variant="outline" className="w-full text-white">
+          <Button variant="outline" className="w-full bg-[#0077FF] hover:bg-[#0077FF]/90 text-white border-0">
             VK (MrMyth92DS)
           </Button>
         </a>
@@ -22,12 +22,12 @@ const ContactSection = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Button variant="outline" className="w-full text-white">
+          <Button variant="outline" className="w-full bg-[#0077FF] hover:bg-[#0077FF]/90 text-white border-0">
             VK (MrMyth92)
           </Button>
         </a>
         <a href="https://t.me/MrMyth92" target="_blank" rel="noopener noreferrer">
-          <Button variant="outline" className="w-full text-white">
+          <Button variant="outline" className="w-full bg-[#229ED9] hover:bg-[#229ED9]/90 text-white border-0">
             Telegram
           </Button>
         </a>
@@ -36,7 +36,7 @@ const ContactSection = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Button variant="outline" className="w-full text-white">
+          <Button variant="outline" className="w-full bg-[#25D366] hover:bg-[#25D366]/90 text-white border-0">
             WhatsApp
           </Button>
         </a>
@@ -45,7 +45,7 @@ const ContactSection = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Button variant="outline" className="w-full text-white">
+          <Button variant="outline" className="w-full bg-[#00AFF0] hover:bg-[#00AFF0]/90 text-white border-0">
             Skype
           </Button>
         </a>
@@ -54,7 +54,7 @@ const ContactSection = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Button variant="outline" className="w-full text-white">
+          <Button variant="outline" className="w-full bg-[#EE8208] hover:bg-[#EE8208]/90 text-white border-0">
             Одноклассники
           </Button>
         </a>
@@ -63,7 +63,7 @@ const ContactSection = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Button variant="outline" className="w-full text-white">
+          <Button variant="outline" className="w-full bg-[#404040] hover:bg-[#404040]/90 text-white border-0">
             <Mail className="mr-2 h-4 w-4" />
             Email
           </Button>
@@ -73,17 +73,17 @@ const ContactSection = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Button variant="outline" className="w-full text-white">
+          <Button variant="outline" className="w-full bg-[#5865F2] hover:bg-[#5865F2]/90 text-white border-0">
             Discord
           </Button>
         </a>
         <a href="https://vk.me/AiCraftMyMyth92" target="_blank" rel="noopener noreferrer">
-          <Button variant="outline" className="w-full text-white">
+          <Button variant="outline" className="w-full bg-[#0077FF] hover:bg-[#0077FF]/90 text-white border-0">
             VK Messages (AiCraft)
           </Button>
         </a>
         <a href="https://t.me/AiCraftMyMyth92" target="_blank" rel="noopener noreferrer">
-          <Button variant="outline" className="w-full text-white">
+          <Button variant="outline" className="w-full bg-[#229ED9] hover:bg-[#229ED9]/90 text-white border-0">
             Telegram (AiCraft)
           </Button>
         </a>
