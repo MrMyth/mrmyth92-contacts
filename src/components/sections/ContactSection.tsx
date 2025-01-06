@@ -77,7 +77,7 @@ const ContactSection = () => {
             Discord
           </Button>
         </a>
-        <a href="https://vk.me/AiCraftMyMyth92" target="_blank" rel="noopener noreferrer">
+        <a href="https://vk.com/aicraftmymyth92" target="_blank" rel="noopener noreferrer">
           <Button variant="outline" className="w-full bg-[#0077FF] hover:bg-[#0077FF]/90 text-white border-0">
             VK Messages (AiCraft)
           </Button>
