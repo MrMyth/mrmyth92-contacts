@@ -18,6 +18,7 @@ const YoutubeSection = () => {
           className="flex-1"
         >
           <Button className="w-full gaming-button bg-[#FF0000] hover:bg-[#FF0000]/80 text-white border-0" variant="outline">
+            <Youtube className="mr-2 h-4 w-4" />
             Посетить канал
           </Button>
         </a>
@@ -28,6 +29,7 @@ const YoutubeSection = () => {
           className="flex-1"
         >
           <Button className="w-full gaming-button bg-[#FF0000] hover:bg-[#FF0000]/80 text-white border-0" variant="outline">
+            <Youtube className="mr-2 h-4 w-4" />
             Подписаться
           </Button>
         </a>

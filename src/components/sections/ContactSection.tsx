@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Mail } from "lucide-react";
+import { Mail, MessageSquare, Phone, MessageCircle, Video, Users } from "lucide-react";
 
 const ContactSection = () => {
   return (
@@ -16,6 +16,7 @@ const ContactSection = () => {
           rel="noopener noreferrer"
         >
           <Button variant="outline" className="w-full bg-[#0077FF] hover:bg-[#0077FF]/90 text-white border-0">
+            <MessageSquare className="mr-2 h-4 w-4" />
             VK (MrMyth92DS)
           </Button>
         </a>
@@ -25,11 +26,13 @@ const ContactSection = () => {
           rel="noopener noreferrer"
         >
           <Button variant="outline" className="w-full bg-[#0077FF] hover:bg-[#0077FF]/90 text-white border-0">
+            <MessageSquare className="mr-2 h-4 w-4" />
             VK (MrMyth92)
           </Button>
         </a>
         <a href="https://t.me/MrMyth92" target="_blank" rel="noopener noreferrer">
           <Button variant="outline" className="w-full bg-[#229ED9] hover:bg-[#229ED9]/90 text-white border-0">
+            <MessageCircle className="mr-2 h-4 w-4" />
             Telegram
           </Button>
         </a>
@@ -39,6 +42,7 @@ const ContactSection = () => {
           rel="noopener noreferrer"
         >
           <Button variant="outline" className="w-full bg-[#25D366] hover:bg-[#25D366]/90 text-white border-0">
+            <Phone className="mr-2 h-4 w-4" />
             WhatsApp
           </Button>
         </a>
@@ -48,6 +52,7 @@ const ContactSection = () => {
           rel="noopener noreferrer"
         >
           <Button variant="outline" className="w-full bg-[#00AFF0] hover:bg-[#00AFF0]/90 text-white border-0">
+            <Video className="mr-2 h-4 w-4" />
             Skype
           </Button>
         </a>
@@ -57,6 +62,7 @@ const ContactSection = () => {
           rel="noopener noreferrer"
         >
           <Button variant="outline" className="w-full bg-[#EE8208] hover:bg-[#EE8208]/90 text-white border-0">
+            <Users className="mr-2 h-4 w-4" />
             Одноклассники
           </Button>
         </a>
@@ -76,16 +82,19 @@ const ContactSection = () => {
           rel="noopener noreferrer"
         >
           <Button variant="outline" className="w-full bg-[#5865F2] hover:bg-[#5865F2]/90 text-white border-0">
+            <MessageCircle className="mr-2 h-4 w-4" />
             Discord
           </Button>
         </a>
         <a href="https://vk.com/aicraftmymyth92" target="_blank" rel="noopener noreferrer">
           <Button variant="outline" className="w-full bg-[#0077FF] hover:bg-[#0077FF]/90 text-white border-0">
+            <MessageSquare className="mr-2 h-4 w-4" />
             VK Messages (AiCraft)
           </Button>
         </a>
         <a href="https://t.me/AiCraftMyMyth92" target="_blank" rel="noopener noreferrer">
           <Button variant="outline" className="w-full bg-[#229ED9] hover:bg-[#229ED9]/90 text-white border-0">
+            <MessageCircle className="mr-2 h-4 w-4" />
             Telegram (AiCraft)
           </Button>
         </a>
