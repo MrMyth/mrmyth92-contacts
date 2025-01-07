@@ -34,17 +34,43 @@ const DonationSection = () => {
           </Button>
         </div>
         
-        <a
-          href="https://boosty.to/mrmyth92_ds/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block w-full"
-        >
-          <Button className="w-full gaming-button bg-[#F15B3D] hover:bg-[#F15B3D]/80 text-white border-0" variant="outline">
-            <ExternalLink className="mr-2 h-4 w-4" />
-            Поддержать на Boosty
-          </Button>
-        </a>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <a
+            href="https://boosty.to/mrmyth92_ds/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full"
+          >
+            <Button className="w-full gaming-button bg-[#F15B3D] hover:bg-[#F15B3D]/80 text-white border-0" variant="outline">
+              <ExternalLink className="mr-2 h-4 w-4" />
+              Поддержать на Boosty
+            </Button>
+          </a>
+          
+          <a
+            href="https://donatty.com/mrmyth92"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full"
+          >
+            <Button className="w-full gaming-button bg-[#6366F1] hover:bg-[#6366F1]/80 text-white border-0" variant="outline">
+              <ExternalLink className="mr-2 h-4 w-4" />
+              Поддержать на Donatty
+            </Button>
+          </a>
+          
+          <a
+            href="https://yoomoney.ru/to/4100118249151359"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full"
+          >
+            <Button className="w-full gaming-button bg-[#F59E0B] hover:bg-[#F59E0B]/80 text-white border-0" variant="outline">
+              <ExternalLink className="mr-2 h-4 w-4" />
+              ЮMoney
+            </Button>
+          </a>
+        </div>
       </div>
     </Card>
   );
