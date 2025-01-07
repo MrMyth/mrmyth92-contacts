@@ -1,7 +1,6 @@
 import React from "react";
 import HeroSection from "@/components/sections/HeroSection";
 import DonationSection from "@/components/sections/DonationSection";
-import BoostySection from "@/components/sections/BoostySection";
 import YoutubeSection from "@/components/sections/YoutubeSection";
 import ContactSection from "@/components/sections/ContactSection";
 import DiscordWidget from "@/components/sections/DiscordWidget";
@@ -12,7 +11,6 @@ const Index = () => {
       <div className="container px-4 py-8 mx-auto">
         <HeroSection />
         <DonationSection />
-        <BoostySection />
         <YoutubeSection />
         <ContactSection />
         <DiscordWidget />
