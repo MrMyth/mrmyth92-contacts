@@ -67,7 +67,7 @@ const ContactSection = () => {
           </Button>
         </a>
         <a
-          href="mailto:starchikovd@yahoo.com"
+          href="mailto:dmstarchikov92@gmail.com"
           target="_blank"
           rel="noopener noreferrer"
         >
