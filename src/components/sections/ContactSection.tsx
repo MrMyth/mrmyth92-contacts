@@ -5,11 +5,11 @@ import { MessageSquare, Phone, MessageCircle, Video, Users } from "lucide-react"
 
 const ContactSection = () => {
   return (
-    <Card className="p-6 gaming-card">
+    <Card className="p-6 mb-8 gaming-card">
       <h2 className="text-3xl font-bold mb-6 text-center text-white bg-clip-text text-transparent bg-gradient-to-r from-[#8B5CF6] to-[#0EA5E9]">
         Контакты
       </h2>
-      <div className="space-y-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         <a
           href="https://vk.com/mrmyth92ds"
           target="_blank"
