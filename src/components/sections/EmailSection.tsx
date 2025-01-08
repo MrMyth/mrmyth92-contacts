@@ -1,12 +1,12 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Mail, Copy } from "lucide-react";
+import { CreditCard } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 
 const EmailSection = () => {
   const { toast } = useToast();
-  const email = "dmstarchikov@outlook.com";
+  const email = "dmstarchikov92@gmail.com";
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(email);
@@ -17,27 +17,18 @@ const EmailSection = () => {
   };
 
   return (
-    <Card className="p-6 mb-8 gaming-card">
+    <Card className="p-6 gaming-card">
       <h2 className="text-3xl font-bold mb-6 text-center text-white bg-clip-text text-transparent bg-gradient-to-r from-[#8B5CF6] to-[#0EA5E9]">
         Почта
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <a
-          href={`mailto:${email}`}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Button variant="outline" className="w-full bg-[#404040] hover:bg-[#404040]/90 text-white border-0">
-            <Mail className="mr-2 h-4 w-4" />
-            Email
-          </Button>
-        </a>
+      <div className="space-y-4">
+        <p className="text-xl text-[#F1F1F1]">Email: {email}</p>
         <Button
-          variant="outline"
-          className="w-full bg-[#404040] hover:bg-[#404040]/90 text-white border-0"
           onClick={handleCopyEmail}
+          variant="outline"
+          className="w-full gaming-button bg-[#8B5CF6] hover:bg-[#8B5CF6]/80 text-white border-0"
         >
-          <Copy className="mr-2 h-4 w-4" />
+          <CreditCard className="mr-2 h-4 w-4" />
           Копировать Email
         </Button>
       </div>
