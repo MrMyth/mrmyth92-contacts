@@ -76,28 +76,6 @@ const ContactSection = () => {
             Email
           </Button>
         </a>
-        <a
-          href="https://discord.gg/vZrmPCUN7p"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Button variant="outline" className="w-full bg-[#5865F2] hover:bg-[#5865F2]/90 text-white border-0">
-            <MessageCircle className="mr-2 h-4 w-4" />
-            Discord
-          </Button>
-        </a>
-        <a href="https://vk.com/aicraftmymyth92" target="_blank" rel="noopener noreferrer">
-          <Button variant="outline" className="w-full bg-[#0077FF] hover:bg-[#0077FF]/90 text-white border-0">
-            <MessageSquare className="mr-2 h-4 w-4" />
-            VK Messages (AiCraft)
-          </Button>
-        </a>
-        <a href="https://t.me/AiCraftMyMyth92" target="_blank" rel="noopener noreferrer">
-          <Button variant="outline" className="w-full bg-[#229ED9] hover:bg-[#229ED9]/90 text-white border-0">
-            <MessageCircle className="mr-2 h-4 w-4" />
-            Telegram (AiCraft)
-          </Button>
-        </a>
       </div>
     </Card>
   );

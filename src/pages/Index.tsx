@@ -4,6 +4,7 @@ import DonationSection from "@/components/sections/DonationSection";
 import YoutubeSection from "@/components/sections/YoutubeSection";
 import ContactSection from "@/components/sections/ContactSection";
 import DiscordWidget from "@/components/sections/DiscordWidget";
+import AiCraftSection from "@/components/sections/AiCraftSection";
 
 const Index = () => {
   return (
@@ -13,6 +14,7 @@ const Index = () => {
         <DonationSection />
         <YoutubeSection />
         <ContactSection />
+        <AiCraftSection />
         <DiscordWidget />
       </div>
     </div>
