@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Mail, MessageSquare, Phone, MessageCircle, Video, Users } from "lucide-react";
+import { MessageSquare, Phone, MessageCircle, Video, Users } from "lucide-react";
 
 const ContactSection = () => {
   return (
@@ -64,16 +64,6 @@ const ContactSection = () => {
           <Button variant="outline" className="w-full bg-[#EE8208] hover:bg-[#EE8208]/90 text-white border-0">
             <Users className="mr-2 h-4 w-4" />
             Одноклассники
-          </Button>
-        </a>
-        <a
-          href="mailto:dmstarchikov92@gmail.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Button variant="outline" className="w-full bg-[#404040] hover:bg-[#404040]/90 text-white border-0">
-            <Mail className="mr-2 h-4 w-4" />
-            Email
           </Button>
         </a>
       </div>
