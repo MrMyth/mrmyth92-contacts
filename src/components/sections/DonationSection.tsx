@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { DollarSign, CreditCard, ExternalLink } from "lucide-react";
+import { DollarSign, CreditCard } from "lucide-react";
 import { toast } from "sonner";
 
 const DonationSection = () => {
@@ -67,7 +67,7 @@ const DonationSection = () => {
           >
             <Button className="w-full gaming-button bg-[#F59E0B] hover:bg-[#F59E0B]/80 text-white border-0" variant="outline">
               <DollarSign className="mr-2 h-4 w-4" />
-              ЮMoney
+              Поддержать через Юмани
             </Button>
           </a>
         </div>

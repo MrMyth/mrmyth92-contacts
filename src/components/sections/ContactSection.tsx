@@ -17,13 +17,13 @@ const ContactSection = () => {
         >
           <Button variant="outline" className="w-full bg-[#0077FF] hover:bg-[#0077FF]/90 text-white border-0">
             <MessageSquare className="mr-2 h-4 w-4" />
-            VK (MrMyth92)
+            Страница в VK
           </Button>
         </a>
         <a href="https://t.me/MrMyth92" target="_blank" rel="noopener noreferrer">
           <Button variant="outline" className="w-full bg-[#229ED9] hover:bg-[#229ED9]/90 text-white border-0">
             <MessageCircle className="mr-2 h-4 w-4" />
-            Telegram
+            Написать в Telegram
           </Button>
         </a>
         <a
@@ -33,7 +33,7 @@ const ContactSection = () => {
         >
           <Button variant="outline" className="w-full bg-[#25D366] hover:bg-[#25D366]/90 text-white border-0">
             <Phone className="mr-2 h-4 w-4" />
-            WhatsApp
+            Написать в WhatsApp
           </Button>
         </a>
         <a
@@ -43,7 +43,7 @@ const ContactSection = () => {
         >
           <Button variant="outline" className="w-full bg-[#00AFF0] hover:bg-[#00AFF0]/90 text-white border-0">
             <Video className="mr-2 h-4 w-4" />
-            Skype
+            Написать в Skype
           </Button>
         </a>
         <a
@@ -53,7 +53,7 @@ const ContactSection = () => {
         >
           <Button variant="outline" className="w-full bg-[#EE8208] hover:bg-[#EE8208]/90 text-white border-0">
             <Users className="mr-2 h-4 w-4" />
-            Одноклассники
+            Страница в ОК
           </Button>
         </a>
       </div>
