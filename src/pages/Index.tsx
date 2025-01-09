@@ -2,6 +2,7 @@ import React from "react";
 import HeroSection from "@/components/sections/HeroSection";
 import DonationSection from "@/components/sections/DonationSection";
 import YoutubeSection from "@/components/sections/YoutubeSection";
+import VKGroupSection from "@/components/sections/VKGroupSection";
 import ContactSection from "@/components/sections/ContactSection";
 import DiscordWidget from "@/components/sections/DiscordWidget";
 import AiCraftSection from "@/components/sections/AiCraftSection";
@@ -14,6 +15,7 @@ const Index = () => {
         <HeroSection />
         <DonationSection />
         <YoutubeSection />
+        <VKGroupSection />
         <ContactSection />
         <AiCraftSection />
         <DiscordWidget />
