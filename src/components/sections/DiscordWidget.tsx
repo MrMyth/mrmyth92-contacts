@@ -44,7 +44,7 @@ const DiscordWidget = () => {
             >
               <Button 
                 variant="outline" 
-                className="w-full bg-[#5865F2] hover:bg-[#5865F2]/90 text-white border-0 h-12"
+                className="w-full bg-[#5865F2] hover:bg-[#5865F2]/90 text-white border-0"
               >
                 <MessageCircle className="mr-2 h-5 w-5" />
                 ПРИСОЕДИНИТСЯ К DISCORD
@@ -65,7 +65,7 @@ const DiscordWidget = () => {
               >
                 <Button 
                   variant="outline" 
-                  className="w-full bg-[#5865F2] hover:bg-[#5865F2]/90 text-white border-0 h-12"
+                  className="w-full bg-[#5865F2] hover:bg-[#5865F2]/90 text-white border-0"
                 >
                   <Download className="mr-2 h-5 w-5" />
                   СКАЧАТЬ DISCORD С ОФИЦИАЛЬНОГО САЙТА
@@ -73,7 +73,7 @@ const DiscordWidget = () => {
               </a>
               <Button 
                 variant="outline" 
-                className="w-full bg-[#5865F2] hover:bg-[#5865F2]/90 text-white border-0 h-12"
+                className="w-full bg-[#5865F2] hover:bg-[#5865F2]/90 text-white border-0"
                 onClick={() => window.open('https://disk.yandex.ru/d/h0sNYN18hB0EMg', '_blank')}
               >
                 <AlertCircle className="mr-2 h-5 w-5" />
