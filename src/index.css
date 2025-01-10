@@ -29,7 +29,7 @@
 
 @layer base {
   * {
-    @apply border-border font-['Furore'];
+    @apply border-border;
   }
   body {
     @apply bg-[#221F26] text-foreground bg-[url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5')] bg-cover bg-fixed bg-center bg-no-repeat before:content-[''] before:absolute before:inset-0 before:bg-black/70 before:z-[-1];
@@ -51,8 +51,4 @@
 
 .gaming-button {
   @apply rounded-lg transition-all duration-300 hover:shadow-[0_0_15px_rgba(139,92,246,0.5)] hover:scale-105;
-}
-
-.section-header {
-  @apply flex items-center gap-2 text-3xl font-bold mb-6 text-center text-white bg-clip-text text-transparent bg-gradient-to-r from-[#8B5CF6] to-[#0EA5E9];
 }

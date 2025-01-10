@@ -1,17 +1,17 @@
 import React from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Download, AlertCircle, MessagesSquare } from "lucide-react";
+import { MessageCircle, Download, AlertCircle } from "lucide-react";
 
 const DiscordWidget = () => {
   return (
     <Card className="p-6 gaming-card">
-      <h2 className="section-header justify-center">
-        <MessagesSquare className="h-8 w-8" />
+      <h2 className="text-3xl font-bold mb-6 text-center text-white bg-clip-text text-transparent bg-gradient-to-r from-[#8B5CF6] to-[#0EA5E9]">
         DISCORD СЕРВЕР
       </h2>
       
       <div className="grid md:grid-cols-2 gap-8">
+        {/* Left column - Widget */}
         <div>
           <h3 className="text-xl font-bold mb-4 text-[#FF6B00]">
             ВИДЖЕТ DISCORD СЕРВЕРА
@@ -27,6 +27,7 @@ const DiscordWidget = () => {
           ></iframe>
         </div>
 
+        {/* Right column - Instructions and buttons */}
         <div className="flex flex-col gap-6">
           <div>
             <h3 className="text-xl font-bold mb-4 text-[#FF6B00]">
@@ -41,7 +42,9 @@ const DiscordWidget = () => {
               rel="noopener noreferrer"
               className="w-full block"
             >
-              <Button className="w-full">
+              <Button 
+                className="w-full"
+              >
                 <MessageCircle className="mr-2 h-5 w-5" />
                 ПРИСОЕДИНИТСЯ К DISCORD
               </Button>
@@ -59,7 +62,9 @@ const DiscordWidget = () => {
                 rel="noopener noreferrer"
                 className="w-full block"
               >
-                <Button className="w-full">
+                <Button 
+                  className="w-full"
+                >
                   <Download className="mr-2 h-5 w-5" />
                   СКАЧАТЬ DISCORD С ОФИЦИАЛЬНОГО САЙТА
                 </Button>
