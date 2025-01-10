@@ -1,13 +1,13 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { DollarSign } from "lucide-react";
+import { DollarSign, Gift } from "lucide-react";
 
 const DonationSection = () => {
   return (
     <Card className="p-6 mb-8 gaming-card">
-      <h2 className="text-3xl font-bold mb-6 flex items-center gap-2 justify-center text-white bg-clip-text text-transparent bg-gradient-to-r from-[#8B5CF6] to-[#0EA5E9]">
-        <DollarSign className="text-[#8B5CF6]" />
+      <h2 className="text-3xl font-bold mb-6 text-center text-white bg-clip-text text-transparent bg-gradient-to-r from-[#8B5CF6] to-[#0EA5E9] flex items-center justify-center gap-2">
+        <Gift className="h-8 w-8" />
         Прием пожертвований
       </h2>
       <div className="space-y-6">
