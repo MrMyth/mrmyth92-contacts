@@ -14,7 +14,7 @@ const DiscordWidget = () => {
       <div className="grid md:grid-cols-2 gap-8">
         {/* Left column - Widget */}
         <div>
-          <h3 className="text-xl font-bold mb-4 text-[#FF6B00]">
+          <h3 className="text-xl font-bold mb-4 text-white">
             ВИДЖЕТ DISCORD СЕРВЕРА
           </h3>
           <iframe
@@ -31,7 +31,7 @@ const DiscordWidget = () => {
         {/* Right column - Instructions and buttons */}
         <div className="flex flex-col gap-6">
           <div>
-            <h3 className="text-xl font-bold mb-4 text-[#FF6B00]">
+            <h3 className="text-xl font-bold mb-4 text-white">
               КАК ПРИСОЕДИНИТЬСЯ К СЕРВЕРУ
             </h3>
             <p className="text-white mb-4">
@@ -44,7 +44,7 @@ const DiscordWidget = () => {
               className="w-full block"
             >
               <Button 
-                className="w-full"
+                className="w-full bg-[#5865F2] hover:bg-[#5865F2]/90 text-white border-0"
               >
                 <MessageCircle className="mr-2 h-5 w-5" />
                 ПРИСОЕДИНИТСЯ К DISCORD
@@ -53,7 +53,7 @@ const DiscordWidget = () => {
           </div>
 
           <div>
-            <h3 className="text-xl font-bold mb-4 text-[#FF6B00]">
+            <h3 className="text-xl font-bold mb-4 text-white">
               ДОПОЛНИТЕЛЬНО
             </h3>
             <div className="flex flex-col gap-3">
@@ -64,14 +64,14 @@ const DiscordWidget = () => {
                 className="w-full block"
               >
                 <Button 
-                  className="w-full"
+                  className="w-full bg-[#5865F2] hover:bg-[#5865F2]/90 text-white border-0"
                 >
                   <Download className="mr-2 h-5 w-5" />
                   СКАЧАТЬ DISCORD С ОФИЦИАЛЬНОГО САЙТА
                 </Button>
               </a>
               <Button 
-                className="w-full"
+                className="w-full bg-[#5865F2] hover:bg-[#5865F2]/90 text-white border-0"
                 onClick={() => window.open('https://disk.yandex.ru/d/h0sNYN18hB0EMg', '_blank')}
               >
                 <AlertCircle className="mr-2 h-5 w-5" />
