@@ -17,9 +17,9 @@ const Index = () => {
         <DonationSection />
         <YoutubeSection />
         <VKGroupSection />
+        <DiscordWidget />
         <ContactSection />
         <AiCraftSection />
-        <DiscordWidget />
       </div>
     </div>
   );
