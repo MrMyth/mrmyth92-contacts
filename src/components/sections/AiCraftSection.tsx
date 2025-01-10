@@ -1,12 +1,13 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { MessageSquare, MessageCircle } from "lucide-react";
+import { MessageSquare, MessageCircle, Palette } from "lucide-react";
 
 const AiCraftSection = () => {
   return (
     <Card className="p-6 mb-8 gaming-card">
-      <h2 className="text-3xl font-bold mb-6 text-center text-white bg-clip-text text-transparent bg-gradient-to-r from-[#8B5CF6] to-[#0EA5E9]">
+      <h2 className="section-header justify-center">
+        <Palette className="h-8 w-8" />
         Картины 21 века от Ai
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
