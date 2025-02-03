@@ -77,6 +77,13 @@ const DiscordWidget = () => {
                 <AlertCircle className="mr-2 h-5 w-5" />
                 Разблокировка Discord в РФ
               </Button>
+              <Button 
+                className="w-full bg-[#5865F2] hover:bg-[#5865F2]/90 text-white border-0"
+                onClick={() => window.open('https://div2-fromrussia.lovable.app/', '_blank')}
+              >
+                <MessagesSquare className="mr-2 h-5 w-5" />
+                Подробнее о сервере
+              </Button>
             </div>
           </div>
         </div>
