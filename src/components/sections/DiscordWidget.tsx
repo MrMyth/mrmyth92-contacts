@@ -72,7 +72,7 @@ const DiscordWidget = () => {
               </a>
               <Button 
                 className="w-full bg-[#5865F2] hover:bg-[#5865F2]/90 text-white border-0"
-                onClick={() => window.open('https://disk.yandex.ru/d/h0sNYN18hB0EMg', '_blank')}
+                onClick={() => window.open('https://drive.google.com/file/d/1GEWBHezhE4-LJ9hMCk9oxg38dXf1tVSx/view', '_blank')}
               >
                 <AlertCircle className="mr-2 h-5 w-5" />
                 ЕСЛИ DISCORD НЕ РАБОТАЕТ
