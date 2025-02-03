@@ -75,7 +75,7 @@ const DiscordWidget = () => {
                 onClick={() => window.open('https://drive.google.com/file/d/1GEWBHezhE4-LJ9hMCk9oxg38dXf1tVSx/view', '_blank')}
               >
                 <AlertCircle className="mr-2 h-5 w-5" />
-                ЕСЛИ DISCORD НЕ РАБОТАЕТ
+                Разблокировка Discord в РФ
               </Button>
             </div>
           </div>
