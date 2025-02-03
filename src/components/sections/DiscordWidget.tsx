@@ -38,7 +38,7 @@ const DiscordWidget = () => {
               ЧТОБЫ ЗАЙТИ НА СЕРВЕР НАЖМИТЕ НА "ПРИСОЕДИНИТСЯ К DISCORD". ЕСЛИ ПРИГЛАШЕНИЕ НЕ СРАБОТАЛО, ТО ИСПОЛЬЗУЙТЕ КНОПКУ "JOIN DISCORD".
             </p>
             <a
-              href="https://discord.gg/vZrmPCUN7p"
+              href="https://discord.gg/8C6HzXq92W"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full block"
