@@ -15,10 +15,10 @@ const DiscordWidget = () => {
         {/* Left column - Widget */}
         <div>
           <h3 className="text-xl font-bold mb-4 text-white">
-            ВИДЖЕТ DISCORD СЕРВЕРА
+            Виджет Discord сервера
           </h3>
           <iframe
-            src="https://discord.com/widget?id=1089843053176569913&theme=dark"
+            src="https://discord.com/widget?id=835802952521351180&theme=dark"
             width="100%"
             height="500"
             allowTransparency={true}
@@ -32,7 +32,7 @@ const DiscordWidget = () => {
         <div className="flex flex-col gap-6">
           <div>
             <h3 className="text-xl font-bold mb-4 text-white">
-              КАК ПРИСОЕДИНИТЬСЯ К СЕРВЕРУ
+              Как присоединиться к серверу
             </h3>
             <p className="text-white mb-4">
               ЧТОБЫ ЗАЙТИ НА СЕРВЕР НАЖМИТЕ НА "ПРИСОЕДИНИТСЯ К DISCORD". ЕСЛИ ПРИГЛАШЕНИЕ НЕ СРАБОТАЛО, ТО ИСПОЛЬЗУЙТЕ КНОПКУ "JOIN DISCORD".
@@ -54,7 +54,7 @@ const DiscordWidget = () => {
 
           <div>
             <h3 className="text-xl font-bold mb-4 text-white">
-              ДОПОЛНИТЕЛЬНО
+              Дополнительно
             </h3>
             <div className="flex flex-col gap-3">
               <a
