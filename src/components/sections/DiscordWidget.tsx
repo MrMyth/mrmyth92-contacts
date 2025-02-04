@@ -8,7 +8,7 @@ const DiscordWidget = () => {
     <Card className="p-6 mb-8 gaming-card">
       <h2 className="text-3xl font-bold mb-6 text-center text-white bg-clip-text text-transparent bg-gradient-to-r from-[#8B5CF6] to-[#0EA5E9] flex items-center justify-center gap-2">
         <MessagesSquare className="h-8 w-8" />
-        Discord сервер
+        Discord сервер "From Russia"
       </h2>
       
       <div className="grid md:grid-cols-2 gap-8">
@@ -67,7 +67,7 @@ const DiscordWidget = () => {
                   className="w-full bg-[#5865F2] hover:bg-[#5865F2]/90 text-white border-0"
                 >
                   <Download className="mr-2 h-5 w-5" />
-                  СКАЧАТЬ DISCORD С ОФИЦИАЛЬНОГО САЙТА
+                  Скачать Discord с официального сайта
                 </Button>
               </a>
               <Button 
