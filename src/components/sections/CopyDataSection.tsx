@@ -7,7 +7,7 @@ import { useToast } from "@/components/ui/use-toast";
 const CopyDataSection = () => {
   const { toast } = useToast();
   const email = "dmstarchikov@outlook.com";
-  const cardNumber = "5599002035781774";
+  const cardNumber = "5599002109565798";
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(email);
