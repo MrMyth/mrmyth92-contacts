@@ -7,6 +7,7 @@ import ContactSection from "@/components/sections/ContactSection";
 import DiscordWidget from "@/components/sections/DiscordWidget";
 import AiCraftSection from "@/components/sections/AiCraftSection";
 import CopyDataSection from "@/components/sections/CopyDataSection";
+import TwitchSection from "@/components/sections/TwitchSection";
 
 const Index = () => {
   return (
@@ -16,6 +17,7 @@ const Index = () => {
         <CopyDataSection />
         <DonationSection />
         <YoutubeSection />
+        <TwitchSection />
         <VKGroupSection />
         <DiscordWidget />
         <ContactSection />
