@@ -1,9 +1,22 @@
+
 import React from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Download, AlertCircle, MessagesSquare } from "lucide-react";
+import { MessageCircle, Download, AlertCircle, MessagesSquare, Copy } from "lucide-react";
+import { useToast } from "@/components/ui/use-toast";
 
 const DiscordWidget = () => {
+  const { toast } = useToast();
+  const discordUsername = "MrMyth92";
+
+  const handleCopyDiscordUsername = () => {
+    navigator.clipboard.writeText(discordUsername);
+    toast({
+      title: "Discord ник скопирован",
+      description: "Ник Discord был скопирован в буфер обмена",
+    });
+  };
+
   return (
     <Card className="p-6 mb-8 gaming-card">
       <h2 className="text-3xl font-bold mb-6 text-center text-white bg-clip-text text-transparent bg-gradient-to-r from-[#8B5CF6] to-[#0EA5E9] flex items-center justify-center gap-2">
@@ -37,19 +50,34 @@ const DiscordWidget = () => {
             <p className="text-white mb-4">
               ЧТОБЫ ЗАЙТИ НА СЕРВЕР НАЖМИТЕ НА "ПРИСОЕДИНИТСЯ К DISCORD". ЕСЛИ ПРИГЛАШЕНИЕ НЕ СРАБОТАЛО, ТО ИСПОЛЬЗУЙТЕ КНОПКУ "JOIN DISCORD".
             </p>
-            <a
-              href="https://discord.gg/rk7ZeadZGH"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full block"
-            >
-              <Button 
-                className="w-full bg-[#5865F2] hover:bg-[#5865F2]/90 text-white border-0"
+            <div className="flex flex-col gap-3">
+              <a
+                href="https://discord.gg/rk7ZeadZGH"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full block"
               >
-                <MessageCircle className="mr-2 h-5 w-5" />
-                ПРИСОЕДИНИТСЯ К DISCORD
-              </Button>
-            </a>
+                <Button 
+                  className="w-full bg-[#5865F2] hover:bg-[#5865F2]/90 text-white border-0"
+                >
+                  <MessageCircle className="mr-2 h-5 w-5" />
+                  ПРИСОЕДИНИТСЯ К DISCORD
+                </Button>
+              </a>
+              
+              <div className="flex items-center gap-3 p-3 bg-[#2D2F3E] rounded-lg">
+                <p className="text-white">Мой ник Discord: {discordUsername}</p>
+                <Button 
+                  variant="outline" 
+                  size="sm"
+                  onClick={handleCopyDiscordUsername}
+                  className="ml-auto bg-[#5865F2] hover:bg-[#5865F2]/90 text-white border-0"
+                >
+                  <Copy className="mr-2 h-4 w-4" />
+                  Копировать
+                </Button>
+              </div>
+            </div>
           </div>
 
           <div>
