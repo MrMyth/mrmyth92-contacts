@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -70,7 +71,7 @@ const DiscordWidget = () => {
               {/* Moved Discord username block to be after "Подробнее о сервере" button */}
               <div className="flex items-center gap-3 p-3 bg-[#2D2F3E] rounded-lg mt-3">
                 <p className="text-white">Мой ник Discord: {discordUsername}</p>
-                <Button variant="outline" size="sm" onClick={handleCopyDiscordUsername} className="ml-auto bg-[#5865F2] hover:bg-[#5865F2]/90 text-white border-0">
+                <Button variant="outline" size="sm" onClick={handleCopyDiscordUsername} className="ml-auto bg-[#1B4D3E] hover:bg-[#1B4D3E]/90 text-white border-0">
                   <Copy className="mr-2 h-4 w-4" />
                   Копировать
                 </Button>

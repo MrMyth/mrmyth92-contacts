@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -37,7 +38,7 @@ const CopyDataSection = () => {
           <Button
             onClick={handleCopyEmail}
             variant="outline"
-            className="gaming-button bg-[#8B5CF6] hover:bg-[#8B5CF6]/80 text-white border-0"
+            className="gaming-button bg-[#1B4D3E] hover:bg-[#1B4D3E]/80 text-white border-0"
           >
             <Copy className="mr-2 h-4 w-4" />
             Копировать Email
@@ -48,7 +49,7 @@ const CopyDataSection = () => {
           <Button
             onClick={handleCopyCard}
             variant="outline"
-            className="gaming-button bg-[#8B5CF6] hover:bg-[#8B5CF6]/80 text-white border-0"
+            className="gaming-button bg-[#1B4D3E] hover:bg-[#1B4D3E]/80 text-white border-0"
           >
             <Copy className="mr-2 h-4 w-4" />
             Копировать номер
