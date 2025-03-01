@@ -64,19 +64,6 @@ const DiscordWidget = () => {
                   ПРИСОЕДИНИТСЯ К DISCORD
                 </Button>
               </a>
-              
-              <div className="flex items-center gap-3 p-3 bg-[#2D2F3E] rounded-lg">
-                <p className="text-white">Мой ник Discord: {discordUsername}</p>
-                <Button 
-                  variant="outline" 
-                  size="sm"
-                  onClick={handleCopyDiscordUsername}
-                  className="ml-auto bg-[#5865F2] hover:bg-[#5865F2]/90 text-white border-0"
-                >
-                  <Copy className="mr-2 h-4 w-4" />
-                  Копировать
-                </Button>
-              </div>
             </div>
           </div>
 
@@ -112,6 +99,20 @@ const DiscordWidget = () => {
                 <MessagesSquare className="mr-2 h-5 w-5" />
                 Подробнее о сервере
               </Button>
+              
+              {/* Moved Discord username block to be after "Подробнее о сервере" button */}
+              <div className="flex items-center gap-3 p-3 bg-[#2D2F3E] rounded-lg mt-3">
+                <p className="text-white">Мой ник Discord: {discordUsername}</p>
+                <Button 
+                  variant="outline" 
+                  size="sm"
+                  onClick={handleCopyDiscordUsername}
+                  className="ml-auto bg-[#5865F2] hover:bg-[#5865F2]/90 text-white border-0"
+                >
+                  <Copy className="mr-2 h-4 w-4" />
+                  Копировать
+                </Button>
+              </div>
             </div>
           </div>
         </div>
