@@ -1,14 +1,13 @@
-
 import React from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Download, AlertCircle, MessagesSquare, Copy } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
-
 const DiscordWidget = () => {
-  const { toast } = useToast();
+  const {
+    toast
+  } = useToast();
   const discordUsername = "MrMyth92";
-  
   const handleCopyDiscordUsername = () => {
     navigator.clipboard.writeText(discordUsername);
     toast({
@@ -16,9 +15,7 @@ const DiscordWidget = () => {
       description: "Ник Discord был скопирован в буфер обмена"
     });
   };
-  
-  return (
-    <Card className="p-6 mb-8 gaming-card">
+  return <Card className="p-6 mb-8 gaming-card">
       <h2 className="text-3xl font-bold mb-6 text-center text-black bg-clip-text bg-gradient-to-r from-[#8B5CF6] to-[#0EA5E9] flex items-center justify-center gap-2">
         <MessagesSquare className="h-8 w-8 text-black" />
         Discord сервер "From Russia"
@@ -37,9 +34,7 @@ const DiscordWidget = () => {
             <h3 className="text-xl font-bold mb-4 text-black">
               Как присоединиться к серверу
             </h3>
-            <p className="text-black mb-4">
-              ЧТОБЫ ЗАЙТИ НА СЕРВЕР НАЖМИТЕ НА "ПРИСОЕДИНИТСЯ К DISCORD". ЕСЛИ ПРИГЛАШЕНИЕ НЕ СРАБОТАЛО, ТО ИСПОЛЬЗУЙТЕ КНОПКУ "JOIN DISCORD".
-            </p>
+            <p className="text-black mb-4">Чтобы зайти на сервер нажмите на &quot;Присоединится к Discord&quot;. Если приглашение не сработало, то используйте кнопку &quot;Join Discord&quot;.</p>
             <div className="flex flex-col gap-3">
               <a href="https://discord.gg/rk7ZeadZGH" target="_blank" rel="noopener noreferrer" className="w-full block">
                 <Button className="w-full bg-[#5865F2] hover:bg-[#5865F2]/90 text-white border-0">
@@ -82,8 +77,6 @@ const DiscordWidget = () => {
           </div>
         </div>
       </div>
-    </Card>
-  );
+    </Card>;
 };
-
 export default DiscordWidget;
