@@ -1,7 +1,8 @@
+
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { MessageSquare, Phone, MessageCircle, Video, Users, ContactIcon } from "lucide-react";
+import { MessageSquare, Phone, MessageCircle, Users, ContactIcon } from "lucide-react";
 
 const ContactSection = () => {
   return (
@@ -35,16 +36,6 @@ const ContactSection = () => {
           <Button variant="outline" className="w-full bg-[#25D366] hover:bg-[#25D366]/90 text-white border-0">
             <Phone className="mr-2 h-4 w-4" />
             Написать в WhatsApp
-          </Button>
-        </a>
-        <a
-          href="skype:Dmstarchikov"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Button variant="outline" className="w-full bg-[#00AFF0] hover:bg-[#00AFF0]/90 text-white border-0">
-            <Video className="mr-2 h-4 w-4" />
-            Написать в Skype
           </Button>
         </a>
         <a
