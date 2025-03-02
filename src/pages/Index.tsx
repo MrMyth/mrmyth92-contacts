@@ -1,3 +1,4 @@
+
 import React from "react";
 import HeroSection from "@/components/sections/HeroSection";
 import DonationSection from "@/components/sections/DonationSection";
@@ -11,7 +12,7 @@ import TwitchSection from "@/components/sections/TwitchSection";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-accent text-accent-foreground">
+    <div className="min-h-screen bg-white text-black">
       <div className="container px-4 py-8 mx-auto">
         <HeroSection />
         <CopyDataSection />

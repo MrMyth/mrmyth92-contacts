@@ -7,7 +7,7 @@ import { MessageSquare, Phone, MessageCircle, Users, ContactIcon } from "lucide-
 const ContactSection = () => {
   return (
     <Card className="p-6 mb-8 gaming-card">
-      <h2 className="text-3xl font-bold mb-6 text-center text-white bg-clip-text text-transparent bg-gradient-to-r from-[#8B5CF6] to-[#0EA5E9] flex items-center justify-center gap-2">
+      <h2 className="text-3xl font-bold mb-6 text-center text-black bg-clip-text bg-gradient-to-r from-[#8B5CF6] to-[#0EA5E9] flex items-center justify-center gap-2">
         <ContactIcon className="h-8 w-8" />
         Другие контакты
       </h2>

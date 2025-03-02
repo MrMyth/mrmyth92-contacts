@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -25,8 +26,8 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#FFFFFF",
-          foreground: "#000000",
+          DEFAULT: "#000000",
+          foreground: "#FFFFFF",
         },
         secondary: {
           DEFAULT: "#FFFFFF",
@@ -41,8 +42,8 @@ export default {
           foreground: "#000000",
         },
         accent: {
-          DEFAULT: "#1B4D3E", // Dark green
-          foreground: "#FFFFFF",
+          DEFAULT: "#FFFFFF", // Changed from dark green to white
+          foreground: "#000000", // Changed from white to black
         },
         card: {
           DEFAULT: "#FFFFFF",
