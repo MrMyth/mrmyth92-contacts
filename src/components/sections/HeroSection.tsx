@@ -6,7 +6,7 @@ const HeroSection = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
   const images = [
-    "https://i.ibb.co/C86p9W2/25-head.jpg",
+    "https://i.ibb.co/BHk9zK3B/2025.jpg",
     "https://i.ibb.co/fz07Rswy/image.jpg"
   ];
 
