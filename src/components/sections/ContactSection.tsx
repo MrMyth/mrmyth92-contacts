@@ -8,7 +8,7 @@ const ContactSection = () => {
   return (
     <Card className="p-6 mb-8 gaming-card">
       <h2 className="text-3xl font-bold mb-6 text-center text-black bg-clip-text bg-gradient-to-r from-[#8B5CF6] to-[#0EA5E9] flex items-center justify-center gap-2">
-        <ContactIcon className="h-8 w-8" />
+        <ContactIcon className="h-8 w-8 text-black" />
         Другие контакты
       </h2>
       <div className="grid grid-cols-1 gap-4">
@@ -17,14 +17,14 @@ const ContactSection = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Button variant="outline" className="w-full bg-[#0077FF] hover:bg-[#0077FF]/90 text-white border-0">
-            <MessageSquare className="mr-2 h-4 w-4" />
+          <Button variant="outline" className="w-full bg-[#0077FF] hover:bg-[#0077FF]/90 text-black border-0">
+            <MessageSquare className="mr-2 h-4 w-4 text-black" />
             Страница в VK
           </Button>
         </a>
         <a href="https://t.me/MrMyth92" target="_blank" rel="noopener noreferrer">
-          <Button variant="outline" className="w-full bg-[#229ED9] hover:bg-[#229ED9]/90 text-white border-0">
-            <MessageCircle className="mr-2 h-4 w-4" />
+          <Button variant="outline" className="w-full bg-[#229ED9] hover:bg-[#229ED9]/90 text-black border-0">
+            <MessageCircle className="mr-2 h-4 w-4 text-black" />
             Написать в Telegram
           </Button>
         </a>
@@ -33,8 +33,8 @@ const ContactSection = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Button variant="outline" className="w-full bg-[#25D366] hover:bg-[#25D366]/90 text-white border-0">
-            <Phone className="mr-2 h-4 w-4" />
+          <Button variant="outline" className="w-full bg-[#25D366] hover:bg-[#25D366]/90 text-black border-0">
+            <Phone className="mr-2 h-4 w-4 text-black" />
             Написать в WhatsApp
           </Button>
         </a>
@@ -43,8 +43,8 @@ const ContactSection = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Button variant="outline" className="w-full bg-[#EE8208] hover:bg-[#EE8208]/90 text-white border-0">
-            <Users className="mr-2 h-4 w-4" />
+          <Button variant="outline" className="w-full bg-[#EE8208] hover:bg-[#EE8208]/90 text-black border-0">
+            <Users className="mr-2 h-4 w-4 text-black" />
             Страница в ОК
           </Button>
         </a>

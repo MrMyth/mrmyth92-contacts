@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -6,8 +7,8 @@ import { DollarSign, Gift } from "lucide-react";
 const DonationSection = () => {
   return (
     <Card className="p-6 mb-8 gaming-card">
-      <h2 className="text-3xl font-bold mb-6 text-center text-white bg-clip-text text-transparent bg-gradient-to-r from-[#8B5CF6] to-[#0EA5E9] flex items-center justify-center gap-2">
-        <Gift className="h-8 w-8" />
+      <h2 className="text-3xl font-bold mb-6 text-center text-black bg-clip-text bg-gradient-to-r from-[#8B5CF6] to-[#0EA5E9] flex items-center justify-center gap-2">
+        <Gift className="h-8 w-8 text-black" />
         Прием пожертвований
       </h2>
       <div className="space-y-6">
@@ -18,8 +19,8 @@ const DonationSection = () => {
             rel="noopener noreferrer"
             className="block w-full"
           >
-            <Button className="w-full gaming-button bg-[#F15B3D] hover:bg-[#F15B3D]/80 text-white border-0" variant="outline">
-              <DollarSign className="mr-2 h-4 w-4" />
+            <Button className="w-full gaming-button bg-[#F15B3D] hover:bg-[#F15B3D]/80 text-black border-0" variant="outline">
+              <DollarSign className="mr-2 h-4 w-4 text-black" />
               Поддержать на Boosty
             </Button>
           </a>
@@ -30,8 +31,8 @@ const DonationSection = () => {
             rel="noopener noreferrer"
             className="block w-full"
           >
-            <Button className="w-full gaming-button bg-[#6366F1] hover:bg-[#6366F1]/80 text-white border-0" variant="outline">
-              <DollarSign className="mr-2 h-4 w-4" />
+            <Button className="w-full gaming-button bg-[#6366F1] hover:bg-[#6366F1]/80 text-black border-0" variant="outline">
+              <DollarSign className="mr-2 h-4 w-4 text-black" />
               Поддержать на Donatty
             </Button>
           </a>
@@ -42,8 +43,8 @@ const DonationSection = () => {
             rel="noopener noreferrer"
             className="block w-full"
           >
-            <Button className="w-full gaming-button bg-[#F59E0B] hover:bg-[#F59E0B]/80 text-white border-0" variant="outline">
-              <DollarSign className="mr-2 h-4 w-4" />
+            <Button className="w-full gaming-button bg-[#F59E0B] hover:bg-[#F59E0B]/80 text-black border-0" variant="outline">
+              <DollarSign className="mr-2 h-4 w-4 text-black" />
               Поддержать через Юмани
             </Button>
           </a>

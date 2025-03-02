@@ -20,7 +20,7 @@ const DiscordWidget = () => {
   return (
     <Card className="p-6 mb-8 gaming-card">
       <h2 className="text-3xl font-bold mb-6 text-center text-black bg-clip-text bg-gradient-to-r from-[#8B5CF6] to-[#0EA5E9] flex items-center justify-center gap-2">
-        <MessagesSquare className="h-8 w-8" />
+        <MessagesSquare className="h-8 w-8 text-black" />
         Discord сервер "From Russia"
       </h2>
       
@@ -42,8 +42,8 @@ const DiscordWidget = () => {
             </p>
             <div className="flex flex-col gap-3">
               <a href="https://discord.gg/rk7ZeadZGH" target="_blank" rel="noopener noreferrer" className="w-full block">
-                <Button className="w-full bg-[#5865F2] hover:bg-[#5865F2]/90 text-white border-0">
-                  <MessageCircle className="mr-2 h-5 w-5" />
+                <Button className="w-full bg-[#5865F2] hover:bg-[#5865F2]/90 text-black border-0">
+                  <MessageCircle className="mr-2 h-5 w-5 text-black" />
                   ПРИСОЕДИНИТСЯ К DISCORD
                 </Button>
               </a>
@@ -56,25 +56,25 @@ const DiscordWidget = () => {
             </h3>
             <div className="flex flex-col gap-3">
               <a href="https://discord.com/download" target="_blank" rel="noopener noreferrer" className="w-full block">
-                <Button className="w-full bg-[#5865F2] hover:bg-[#5865F2]/90 text-white border-0">
-                  <Download className="mr-2 h-5 w-5" />
+                <Button className="w-full bg-[#5865F2] hover:bg-[#5865F2]/90 text-black border-0">
+                  <Download className="mr-2 h-5 w-5 text-black" />
                   Скачать Discord с официального сайта
                 </Button>
               </a>
-              <Button className="w-full bg-[#5865F2] hover:bg-[#5865F2]/90 text-white border-0" onClick={() => window.open('https://drive.google.com/file/d/1GEWBHezhE4-LJ9hMCk9oxg38dXf1tVSx/view', '_blank')}>
-                <AlertCircle className="mr-2 h-5 w-5" />
+              <Button className="w-full bg-[#5865F2] hover:bg-[#5865F2]/90 text-black border-0" onClick={() => window.open('https://drive.google.com/file/d/1GEWBHezhE4-LJ9hMCk9oxg38dXf1tVSx/view', '_blank')}>
+                <AlertCircle className="mr-2 h-5 w-5 text-black" />
                 Разблокировка Discord в РФ
               </Button>
-              <Button className="w-full bg-[#5865F2] hover:bg-[#5865F2]/90 text-white border-0" onClick={() => window.open('https://div2-fromrussia.lovable.app/', '_blank')}>
-                <MessagesSquare className="mr-2 h-5 w-5" />
+              <Button className="w-full bg-[#5865F2] hover:bg-[#5865F2]/90 text-black border-0" onClick={() => window.open('https://div2-fromrussia.lovable.app/', '_blank')}>
+                <MessagesSquare className="mr-2 h-5 w-5 text-black" />
                 Подробнее о сервере
               </Button>
               
               {/* Discord username block */}
               <div className="flex items-center gap-3 p-3 bg-[#F5F5F5] rounded-lg mt-3">
                 <p className="text-black">Мой ник Discord: {discordUsername}</p>
-                <Button variant="outline" size="sm" onClick={handleCopyDiscordUsername} className="ml-auto bg-[#1B4D3E] hover:bg-[#1B4D3E]/90 text-white border-0">
-                  <Copy className="mr-2 h-4 w-4" />
+                <Button variant="outline" size="sm" onClick={handleCopyDiscordUsername} className="ml-auto bg-[#1B4D3E] hover:bg-[#1B4D3E]/90 text-black border-0">
+                  <Copy className="mr-2 h-4 w-4 text-black" />
                   Копировать
                 </Button>
               </div>

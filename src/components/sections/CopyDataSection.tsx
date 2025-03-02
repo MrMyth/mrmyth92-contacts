@@ -29,7 +29,7 @@ const CopyDataSection = () => {
   return (
     <Card className="p-6 mb-8 gaming-card">
       <h2 className="text-3xl font-bold mb-6 text-center text-black bg-clip-text bg-gradient-to-r from-[#8B5CF6] to-[#0EA5E9] flex items-center justify-center gap-2">
-        <Database className="h-8 w-8" />
+        <Database className="h-8 w-8 text-black" />
         Данные для копирования
       </h2>
       <div className="flex flex-col md:flex-row gap-8 items-center justify-center">
@@ -38,9 +38,9 @@ const CopyDataSection = () => {
           <Button
             onClick={handleCopyEmail}
             variant="outline"
-            className="gaming-button bg-[#1B4D3E] hover:bg-[#1B4D3E]/80 text-white border-0"
+            className="gaming-button bg-[#1B4D3E] hover:bg-[#1B4D3E]/80 text-black border-0"
           >
-            <Copy className="mr-2 h-4 w-4" />
+            <Copy className="mr-2 h-4 w-4 text-black" />
             Копировать Email
           </Button>
         </div>
@@ -49,9 +49,9 @@ const CopyDataSection = () => {
           <Button
             onClick={handleCopyCard}
             variant="outline"
-            className="gaming-button bg-[#1B4D3E] hover:bg-[#1B4D3E]/80 text-white border-0"
+            className="gaming-button bg-[#1B4D3E] hover:bg-[#1B4D3E]/80 text-black border-0"
           >
-            <Copy className="mr-2 h-4 w-4" />
+            <Copy className="mr-2 h-4 w-4 text-black" />
             Копировать номер
           </Button>
         </div>
