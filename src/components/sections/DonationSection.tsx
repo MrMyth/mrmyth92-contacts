@@ -19,8 +19,8 @@ const DonationSection = () => {
             rel="noopener noreferrer"
             className="block w-full"
           >
-            <Button className="w-full gaming-button bg-[#F15B3D] hover:bg-[#F15B3D]/80 text-black border-0" variant="outline">
-              <DollarSign className="mr-2 h-4 w-4 text-black" />
+            <Button className="w-full gaming-button bg-[#F15B3D] hover:bg-[#F15B3D]/80 text-white border-0" variant="outline">
+              <DollarSign className="mr-2 h-4 w-4 text-white" />
               Поддержать на Boosty
             </Button>
           </a>
@@ -31,8 +31,8 @@ const DonationSection = () => {
             rel="noopener noreferrer"
             className="block w-full"
           >
-            <Button className="w-full gaming-button bg-[#6366F1] hover:bg-[#6366F1]/80 text-black border-0" variant="outline">
-              <DollarSign className="mr-2 h-4 w-4 text-black" />
+            <Button className="w-full gaming-button bg-[#6366F1] hover:bg-[#6366F1]/80 text-white border-0" variant="outline">
+              <DollarSign className="mr-2 h-4 w-4 text-white" />
               Поддержать на Donatty
             </Button>
           </a>
@@ -43,8 +43,8 @@ const DonationSection = () => {
             rel="noopener noreferrer"
             className="block w-full"
           >
-            <Button className="w-full gaming-button bg-[#F59E0B] hover:bg-[#F59E0B]/80 text-black border-0" variant="outline">
-              <DollarSign className="mr-2 h-4 w-4 text-black" />
+            <Button className="w-full gaming-button bg-[#F59E0B] hover:bg-[#F59E0B]/80 text-white border-0" variant="outline">
+              <DollarSign className="mr-2 h-4 w-4 text-white" />
               Поддержать через Юмани
             </Button>
           </a>

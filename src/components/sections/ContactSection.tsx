@@ -17,14 +17,14 @@ const ContactSection = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Button variant="outline" className="w-full bg-[#0077FF] hover:bg-[#0077FF]/90 text-black border-0">
-            <MessageSquare className="mr-2 h-4 w-4 text-black" />
+          <Button variant="outline" className="w-full bg-[#0077FF] hover:bg-[#0077FF]/90 text-white border-0">
+            <MessageSquare className="mr-2 h-4 w-4 text-white" />
             Страница в VK
           </Button>
         </a>
         <a href="https://t.me/MrMyth92" target="_blank" rel="noopener noreferrer">
-          <Button variant="outline" className="w-full bg-[#229ED9] hover:bg-[#229ED9]/90 text-black border-0">
-            <MessageCircle className="mr-2 h-4 w-4 text-black" />
+          <Button variant="outline" className="w-full bg-[#229ED9] hover:bg-[#229ED9]/90 text-white border-0">
+            <MessageCircle className="mr-2 h-4 w-4 text-white" />
             Написать в Telegram
           </Button>
         </a>
@@ -33,8 +33,8 @@ const ContactSection = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Button variant="outline" className="w-full bg-[#25D366] hover:bg-[#25D366]/90 text-black border-0">
-            <Phone className="mr-2 h-4 w-4 text-black" />
+          <Button variant="outline" className="w-full bg-[#25D366] hover:bg-[#25D366]/90 text-white border-0">
+            <Phone className="mr-2 h-4 w-4 text-white" />
             Написать в WhatsApp
           </Button>
         </a>
@@ -43,8 +43,8 @@ const ContactSection = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Button variant="outline" className="w-full bg-[#EE8208] hover:bg-[#EE8208]/90 text-black border-0">
-            <Users className="mr-2 h-4 w-4 text-black" />
+          <Button variant="outline" className="w-full bg-[#EE8208] hover:bg-[#EE8208]/90 text-white border-0">
+            <Users className="mr-2 h-4 w-4 text-white" />
             Страница в ОК
           </Button>
         </a>

@@ -17,8 +17,8 @@ const VKGroupSection = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Button variant="outline" className="w-full bg-[#0077FF] hover:bg-[#0077FF]/90 text-black border-0">
-            <MessageSquare className="mr-2 h-4 w-4 text-black" />
+          <Button variant="outline" className="w-full bg-[#0077FF] hover:bg-[#0077FF]/90 text-white border-0">
+            <MessageSquare className="mr-2 h-4 w-4 text-white" />
             Группа в VK
           </Button>
         </a>

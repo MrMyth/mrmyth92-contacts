@@ -17,8 +17,8 @@ const TwitchSection = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Button variant="outline" className="w-full bg-[#9146FF] hover:bg-[#9146FF]/90 text-black border-0">
-            <Twitch className="mr-2 h-4 w-4 text-black" />
+          <Button variant="outline" className="w-full bg-[#9146FF] hover:bg-[#9146FF]/90 text-white border-0">
+            <Twitch className="mr-2 h-4 w-4 text-white" />
             Посетить канал
           </Button>
         </a>
