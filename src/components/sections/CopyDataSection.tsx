@@ -9,6 +9,7 @@ const CopyDataSection = () => {
   const { toast } = useToast();
   const email = "dmstarchikov@outlook.com";
   const cardNumber = "5599002109565798";
+  const ubisoftUsername = "MrMyth92";
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(email);
@@ -26,13 +27,21 @@ const CopyDataSection = () => {
     });
   };
 
+  const handleCopyUbisoftUsername = () => {
+    navigator.clipboard.writeText(ubisoftUsername);
+    toast({
+      title: "Ubisoft Connect имя скопировано",
+      description: "Имя Ubisoft Connect было скопировано в буфер обмена",
+    });
+  };
+
   return (
     <Card className="p-6 mb-8 gaming-card">
       <h2 className="text-3xl font-bold mb-6 text-center text-black bg-clip-text bg-gradient-to-r from-[#8B5CF6] to-[#0EA5E9] flex items-center justify-center gap-2">
         <Database className="h-8 w-8 text-black" />
         Данные для копирования
       </h2>
-      <div className="flex flex-col md:flex-row gap-8 items-center justify-center">
+      <div className="flex flex-col gap-6">
         <div className="flex flex-col sm:flex-row gap-4 items-center">
           <p className="text-xl text-black">Email: {email}</p>
           <Button
@@ -53,6 +62,17 @@ const CopyDataSection = () => {
           >
             <Copy className="mr-2 h-4 w-4 text-white" />
             Копировать номер
+          </Button>
+        </div>
+        <div className="flex flex-col sm:flex-row gap-4 items-center">
+          <p className="text-xl text-black">Ubisoft Connect: {ubisoftUsername}</p>
+          <Button
+            onClick={handleCopyUbisoftUsername}
+            variant="outline"
+            className="gaming-button bg-[#1B4D3E] hover:bg-[#1B4D3E]/80 text-white border-0"
+          >
+            <Copy className="mr-2 h-4 w-4 text-white" />
+            Копировать имя
           </Button>
         </div>
       </div>
