@@ -42,7 +42,8 @@ const CopyDataSection = () => {
         Данные для копирования
       </h2>
       <div className="flex flex-col gap-6">
-        <div className="flex flex-col sm:flex-row gap-4 items-center">
+        {/* Email row */}
+        <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
           <p className="text-xl text-black">Email: {email}</p>
           <Button
             onClick={handleCopyEmail}
@@ -53,7 +54,9 @@ const CopyDataSection = () => {
             Копировать Email
           </Button>
         </div>
-        <div className="flex flex-col sm:flex-row gap-4 items-center">
+        
+        {/* Card number row */}
+        <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
           <p className="text-xl text-black">Номер карты: {cardNumber}</p>
           <Button
             onClick={handleCopyCard}
@@ -64,7 +67,9 @@ const CopyDataSection = () => {
             Копировать номер
           </Button>
         </div>
-        <div className="flex flex-col sm:flex-row gap-4 items-center">
+        
+        {/* Ubisoft username row */}
+        <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
           <p className="text-xl text-black">Ubisoft Connect: {ubisoftUsername}</p>
           <Button
             onClick={handleCopyUbisoftUsername}
