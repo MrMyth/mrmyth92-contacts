@@ -1,13 +1,16 @@
+
 import React from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Download, AlertCircle, MessagesSquare, Copy } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
+
 const DiscordWidget = () => {
   const {
     toast
   } = useToast();
   const discordUsername = "MrMyth92";
+  
   const handleCopyDiscordUsername = () => {
     navigator.clipboard.writeText(discordUsername);
     toast({
@@ -15,10 +18,11 @@ const DiscordWidget = () => {
       description: "Ник Discord был скопирован в буфер обмена"
     });
   };
+  
   return <Card className="p-6 mb-8 gaming-card">
       <h2 className="text-3xl font-bold mb-6 text-center text-black bg-clip-text bg-gradient-to-r from-[#8B5CF6] to-[#0EA5E9] flex items-center justify-center gap-2">
         <MessagesSquare className="h-8 w-8 text-black" />
-        Discord сервер "From Russia"
+        Discord
       </h2>
       
       <div className="grid md:grid-cols-2 gap-8">
@@ -79,4 +83,5 @@ const DiscordWidget = () => {
       </div>
     </Card>;
 };
+
 export default DiscordWidget;
