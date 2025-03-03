@@ -1,16 +1,13 @@
-
 import React from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Download, AlertCircle, MessagesSquare, Copy } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
-
 const DiscordWidget = () => {
   const {
     toast
   } = useToast();
   const discordUsername = "MrMyth92";
-  
   const handleCopyDiscordUsername = () => {
     navigator.clipboard.writeText(discordUsername);
     toast({
@@ -18,7 +15,6 @@ const DiscordWidget = () => {
       description: "Ник Discord был скопирован в буфер обмена"
     });
   };
-  
   return <Card className="p-6 mb-8 gaming-card">
       <h2 className="text-3xl font-bold mb-6 text-center text-black bg-clip-text bg-gradient-to-r from-[#8B5CF6] to-[#0EA5E9] flex items-center justify-center gap-2">
         <MessagesSquare className="h-8 w-8 text-black" />
@@ -70,7 +66,7 @@ const DiscordWidget = () => {
               </Button>
               
               {/* Discord username block */}
-              <div className="flex items-center gap-3 p-3 bg-[#F5F5F5] rounded-lg mt-3">
+              <div className="flex items-center gap-3 p-3 mt-3 rounded-none bg-primary-foreground">
                 <p className="text-black">Мой ник Discord: {discordUsername}</p>
                 <Button variant="outline" size="sm" onClick={handleCopyDiscordUsername} className="ml-auto bg-[#1B4D3E] hover:bg-[#1B4D3E]/90 text-white border-0">
                   <Copy className="mr-2 h-4 w-4 text-white" />
@@ -83,5 +79,4 @@ const DiscordWidget = () => {
       </div>
     </Card>;
 };
-
 export default DiscordWidget;
