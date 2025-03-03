@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -43,7 +42,7 @@ const DiscordWidget = () => {
               <a href="https://discord.gg/rk7ZeadZGH" target="_blank" rel="noopener noreferrer" className="w-full block">
                 <Button className="w-full bg-[#5865F2] hover:bg-[#5865F2]/90 text-white border-0">
                   <MessageCircle className="mr-2 h-5 w-5 text-white" />
-                  ПРИСОЕДИНИТСЯ К DISCORD
+                  Присоединится к Discord
                 </Button>
               </a>
             </div>
