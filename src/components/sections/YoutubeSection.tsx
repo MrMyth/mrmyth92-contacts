@@ -2,7 +2,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Youtube } from "lucide-react";
+import { Youtube, BellPlus } from "lucide-react";
 
 const YoutubeSection = () => {
   return (
@@ -28,7 +28,7 @@ const YoutubeSection = () => {
           rel="noopener noreferrer"
         >
           <Button variant="outline" className="w-full bg-[#FF0000] hover:bg-[#FF0000]/90 text-white border-0">
-            <Youtube className="mr-2 h-4 w-4 text-white" />
+            <BellPlus className="mr-2 h-4 w-4 text-white" />
             Подписаться на канал
           </Button>
         </a>
