@@ -7,10 +7,11 @@ import { Youtube, BellPlus } from "lucide-react";
 const YoutubeSection = () => {
   return (
     <Card className="p-6 mb-8 gaming-card">
-      <h2 className="text-3xl font-bold mb-6 text-center text-black bg-clip-text bg-gradient-to-r from-[#8B5CF6] to-[#0EA5E9] flex items-center justify-center gap-2">
+      <h2 className="text-3xl font-bold mb-2 text-center text-black bg-clip-text bg-gradient-to-r from-[#8B5CF6] to-[#0EA5E9] flex items-center justify-center gap-2">
         <Youtube className="h-8 w-8 text-black" />
         YouTube канал
       </h2>
+      <p className="text-center text-gray-600 mb-6">Мой Youtube канал по франшизе The Division</p>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <a
           href="https://www.youtube.com/@MrMyth92_TC"

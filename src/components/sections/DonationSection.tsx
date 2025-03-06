@@ -7,10 +7,11 @@ import { DollarSign, Gift } from "lucide-react";
 const DonationSection = () => {
   return (
     <Card className="p-6 mb-8 gaming-card">
-      <h2 className="text-3xl font-bold mb-6 text-center text-black bg-clip-text bg-gradient-to-r from-[#8B5CF6] to-[#0EA5E9] flex items-center justify-center gap-2">
+      <h2 className="text-3xl font-bold mb-2 text-center text-black bg-clip-text bg-gradient-to-r from-[#8B5CF6] to-[#0EA5E9] flex items-center justify-center gap-2">
         <Gift className="h-8 w-8 text-black" />
         Прием пожертвований
       </h2>
+      <p className="text-center text-gray-600 mb-6">Все способы, с помощью которых вы можете поддержать любой мой проект</p>
       <div className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           <a
