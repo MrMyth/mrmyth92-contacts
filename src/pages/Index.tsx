@@ -1,6 +1,7 @@
 
 import React from "react";
 import HeroSection from "@/components/sections/HeroSection";
+import AboutMeSection from "@/components/sections/AboutMeSection";
 import DonationSection from "@/components/sections/DonationSection";
 import YoutubeSection from "@/components/sections/YoutubeSection";
 import VKGroupSection from "@/components/sections/VKGroupSection";
@@ -15,6 +16,7 @@ const Index = () => {
     <div className="min-h-screen bg-white text-black">
       <div className="container px-4 py-8 mx-auto">
         <HeroSection />
+        <AboutMeSection />
         <CopyDataSection />
         <DonationSection />
         <YoutubeSection />
