@@ -13,7 +13,7 @@ const YoutubeSection = () => {
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <a
-          href="https://www.youtube.com/@MrMyth92"
+          href="https://www.youtube.com/@MrMyth92_TC"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -23,7 +23,7 @@ const YoutubeSection = () => {
           </Button>
         </a>
         <a
-          href="https://www.youtube.com/@MrMyth92?sub_confirmation=1"
+          href="https://www.youtube.com/@MrMyth92_TC?sub_confirmation=1"
           target="_blank"
           rel="noopener noreferrer"
         >
