@@ -26,7 +26,7 @@ const DonationSection = () => {
       <p className="text-center text-gray-600 mb-6">Все способы, с помощью которых вы можете поддержать любой мой проект</p>
       
       {/* Bank Card */}
-      <div className="flex flex-row items-center justify-between flex-wrap gap-4 mb-6">
+      <div className="flex flex-col sm:flex-row gap-4 items-center justify-center mb-6">
         <p className="text-xl text-black">Номер карты: {cardNumber}</p>
         <Button
           onClick={handleCopyCard}
