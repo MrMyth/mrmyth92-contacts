@@ -34,7 +34,7 @@ const CopyDataSection = () => {
       </h2>
       <div className="flex flex-col gap-6">
         {/* Email row */}
-        <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
+        <div className="flex flex-row items-center justify-between flex-wrap gap-4">
           <p className="text-xl text-black">Email: {email}</p>
           <Button
             onClick={handleCopyEmail}
@@ -47,7 +47,7 @@ const CopyDataSection = () => {
         </div>
         
         {/* Ubisoft username row */}
-        <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
+        <div className="flex flex-row items-center justify-between flex-wrap gap-4">
           <p className="text-xl text-black">Ubisoft Connect: {ubisoftUsername}</p>
           <Button
             onClick={handleCopyUbisoftUsername}
