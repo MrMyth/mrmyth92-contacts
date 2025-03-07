@@ -8,7 +8,6 @@ import { useToast } from "@/components/ui/use-toast";
 const CopyDataSection = () => {
   const { toast } = useToast();
   const email = "dmstarchikov@outlook.com";
-  const cardNumber = "5599002109565798";
   const ubisoftUsername = "MrMyth92";
 
   const handleCopyEmail = () => {
@@ -16,14 +15,6 @@ const CopyDataSection = () => {
     toast({
       title: "Email скопирован",
       description: "Email адрес был скопирован в буфер обмена",
-    });
-  };
-
-  const handleCopyCard = () => {
-    navigator.clipboard.writeText(cardNumber);
-    toast({
-      title: "Номер карты скопирован",
-      description: "Номер карты скопирован в буфер обмена!",
     });
   };
 
@@ -52,19 +43,6 @@ const CopyDataSection = () => {
           >
             <Copy className="mr-2 h-4 w-4 text-white" />
             Копировать Email
-          </Button>
-        </div>
-        
-        {/* Card number row */}
-        <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
-          <p className="text-xl text-black">Номер карты: {cardNumber}</p>
-          <Button
-            onClick={handleCopyCard}
-            variant="outline"
-            className="gaming-button bg-[#1B4D3E] hover:bg-[#1B4D3E]/80 text-white border-0"
-          >
-            <Copy className="mr-2 h-4 w-4 text-white" />
-            Копировать номер
           </Button>
         </div>
         
