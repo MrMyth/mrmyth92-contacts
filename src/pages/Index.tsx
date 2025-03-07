@@ -10,6 +10,7 @@ import DiscordWidget from "@/components/sections/DiscordWidget";
 import AiCraftSection from "@/components/sections/AiCraftSection";
 import CopyDataSection from "@/components/sections/CopyDataSection";
 import TwitchSection from "@/components/sections/TwitchSection";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
@@ -26,6 +27,7 @@ const Index = () => {
         <ContactSection />
         <AiCraftSection />
       </div>
+      <Footer />
     </div>
   );
 };
