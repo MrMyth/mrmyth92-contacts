@@ -12,7 +12,7 @@ const YoutubeSection = () => {
         YouTube канал
       </h2>
       <p className="text-center text-gray-600 mb-6">Мой Youtube канал по франшизе The Division</p>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
         <a
           href="https://www.youtube.com/@MrMyth92_TC"
           target="_blank"
@@ -25,6 +25,30 @@ const YoutubeSection = () => {
         </a>
         <a
           href="https://www.youtube.com/@MrMyth92_TC?sub_confirmation=1"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Button variant="outline" className="w-full bg-[#FF0000] hover:bg-[#FF0000]/90 text-white border-0">
+            <BellPlus className="mr-2 h-4 w-4 text-white" />
+            Подписаться на канал
+          </Button>
+        </a>
+      </div>
+      
+      <p className="text-center text-gray-600 mb-6">Мой Youtube канал по франшизе Assassin's Creed</p>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <a
+          href="https://www.youtube.com/@MrMyth92_AC"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Button variant="outline" className="w-full bg-[#FF0000] hover:bg-[#FF0000]/90 text-white border-0">
+            <Youtube className="mr-2 h-4 w-4 text-white" />
+            Посетить канал
+          </Button>
+        </a>
+        <a
+          href="https://www.youtube.com/@MrMyth92_AC?sub_confirmation=1"
           target="_blank"
           rel="noopener noreferrer"
         >
