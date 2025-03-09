@@ -2,12 +2,17 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const HeroSection = () => {
+const HeroSection: React.FC = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
   const images = [
     "https://i.ibb.co/PG45Qbnk/image.jpg",
     "https://i.ibb.co/sL0YxWD/image.jpg"
+  ];
+
+  const imageDescriptions = [
+    "Gaming-themed header image showing game environment",
+    "Scenic game landscape with atmospheric lighting"
   ];
 
   // Using useCallback to memoize the image transition function
@@ -27,13 +32,14 @@ const HeroSection = () => {
           <motion.img
             key={currentImageIndex}
             src={images[currentImageIndex]}
-            alt={`Header image ${currentImageIndex + 1}`}
+            alt={imageDescriptions[currentImageIndex]}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 1.5 }}
             className="absolute inset-0 w-full h-full object-cover"
             loading="eager"
+            fetchpriority="high"
           />
         </AnimatePresence>
       </div>
