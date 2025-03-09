@@ -35,7 +35,7 @@ const DiscordWidget = () => {
             src="https://discord.com/widget?id=835802952521351180&theme=dark" 
             width="100%" 
             height="500" 
-            allowTransparency="true" 
+            allowTransparency={true}
             frameBorder="0" 
             sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts" 
             className="rounded-lg border border-[#8B5CF6]/20"
