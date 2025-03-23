@@ -7,7 +7,7 @@ import { useToast } from "@/components/ui/use-toast";
 
 const DonationSection = () => {
   const { toast } = useToast();
-  const cardNumber = "5599002109565798";
+  const cardNumber = "2202200321251892";
 
   const handleCopyCard = () => {
     navigator.clipboard.writeText(cardNumber);
