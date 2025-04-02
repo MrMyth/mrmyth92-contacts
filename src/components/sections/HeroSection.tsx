@@ -39,7 +39,7 @@ const HeroSection: React.FC = () => {
             transition={{ duration: 1.5 }}
             className="absolute inset-0 w-full h-full object-cover"
             loading="eager"
-            fetchpriority="high"
+            fetchPriority="high"
           />
         </AnimatePresence>
       </div>
