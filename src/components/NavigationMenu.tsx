@@ -36,7 +36,7 @@ const NavigationMenu: React.FC = () => {
   return (
     <nav className="sticky top-0 bg-white/90 backdrop-blur-sm shadow-sm z-50 py-2 px-4 mb-6">
       <div className="container mx-auto flex justify-between items-center">
-        <div className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#8B5CF6] to-[#0EA5E9]">
+        <div className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#004d00] to-[#006400]">
           MrMyth92
         </div>
 
