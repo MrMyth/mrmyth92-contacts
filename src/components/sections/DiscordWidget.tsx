@@ -48,7 +48,7 @@ const DiscordWidget = () => {
         <div className="flex flex-col gap-6">
           <div>
             <h3 className="text-xl font-bold mb-4 text-black">
-              Как присоединиться к серверу
+              Как присоединиться к серверу?
             </h3>
             <p className="text-black mb-4">Чтобы зайти на сервер нажмите на &quot;Присоединится к Discord&quot;. Если приглашение не сработало, то используйте кнопку &quot;Join Discord&quot; Ее вы можете найти в правом нижнем углу виджета.</p>
             <div className="flex flex-col gap-3">
