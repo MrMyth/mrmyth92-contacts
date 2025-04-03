@@ -1,11 +1,9 @@
-
 import React, { useState } from "react";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navigationItems = [
-  { label: "Главная", href: "#hero-section" },
   { label: "Обо мне", href: "#about-me-section" },
   { label: "Email и никнеймы", href: "#contacts-section" },
   { label: "Помочь проекту", href: "#donation-section" },
