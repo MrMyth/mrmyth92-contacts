@@ -7,14 +7,14 @@ import { Button } from "@/components/ui/button";
 const navigationItems = [
   { label: "Главная", href: "#hero-section" },
   { label: "Обо мне", href: "#about-me-section" },
-  { label: "Копировать данные", href: "#contacts-section" },
-  { label: "Донаты", href: "#donation-section" },
+  { label: "Email и никнеймы", href: "#contacts-section" },
+  { label: "Помочь проекту", href: "#donation-section" },
   { label: "YouTube", href: "#youtube-section" },
   { label: "Twitch", href: "#twitch-section" },
-  { label: "ВКонтакте", href: "#vk-section" },
+  { label: "VK", href: "#vk-section" },
   { label: "Discord", href: "#discord-section" },
   { label: "Контакты", href: "#contact-section" },
-  { label: "AI Craft", href: "#ai-craft-section" },
+  { label: "Обои на рабочий стол", href: "#ai-craft-section" },
 ];
 
 const NavigationMenu: React.FC = () => {
@@ -38,7 +38,7 @@ const NavigationMenu: React.FC = () => {
     <nav className="sticky top-0 bg-white/90 backdrop-blur-sm shadow-sm z-50 py-2 px-4 mb-6">
       <div className="container mx-auto flex justify-between items-center">
         <div className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#004d00] to-[#006400]">
-          MrMyth92
+          MrMyth92 Dmitry Starchikov
         </div>
 
         {/* Mobile menu button */}
