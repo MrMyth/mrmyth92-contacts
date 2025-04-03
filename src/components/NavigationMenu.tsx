@@ -7,12 +7,13 @@ import { Button } from "@/components/ui/button";
 const navigationItems = [
   { label: "Главная", href: "#hero-section" },
   { label: "Обо мне", href: "#about-me-section" },
-  { label: "Контакты", href: "#contacts-section" },
+  { label: "Копировать данные", href: "#contacts-section" },
   { label: "Донаты", href: "#donation-section" },
   { label: "YouTube", href: "#youtube-section" },
   { label: "Twitch", href: "#twitch-section" },
   { label: "ВКонтакте", href: "#vk-section" },
   { label: "Discord", href: "#discord-section" },
+  { label: "Контакты", href: "#contact-section" },
   { label: "AI Craft", href: "#ai-craft-section" },
 ];
 
