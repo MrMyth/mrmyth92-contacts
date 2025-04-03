@@ -32,7 +32,7 @@ const DiscordWidget = () => {
         <div>
           <h3 className="text-xl font-bold mb-4 text-black">Виджет Discord сервера &quot;From Russia&quot;</h3>
           <iframe 
-            src="https://discord.com/widget?id=835802952521351180&theme=dark" 
+            src="https://discord.com/widget?id=835802952521351180&theme=light" 
             width="100%" 
             height="500" 
             allowTransparency={true}
@@ -50,7 +50,7 @@ const DiscordWidget = () => {
             <h3 className="text-xl font-bold mb-4 text-black">
               Как присоединиться к серверу
             </h3>
-            <p className="text-black mb-4">Чтобы зайти на сервер нажмите на &quot;Присоединится к Discord&quot;. Если приглашение не сработало, то используйте кнопку &quot;Join Discord&quot;.</p>
+            <p className="text-black mb-4">Чтобы зайти на сервер нажмите на &quot;Присоединится к Discord&quot;. Если приглашение не сработало, то используйте кнопку &quot;Join Discord&quot; Ее вы можете найти в правом нижнем углу виджета.</p>
             <div className="flex flex-col gap-3">
               <a href="https://discord.gg/rk7ZeadZGH" target="_blank" rel="noopener noreferrer" className="w-full block">
                 <Button className="w-full bg-[#5865F2] hover:bg-[#5865F2]/90 text-white border-0">
