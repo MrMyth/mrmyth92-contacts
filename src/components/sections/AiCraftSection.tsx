@@ -46,7 +46,7 @@ const AiCraftSection = () => {
             >
               <Button 
                 variant="outline" 
-                className={`w-full ${link.bgColor} text-white border-0 flex items-center justify-center`}
+                className={`w-full ${link.bgColor} text-white border-0 flex items-center justify-center hover:${link.bgColor} hover:text-white active:${link.bgColor} active:text-white`}
               >
                 {link.id === "vk" ? (
                   <svg className="mr-2 h-4 w-4 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
