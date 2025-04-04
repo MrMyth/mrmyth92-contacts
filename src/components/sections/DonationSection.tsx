@@ -30,7 +30,7 @@ const DonationSection = () => {
         <Button
           onClick={handleCopyCard}
           variant="outline"
-          className="gaming-button bg-[#1B4D3E] hover:bg-[#1B4D3E]/80 text-white border-0"
+          className="gaming-button bg-[#1B4D3E] text-white border-0"
         >
           <Copy className="mr-2 h-4 w-4 text-white" />
           Копировать номер
@@ -45,7 +45,7 @@ const DonationSection = () => {
             rel="noopener noreferrer"
             className="block w-full"
           >
-            <Button className="w-full gaming-button bg-[#F15B3D] hover:bg-[#F15B3D]/80 text-white border-0" variant="outline">
+            <Button className="w-full gaming-button bg-[#F15B3D] text-white border-0" variant="outline">
               <Gift className="mr-2 h-4 w-4 text-white" />
               Поддержать на Boosty
             </Button>
@@ -57,7 +57,7 @@ const DonationSection = () => {
             rel="noopener noreferrer"
             className="block w-full"
           >
-            <Button className="w-full gaming-button bg-[#6366F1] hover:bg-[#6366F1]/80 text-white border-0" variant="outline">
+            <Button className="w-full gaming-button bg-[#6366F1] text-white border-0" variant="outline">
               <Gift className="mr-2 h-4 w-4 text-white" />
               Поддержать на Donatty
             </Button>
@@ -69,7 +69,7 @@ const DonationSection = () => {
             rel="noopener noreferrer"
             className="block w-full"
           >
-            <Button className="w-full gaming-button bg-[#F59E0B] hover:bg-[#F59E0B]/80 text-white border-0" variant="outline">
+            <Button className="w-full gaming-button bg-[#F59E0B] text-white border-0" variant="outline">
               <Gift className="mr-2 h-4 w-4 text-white" />
               Поддержать через Юмани
             </Button>
