@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -18,7 +17,7 @@ const YoutubeSection = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Button variant="outline" className="w-full bg-[#FF0000] hover:bg-[#FF0000]/90 text-white border-0">
+          <Button variant="outline" className="w-full bg-[#FF0000] text-white border-0 hover:bg-[#FF0000] hover:text-white transform-none">
             <Youtube className="mr-2 h-4 w-4 text-white" />
             Посетить канал
           </Button>
@@ -28,7 +27,7 @@ const YoutubeSection = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Button variant="outline" className="w-full bg-[#FF0000] hover:bg-[#FF0000]/90 text-white border-0">
+          <Button variant="outline" className="w-full bg-[#FF0000] text-white border-0 hover:bg-[#FF0000] hover:text-white transform-none">
             <BellPlus className="mr-2 h-4 w-4 text-white" />
             Подписаться на канал
           </Button>
@@ -42,7 +41,7 @@ const YoutubeSection = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Button variant="outline" className="w-full bg-[#FF0000] hover:bg-[#FF0000]/90 text-white border-0">
+          <Button variant="outline" className="w-full bg-[#FF0000] text-white border-0 hover:bg-[#FF0000] hover:text-white transform-none">
             <Youtube className="mr-2 h-4 w-4 text-white" />
             Посетить канал
           </Button>
@@ -52,7 +51,7 @@ const YoutubeSection = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Button variant="outline" className="w-full bg-[#FF0000] hover:bg-[#FF0000]/90 text-white border-0">
+          <Button variant="outline" className="w-full bg-[#FF0000] text-white border-0 hover:bg-[#FF0000] hover:text-white transform-none">
             <BellPlus className="mr-2 h-4 w-4 text-white" />
             Подписаться на канал
           </Button>
