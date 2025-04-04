@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useEffect } from "react";
 import HeroSection from "@/components/sections/HeroSection";
 import AboutMeSection from "@/components/sections/AboutMeSection";
 import DonationSection from "@/components/sections/DonationSection";
@@ -14,6 +14,19 @@ import Footer from "@/components/Footer";
 import NavigationMenu from "@/components/NavigationMenu";
 
 const Index = () => {
+  // Handle initial scroll to hash on page load
+  useEffect(() => {
+    // Wait for components to render
+    setTimeout(() => {
+      if (window.location.hash) {
+        const element = document.querySelector(window.location.hash);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    }, 100);
+  }, []);
+
   return (
     <div className="min-h-screen bg-white text-black">
       <NavigationMenu />
