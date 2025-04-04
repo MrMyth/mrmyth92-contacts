@@ -1,8 +1,7 @@
-
 import React from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Download, AlertCircle, Copy } from "lucide-react";
+import { Download, AlertCircle, Copy } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 
 const DiscordWidget = () => {
@@ -50,12 +49,14 @@ const DiscordWidget = () => {
             <h3 className="text-xl font-bold mb-4 text-black">
               Как присоединиться к серверу?
             </h3>
-            <p className="text-black mb-4">Чтобы зайти на сервер нажмите на &quot;Присоединится к Discord&quot;. Если приглашение не сработало, то используйте кнопку &quot;Join Discord&quot; Ее вы можете найти в правом нижнем углу виджета.</p>
+            <p className="text-black mb-4">Чтобы зайти на сервер нажмите на &quot;Зайти на сервер&quot;. Если приглашение не сработало, то используйте кнопку &quot;Join Discord&quot; Ее вы можете найти в правом нижнем углу виджета.</p>
             <div className="flex flex-col gap-3">
               <a href="https://discord.gg/rk7ZeadZGH" target="_blank" rel="noopener noreferrer" className="w-full block">
                 <Button className="w-full bg-[#5865F2] hover:bg-[#5865F2]/90 text-white border-0">
-                  <MessageCircle className="mr-2 h-5 w-5 text-white" />
-                  Присоединится к Discord
+                  <svg className="mr-2 h-5 w-5 text-white" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15"></path>
+                  </svg>
+                  Зайти на сервер
                 </Button>
               </a>
             </div>
