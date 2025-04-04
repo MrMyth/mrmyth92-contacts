@@ -10,15 +10,13 @@ const AiCraftSection = () => {
       id: "vk", 
       name: "Картины 21 века от AI", 
       url: "https://vk.com/aicraftmymyth92", 
-      bgColor: "bg-[#0077FF]", 
-      hoverColor: "hover:bg-[#0077FF]/90" 
+      bgColor: "bg-[#0077FF]",
     },
     { 
       id: "telegram", 
       name: "Картины 21 века от AI", 
       url: "https://t.me/AiCraftMyMyth92",
-      bgColor: "bg-[#229ED9]", 
-      hoverColor: "hover:bg-[#229ED9]/90" 
+      bgColor: "bg-[#229ED9]",
     },
   ];
 
@@ -45,11 +43,10 @@ const AiCraftSection = () => {
               href={link.url} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="transition-transform duration-200 hover:scale-105"
             >
               <Button 
                 variant="outline" 
-                className={`w-full ${link.bgColor} ${link.hoverColor} text-white border-0 flex items-center justify-center`}
+                className={`w-full ${link.bgColor} text-white border-0 flex items-center justify-center`}
               >
                 {link.id === "vk" ? (
                   <svg className="mr-2 h-4 w-4 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -60,7 +57,7 @@ const AiCraftSection = () => {
                     <path d="M12 0C5.373 0 0 5.373 0 12C0 18.627 5.373 24 12 24C18.627 24 24 18.627 24 12C24 5.373 18.627 0 12 0ZM17.855 8.212L15.87 17.176C15.725 17.764 15.389 17.904 14.898 17.635L11.893 15.409L10.45 16.793C10.295 16.948 10.164 17.079 9.862 17.079L10.068 14.024L15.615 9.038C15.852 8.827 15.565 8.709 15.256 8.921L8.51 13.292L5.55 12.401C4.973 12.22 4.961 11.845 5.669 11.562L17.021 7.166C17.502 6.993 17.916 7.274 17.855 8.212Z" fill="currentColor"/>
                   </svg>
                 )}
-                <span className="text-white">{link.name}</span>
+                {link.name}
               </Button>
             </a>
           ))}
