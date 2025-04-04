@@ -1,4 +1,3 @@
-
 import React, { useState, useCallback, memo, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
@@ -27,10 +26,8 @@ const NavigationMenu: React.FC = () => {
   const scrollToSection = useCallback((href: string) => {
     setIsMenuOpen(false);
     
-    // Update URL with the hash
     window.location.hash = href.replace('#', '');
     
-    // Smooth scroll to section
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({
@@ -39,32 +36,26 @@ const NavigationMenu: React.FC = () => {
     }
   }, []);
   
-  // Update active section when URL hash changes or on page load
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash;
       if (hash) {
         setActiveSection(hash);
       } else {
-        // Default to hero section if no hash
         setActiveSection("#hero-section");
       }
     };
 
-    // Set initial active section based on URL hash
     handleHashChange();
     
-    // Listen for hash changes
     window.addEventListener('hashchange', handleHashChange);
     
-    // Setup intersection observer to update hash when scrolling
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const id = `#${entry.target.id}`;
             if (id !== window.location.hash) {
-              // Update URL without scrolling
               history.replaceState(null, "", id);
               setActiveSection(id);
             }
@@ -74,7 +65,6 @@ const NavigationMenu: React.FC = () => {
       { threshold: 0.3 }
     );
 
-    // Observe all sections
     document.querySelectorAll('section[id]').forEach((section) => {
       observer.observe(section);
     });
@@ -111,8 +101,8 @@ const NavigationMenu: React.FC = () => {
               key={item.href}
               onClick={() => scrollToSection(item.href)}
               className={cn(
-                "text-black hover:text-[#8B5CF6] transition-colors",
-                activeSection === item.href && "text-[#8B5CF6] font-semibold"
+                "text-black",
+                activeSection === item.href && "font-semibold"
               )}
             >
               {item.label}
@@ -134,8 +124,8 @@ const NavigationMenu: React.FC = () => {
               key={item.href}
               onClick={() => scrollToSection(item.href)}
               className={cn(
-                "text-black hover:text-[#8B5CF6] py-2 transition-colors text-left",
-                activeSection === item.href && "text-[#8B5CF6] font-semibold"
+                "text-black py-2 text-left",
+                activeSection === item.href && "font-semibold"
               )}
             >
               {item.label}
@@ -147,5 +137,4 @@ const NavigationMenu: React.FC = () => {
   );
 };
 
-// Memoize the component to prevent unnecessary re-renders
 export default memo(NavigationMenu);
