@@ -1,5 +1,5 @@
 
-import React, { useState } from "react";
+import React, { useState, useCallback, memo } from "react";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -19,9 +19,11 @@ const navigationItems = [
 const NavigationMenu: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const toggleMenu = useCallback(() => {
+    setIsMenuOpen((prevState) => !prevState);
+  }, []);
 
-  const scrollToSection = (href: string) => {
+  const scrollToSection = useCallback((href: string) => {
     setIsMenuOpen(false);
     
     // Smooth scroll to section
@@ -31,7 +33,7 @@ const NavigationMenu: React.FC = () => {
         behavior: "smooth",
       });
     }
-  };
+  }, []);
 
   return (
     <nav className="sticky top-0 bg-white/90 backdrop-blur-sm shadow-sm z-50 py-2 px-4 mb-6">
@@ -89,4 +91,5 @@ const NavigationMenu: React.FC = () => {
   );
 };
 
-export default NavigationMenu;
+// Memoize the component to prevent unnecessary re-renders
+export default memo(NavigationMenu);
