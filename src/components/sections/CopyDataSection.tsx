@@ -30,7 +30,7 @@ const CopyDataSection = () => {
     <Card className="p-6 mb-8 gaming-card">
       <h2 className="text-3xl font-bold mb-6 text-center text-black bg-clip-text bg-gradient-to-r from-[#8B5CF6] to-[#0EA5E9] flex items-center justify-center gap-2">
         <Database className="h-8 w-8 text-black" />
-        Email и никнеймы
+        Ubisoft Connect
       </h2>
       <div className="flex flex-col gap-6">
         {/* Email row */}

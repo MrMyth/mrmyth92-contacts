@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 
 const navigationItems = [
   { label: "Обо мне", href: "#about-me-section" },
-  { label: "Email и никнеймы", href: "#contacts-section" },
+  { label: "Ubisoft Connect", href: "#contacts-section" },
   { label: "Помочь проекту", href: "#donation-section" },
   { label: "YouTube", href: "#youtube-section" },
   { label: "Twitch", href: "#twitch-section" },
