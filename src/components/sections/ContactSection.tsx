@@ -53,7 +53,7 @@ const ContactSection = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Button variant="outline" className="w-full bg-[#6D28D9] hover:bg-[#6D28D9]/90 text-white border-0">
+          <Button variant="outline" className="w-full bg-[#1B4D3E] hover:bg-[#1B4D3E]/90 text-white border-0">
             <Mail className="mr-2 h-4 w-4 text-white" />
             Написать на почту
           </Button>
