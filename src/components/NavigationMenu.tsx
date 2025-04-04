@@ -100,10 +100,7 @@ const NavigationMenu: React.FC = () => {
             <button
               key={item.href}
               onClick={() => scrollToSection(item.href)}
-              className={cn(
-                "text-black",
-                activeSection === item.href && "font-semibold"
-              )}
+              className="text-black"
             >
               {item.label}
             </button>
@@ -123,10 +120,7 @@ const NavigationMenu: React.FC = () => {
             <button
               key={item.href}
               onClick={() => scrollToSection(item.href)}
-              className={cn(
-                "text-black py-2 text-left",
-                activeSection === item.href && "font-semibold"
-              )}
+              className="text-black py-2 text-left"
             >
               {item.label}
             </button>
