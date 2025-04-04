@@ -1,5 +1,5 @@
 
-import React, { useState, useCallback, memo } from "react";
+import React, { useState, useCallback, memo, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -18,6 +18,7 @@ const navigationItems = [
 
 const NavigationMenu: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
 
   const toggleMenu = useCallback(() => {
     setIsMenuOpen((prevState) => !prevState);
@@ -26,6 +27,9 @@ const NavigationMenu: React.FC = () => {
   const scrollToSection = useCallback((href: string) => {
     setIsMenuOpen(false);
     
+    // Update URL with the hash
+    window.location.hash = href.replace('#', '');
+    
     // Smooth scroll to section
     const element = document.querySelector(href);
     if (element) {
@@ -33,6 +37,52 @@ const NavigationMenu: React.FC = () => {
         behavior: "smooth",
       });
     }
+  }, []);
+  
+  // Update active section when URL hash changes or on page load
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash;
+      if (hash) {
+        setActiveSection(hash);
+      } else {
+        // Default to hero section if no hash
+        setActiveSection("#hero-section");
+      }
+    };
+
+    // Set initial active section based on URL hash
+    handleHashChange();
+    
+    // Listen for hash changes
+    window.addEventListener('hashchange', handleHashChange);
+    
+    // Setup intersection observer to update hash when scrolling
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = `#${entry.target.id}`;
+            if (id !== window.location.hash) {
+              // Update URL without scrolling
+              history.replaceState(null, "", id);
+              setActiveSection(id);
+            }
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    // Observe all sections
+    document.querySelectorAll('section[id]').forEach((section) => {
+      observer.observe(section);
+    });
+
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+      observer.disconnect();
+    };
   }, []);
 
   return (
@@ -60,7 +110,10 @@ const NavigationMenu: React.FC = () => {
             <button
               key={item.href}
               onClick={() => scrollToSection(item.href)}
-              className="text-black hover:text-[#8B5CF6] transition-colors"
+              className={cn(
+                "text-black hover:text-[#8B5CF6] transition-colors",
+                activeSection === item.href && "text-[#8B5CF6] font-semibold"
+              )}
             >
               {item.label}
             </button>
@@ -80,7 +133,10 @@ const NavigationMenu: React.FC = () => {
             <button
               key={item.href}
               onClick={() => scrollToSection(item.href)}
-              className="text-black hover:text-[#8B5CF6] py-2 transition-colors text-left"
+              className={cn(
+                "text-black hover:text-[#8B5CF6] py-2 transition-colors text-left",
+                activeSection === item.href && "text-[#8B5CF6] font-semibold"
+              )}
             >
               {item.label}
             </button>
