@@ -22,7 +22,7 @@ const DiscordWidget = () => {
         </svg>
         Discord
       </h2>
-      <p className="text-center text-gray-600 mb-6">Все, что связано с Discord</p>
+      <p className="text-center mb-6 text-primary-DEFAULT">Все, что связано с Discord</p>
       
       <div className="grid md:grid-cols-2 gap-8">
         {/* Left column - Widget */}
