@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -18,7 +17,7 @@ const TwitchSection = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Button variant="outline" className="w-full bg-[#9146FF] hover:bg-[#9146FF]/90 text-white border-0">
+          <Button variant="outline" className="w-full bg-[#9146FF] text-white border-0 hover:bg-[#9146FF] hover:text-white transform-none">
             <Twitch className="mr-2 h-4 w-4 text-white" />
             Посетить канал
           </Button>
