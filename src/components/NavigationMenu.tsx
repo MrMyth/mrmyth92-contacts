@@ -111,7 +111,7 @@ const NavigationMenu: React.FC = () => {
               onClick={() => scrollToSection(item.href)}
               className={cn(
                 "text-black hover:text-primary transition-colors duration-200",
-                activeSection === item.href && "text-primary font-medium"
+                activeSection === item.href && "text-primary"
               )}
               aria-current={activeSection === item.href ? "page" : undefined}
             >
@@ -135,7 +135,7 @@ const NavigationMenu: React.FC = () => {
               onClick={() => scrollToSection(item.href)}
               className={cn(
                 "text-black py-2 text-left hover:text-primary transition-colors duration-200",
-                activeSection === item.href && "text-primary font-medium"
+                activeSection === item.href && "text-primary"
               )}
               aria-current={activeSection === item.href ? "page" : undefined}
             >
