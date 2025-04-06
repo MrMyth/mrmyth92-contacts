@@ -17,7 +17,7 @@ const BiographyItem: React.FC<BiographyItemProps> = ({ label, value, icon }) => 
     viewport={{ once: true, margin: "-50px" }}
     className="flex items-start gap-3"
   >
-    {icon && <span className="text-purple-500 mt-1">{icon}</span>}
+    {icon && <span className="text-green-500 mt-1">{icon}</span>}
     <p className="text-gray-800">
       <span className="font-semibold text-gray-900">{label}</span> {value}
     </p>
@@ -32,7 +32,7 @@ const SkillItem: React.FC<{ children: React.ReactNode }> = ({ children }) => (
     viewport={{ once: true, margin: "-50px" }}
     className="flex items-start gap-3"
   >
-    <span className="text-purple-500 mt-1">•</span>
+    <span className="text-green-500 mt-1">•</span>
     <p className="text-gray-800">{children}</p>
   </motion.div>
 );
