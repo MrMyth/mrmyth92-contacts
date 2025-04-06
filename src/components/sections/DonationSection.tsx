@@ -48,7 +48,7 @@ const DonationSection = () => {
         viewport={{ once: true }}
       >
         <h2 className="text-3xl font-bold mb-2 text-center text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-blue-500 flex items-center justify-center gap-3">
-          <Gift className="h-8 w-8 text-purple-600" />
+          <Gift className="h-8 w-8 text-green-600" />
           Прием пожертвований
         </h2>
         <p className="text-center text-gray-600 mb-8">

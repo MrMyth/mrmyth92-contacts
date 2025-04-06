@@ -63,7 +63,7 @@ const ContactSection = () => {
         viewport={{ once: true }}
       >
         <h2 className="text-3xl font-bold mb-2 text-center text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-blue-500 flex items-center justify-center gap-3">
-          <svg className="h-8 w-8 text-purple-600" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg className="h-8 w-8 text-green-600" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M12 0C5.373 0 0 5.373 0 12C0 18.627 5.373 24 12 24C18.627 24 24 18.627 24 12C24 5.373 18.627 0 12 0ZM12 3C14.209 3 16 4.791 16 7C16 9.209 14.209 11 12 11C9.791 11 8 9.209 8 7C8 4.791 9.791 3 12 3ZM18 20C18 20.552 17.552 21 17 21H7C6.448 21 6 20.552 6 20V19C6 16.791 7.791 15 10 15H14C16.209 15 18 16.791 18 19V20Z" fill="currentColor"/>
           </svg>
           Контакты
