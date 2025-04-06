@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Copy, Gamepad2 } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
+import { motion } from "framer-motion";
 
 const CopyDataSection = () => {
   const { toast } = useToast();
@@ -13,29 +14,43 @@ const CopyDataSection = () => {
     toast({
       title: "Ubisoft Connect имя скопировано",
       description: "Имя Ubisoft Connect было скопировано в буфер обмена",
+      duration: 2000,
     });
   };
 
   return (
-    <Card className="p-6 mb-8 gaming-card">
-      <h2 className="text-3xl font-bold mb-6 text-center text-black bg-clip-text bg-gradient-to-r from-[#8B5CF6] to-[#0EA5E9] flex items-center justify-center gap-2">
-        <Gamepad2 className="h-8 w-8 text-black" />
-        Ubisoft Connect
-      </h2>
-      <div className="flex flex-col gap-6">
-        {/* Ubisoft username row */}
-        <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
-          <p className="text-xl text-black">Имя пользователя: {ubisoftUsername}</p>
+    <Card className="p-8 mb-8 border-0 shadow-lg bg-gradient-to-br from-gray-50 to-white">
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+        className="text-center"
+      >
+        <h2 className="text-3xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-500 flex items-center justify-center gap-3">
+          <Gamepad2 className="h-8 w-8 text-purple-600" />
+          Ubisoft Connect
+        </h2>
+        
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.2 }}
+          viewport={{ once: true }}
+          className="flex flex-col sm:flex-row gap-4 items-center justify-center mt-6 p-4 bg-gray-100 rounded-xl"
+        >
+          <p className="text-xl font-medium text-gray-900">
+            Имя пользователя: <span className="font-mono text-purple-600">{ubisoftUsername}</span>
+          </p>
           <Button
             onClick={handleCopyUbisoftUsername}
-            variant="outline"
-            className="gaming-button bg-[#1B4D3E] hover:bg-[#1B4D3E]/80 text-white border-0"
+            className="bg-purple-600 hover:bg-purple-700 text-white"
           >
-            <Copy className="mr-2 h-4 w-4 text-white" />
+            <Copy className="mr-2 h-4 w-4" />
             Копировать имя
           </Button>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </Card>
   );
 };
