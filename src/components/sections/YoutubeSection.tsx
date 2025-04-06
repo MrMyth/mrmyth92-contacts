@@ -3,61 +3,76 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Youtube, BellPlus } from "lucide-react";
+import { motion } from "framer-motion";
 
 const YoutubeSection = () => {
+  const channels = [
+    {
+      name: "The Division",
+      url: "https://www.youtube.com/@MrMyth92_TC",
+      subscribeUrl: "https://www.youtube.com/@MrMyth92_TC?sub_confirmation=1",
+      description: "Мой Youtube канал по франшизе The Division"
+    },
+    {
+      name: "Assassin's Creed",
+      url: "https://www.youtube.com/@MrMyth92_AC",
+      subscribeUrl: "https://www.youtube.com/@MrMyth92_AC?sub_confirmation=1",
+      description: "Мой Youtube канал по франшизе Assassin's Creed"
+    }
+  ];
+
   return (
-    <Card className="p-6 mb-8 gaming-card">
-      <h2 className="text-3xl font-bold mb-2 text-center text-black bg-clip-text bg-gradient-to-r from-[#8B5CF6] to-[#0EA5E9] flex items-center justify-center gap-2">
-        <Youtube className="h-8 w-8 text-black" />
-        YouTube канал
-      </h2>
-      <p className="text-center text-gray-600 mb-6">Мой Youtube канал по франшизе The Division</p>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-        <a
-          href="https://www.youtube.com/@MrMyth92_TC"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Button variant="outline" className="w-full bg-[#FF0000] text-white border-0 hover:bg-[#FF0000] hover:text-white transform-none">
-            <Youtube className="mr-2 h-4 w-4 text-white" />
-            Посетить канал
-          </Button>
-        </a>
-        <a
-          href="https://www.youtube.com/@MrMyth92_TC?sub_confirmation=1"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Button variant="outline" className="w-full bg-[#FF0000] text-white border-0 hover:bg-[#FF0000] hover:text-white transform-none">
-            <BellPlus className="mr-2 h-4 w-4 text-white" />
-            Подписаться на канал
-          </Button>
-        </a>
-      </div>
-      
-      <p className="text-center text-gray-600 mb-6">Мой Youtube канал по франшизе Assassin's Creed</p>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <a
-          href="https://www.youtube.com/@MrMyth92_AC"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Button variant="outline" className="w-full bg-[#FF0000] text-white border-0 hover:bg-[#FF0000] hover:text-white transform-none">
-            <Youtube className="mr-2 h-4 w-4 text-white" />
-            Посетить канал
-          </Button>
-        </a>
-        <a
-          href="https://www.youtube.com/@MrMyth92_AC?sub_confirmation=1"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Button variant="outline" className="w-full bg-[#FF0000] text-white border-0 hover:bg-[#FF0000] hover:text-white transform-none">
-            <BellPlus className="mr-2 h-4 w-4 text-white" />
-            Подписаться на канал
-          </Button>
-        </a>
-      </div>
+    <Card className="p-8 mb-8 border-0 shadow-lg bg-gradient-to-br from-gray-50 to-white">
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+      >
+        <h2 className="text-3xl font-bold mb-2 text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-500 flex items-center justify-center gap-3">
+          <Youtube className="h-8 w-8 text-[#FF0000]" />
+          YouTube каналы
+        </h2>
+        
+        {channels.map((channel, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.1 }}
+            viewport={{ once: true }}
+            className="mb-6"
+          >
+            <p className="text-center text-gray-600 mb-4">{channel.description}</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <motion.a
+                href={channel.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <Button className="w-full bg-[#FF0000] hover:bg-[#FF0000]/90 text-white">
+                  <Youtube className="mr-2 h-5 w-5" />
+                  Посетить канал
+                </Button>
+              </motion.a>
+              <motion.a
+                href={channel.subscribeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <Button className="w-full bg-[#FF0000] hover:bg-[#FF0000]/90 text-white">
+                  <BellPlus className="mr-2 h-5 w-5" />
+                  Подписаться
+                </Button>
+              </motion.a>
+            </div>
+          </motion.div>
+        ))}
+      </motion.div>
     </Card>
   );
 };
