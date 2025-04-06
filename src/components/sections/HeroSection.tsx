@@ -65,7 +65,7 @@ const HeroSection: React.FC = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-2">
               Дмитрий Старчиков
             </h1>
-            <p className="text-xl md:text-2xl text-purple-300">
+            <p className="text-xl md:text-2xl text-green-300">
               Геймер, стример, создатель контента
             </p>
           </motion.div>
