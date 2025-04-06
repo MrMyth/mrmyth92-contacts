@@ -68,7 +68,7 @@ const DonationSection = () => {
           </p>
           <Button
             onClick={handleCopyCard}
-            className="bg-purple-600 hover:bg-purple-700 text-white"
+            className="bg-purple-600 hover:bg-green-700 text-white"
           >
             <Copy className="mr-2 h-4 w-4" />
             Копировать номер
