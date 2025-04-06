@@ -114,7 +114,7 @@ const AboutMeSection = () => {
           <img 
             src="https://i.ibb.co/qdqTfTZ/my-ava.jpg" 
             alt="Дмитрий Старчиков" 
-            className="rounded-xl shadow-xl w-64 h-64 md:w-80 md:h-80 object-cover border-4 border-purple-500/20" 
+            className="rounded-xl shadow-xl w-64 h-64 md:w-80 md:h-80 object-cover border-4 border-green-500/20" 
             loading="lazy" 
           />
         </motion.div>
