@@ -14,7 +14,7 @@ const TwitchSection = () => {
         viewport={{ once: true }}
         className="text-center"
       >
-        <h2 className="text-3xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-500 flex items-center justify-center gap-3">
+        <h2 className="text-3xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-blue-500 flex items-center justify-center gap-3">
           <Twitch className="h-8 w-8 text-purple-600" />
           Twitch канал
         </h2>

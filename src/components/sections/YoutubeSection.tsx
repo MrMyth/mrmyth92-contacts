@@ -29,7 +29,7 @@ const YoutubeSection = () => {
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
       >
-        <h2 className="text-3xl font-bold mb-2 text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-500 flex items-center justify-center gap-3">
+        <h2 className="text-3xl font-bold mb-2 text-center text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-blue-500 flex items-center justify-center gap-3">
           <Youtube className="h-8 w-8 text-[#FF0000]" />
           YouTube каналы
         </h2>
