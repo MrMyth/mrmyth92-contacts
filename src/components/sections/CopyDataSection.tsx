@@ -40,11 +40,11 @@ const CopyDataSection = () => {
           className="flex flex-col sm:flex-row gap-4 items-center justify-center mt-6 p-4 bg-gray-100 rounded-xl"
         >
           <p className="text-xl font-medium text-gray-900">
-            Имя пользователя: <span className="font-mono text-purple-600">{ubisoftUsername}</span>
+            Имя пользователя: <span className="font-mono text-green-600">{ubisoftUsername}</span>
           </p>
           <Button
             onClick={handleCopyUbisoftUsername}
-            className="bg-purple-600 hover:bg-purple-700 text-white"
+            className="bg-purple-600 hover:bg-green-700 text-white"
           >
             <Copy className="mr-2 h-4 w-4" />
             Копировать имя
