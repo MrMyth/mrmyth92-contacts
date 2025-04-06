@@ -64,7 +64,7 @@ const DonationSection = () => {
           className="flex flex-col sm:flex-row gap-4 items-center justify-center mb-8 p-4 bg-gray-100 rounded-xl"
         >
           <p className="text-xl font-medium text-gray-900">
-            Номер карты: <span className="font-mono text-purple-600">{cardNumber}</span>
+            Номер карты: <span className="font-mono text-green-600">{cardNumber}</span>
           </p>
           <Button
             onClick={handleCopyCard}

@@ -121,7 +121,7 @@ const DiscordWidget = () => {
             >
               <div>
                 <p className="font-medium text-gray-900">Мой ник Discord:</p>
-                <p className="text-lg font-mono text-purple-600">{discordUsername}</p>
+                <p className="text-lg font-mono text-green-600">{discordUsername}</p>
               </div>
               <Button 
                 size="sm" 

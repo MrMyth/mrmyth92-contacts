@@ -93,7 +93,7 @@ const AboutMeSection = () => {
             className="pt-4 space-y-4"
           >
             <h3 className="text-xl font-semibold text-gray-900 flex items-center gap-2">
-              <Paintbrush className="h-5 w-5 text-purple-600" />
+              <Paintbrush className="h-5 w-5 text-green-600" />
               Мои навыки и увлечения:
             </h3>
             <div className="space-y-3 pl-2">
