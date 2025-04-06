@@ -25,6 +25,12 @@ const DiscordWidget = () => {
       icon: <ArrowRight className="h-5 w-5" />,
       bgColor: "bg-[#5865F2] hover:bg-[#5865F2]/90",
     },
+	{
+      name: "Подробнее о сервере",
+      url: "https://div2-fromrussia.lovable.app",
+      icon: <AlertCircle className="h-5 w-5" />,
+      bgColor: "bg-[#5865F2] hover:bg-[#5865F2]/90",
+    },
     {
       name: "Скачать Discord",
       url: "https://discord.com/download",
@@ -68,7 +74,7 @@ const DiscordWidget = () => {
           >
             <h3 className="text-xl font-semibold text-gray-900">Виджет Discord сервера "From Russia"</h3>
             <iframe 
-              src="https://discord.com/widget?id=835802952521351180&theme=dark" 
+              src="https://discord.com/widget?id=835802952521351180&theme=light" 
               width="100%" 
               height="500" 
               allowTransparency={true}
