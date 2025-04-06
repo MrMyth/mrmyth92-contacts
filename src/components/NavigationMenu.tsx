@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const navigationItems = [
   { label: "Обо мне", href: "#about-me-section" },
   { label: "Ubisoft Connect", href: "#contacts-section" },
-  { label: "Помочь проекту", href: "#donation-section" },
+  { label: "Поддержка проектов", href: "#donation-section" },
   { label: "YouTube", href: "#youtube-section" },
   { label: "Twitch", href: "#twitch-section" },
   { label: "VK", href: "#vk-section" },
