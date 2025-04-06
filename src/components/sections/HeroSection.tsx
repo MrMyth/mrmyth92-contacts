@@ -35,7 +35,7 @@ const HeroSection: React.FC = () => {
       <div className="relative h-[300px] md:h-[500px] lg:h-[600px] overflow-hidden rounded-xl shadow-2xl">
         {isLoading && (
           <div className="absolute inset-0 flex items-center justify-center bg-gray-900/20">
-            <Loader2 className="h-12 w-12 animate-spin text-purple-500" />
+            <Loader2 className="h-12 w-12 animate-spin text-green-500" />
           </div>
         )}
         
