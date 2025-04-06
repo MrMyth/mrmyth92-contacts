@@ -14,54 +14,57 @@ import Footer from "@/components/Footer";
 import NavigationMenu from "@/components/NavigationMenu";
 
 const Index = () => {
-  // Handle initial scroll to hash on page load
+  // Обрабатываем начальную прокрутку к хэшу при загрузке страницы
   useEffect(() => {
-    // Wait for components to render
-    setTimeout(() => {
+    // Дождемся рендеринга компонентов
+    const handleInitialScroll = () => {
       if (window.location.hash) {
         const element = document.querySelector(window.location.hash);
         if (element) {
           element.scrollIntoView({ behavior: "smooth" });
         }
       }
-    }, 100);
+    };
+    
+    // Небольшая задержка для гарантии полной загрузки компонентов
+    setTimeout(handleInitialScroll, 100);
   }, []);
 
   return (
     <div className="min-h-screen bg-white text-black">
       <NavigationMenu />
-      <div className="container px-4 py-8 mx-auto">
-        <section id="hero-section">
+      <main className="container px-4 py-8 mx-auto">
+        <section id="hero-section" className="scroll-mt-20">
           <HeroSection />
         </section>
-        <section id="about-me-section">
+        <section id="about-me-section" className="scroll-mt-20">
           <AboutMeSection />
         </section>
-        <section id="contacts-section">
+        <section id="contacts-section" className="scroll-mt-20">
           <CopyDataSection />
         </section>
-        <section id="donation-section">
+        <section id="donation-section" className="scroll-mt-20">
           <DonationSection />
         </section>
-        <section id="youtube-section">
+        <section id="youtube-section" className="scroll-mt-20">
           <YoutubeSection />
         </section>
-        <section id="twitch-section">
+        <section id="twitch-section" className="scroll-mt-20">
           <TwitchSection />
         </section>
-        <section id="vk-section">
+        <section id="vk-section" className="scroll-mt-20">
           <VKGroupSection />
         </section>
-        <section id="discord-section">
+        <section id="discord-section" className="scroll-mt-20">
           <DiscordWidget />
         </section>
-        <section id="contact-section">
+        <section id="contact-section" className="scroll-mt-20">
           <ContactSection />
         </section>
-        <section id="ai-craft-section">
+        <section id="ai-craft-section" className="scroll-mt-20">
           <AiCraftSection />
         </section>
-      </div>
+      </main>
       <Footer />
     </div>
   );

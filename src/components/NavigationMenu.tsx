@@ -1,3 +1,4 @@
+
 import React, { useState, useCallback, memo, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
@@ -19,14 +20,17 @@ const NavigationMenu: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
 
+  // Оптимизированная функция переключения меню
   const toggleMenu = useCallback(() => {
     setIsMenuOpen((prevState) => !prevState);
   }, []);
 
+  // Оптимизированная функция прокрутки к разделу
   const scrollToSection = useCallback((href: string) => {
     setIsMenuOpen(false);
     
-    window.location.hash = href.replace('#', '');
+    const sectionId = href.replace('#', '');
+    window.location.hash = sectionId;
     
     const element = document.querySelector(href);
     if (element) {
@@ -37,6 +41,7 @@ const NavigationMenu: React.FC = () => {
   }, []);
   
   useEffect(() => {
+    // Обработчик изменения хэша
     const handleHashChange = () => {
       const hash = window.location.hash;
       if (hash) {
@@ -50,6 +55,7 @@ const NavigationMenu: React.FC = () => {
     
     window.addEventListener('hashchange', handleHashChange);
     
+    // Создание наблюдателя пересечений для отслеживания видимых разделов
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -65,10 +71,12 @@ const NavigationMenu: React.FC = () => {
       { threshold: 0.3 }
     );
 
+    // Наблюдение за всеми разделами
     document.querySelectorAll('section[id]').forEach((section) => {
       observer.observe(section);
     });
 
+    // Очистка слушателей событий при размонтировании компонента
     return () => {
       window.removeEventListener('hashchange', handleHashChange);
       observer.disconnect();
@@ -82,25 +90,30 @@ const NavigationMenu: React.FC = () => {
           MrMyth92 Dmitry Starchikov
         </div>
 
-        {/* Mobile menu button */}
+        {/* Кнопка мобильного меню */}
         <div className="md:hidden">
           <Button 
             onClick={toggleMenu} 
             variant="ghost" 
             size="icon" 
             aria-label={isMenuOpen ? "Закрыть меню" : "Открыть меню"}
+            className="transition-colors duration-200"
           >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </Button>
         </div>
 
-        {/* Desktop menu */}
+        {/* Десктопное меню */}
         <div className="hidden md:flex space-x-4">
           {navigationItems.map((item) => (
             <button
               key={item.href}
               onClick={() => scrollToSection(item.href)}
-              className="text-black"
+              className={cn(
+                "text-black hover:text-primary transition-colors duration-200",
+                activeSection === item.href && "text-primary font-medium"
+              )}
+              aria-current={activeSection === item.href ? "page" : undefined}
             >
               {item.label}
             </button>
@@ -108,7 +121,7 @@ const NavigationMenu: React.FC = () => {
         </div>
       </div>
 
-      {/* Mobile menu dropdown */}
+      {/* Выпадающее мобильное меню */}
       <div
         className={cn(
           "fixed inset-x-0 top-14 bg-white shadow-md md:hidden transition-all duration-300 overflow-hidden",
@@ -120,7 +133,11 @@ const NavigationMenu: React.FC = () => {
             <button
               key={item.href}
               onClick={() => scrollToSection(item.href)}
-              className="text-black py-2 text-left"
+              className={cn(
+                "text-black py-2 text-left hover:text-primary transition-colors duration-200",
+                activeSection === item.href && "text-primary font-medium"
+              )}
+              aria-current={activeSection === item.href ? "page" : undefined}
             >
               {item.label}
             </button>
