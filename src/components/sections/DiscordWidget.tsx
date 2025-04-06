@@ -126,7 +126,7 @@ const DiscordWidget = () => {
               <Button 
                 size="sm" 
                 onClick={handleCopyDiscordUsername}
-                className="ml-auto bg-purple-600 hover:bg-purple-700"
+                className="ml-auto bg-green-600 hover:bg-green-700"
               >
                 <Copy className="mr-2 h-4 w-4" />
                 Копировать
