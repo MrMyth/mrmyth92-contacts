@@ -44,7 +44,7 @@ const CopyDataSection = () => {
           </p>
           <Button
             onClick={handleCopyUbisoftUsername}
-            className="bg-purple-600 hover:bg-green-700 text-white"
+            className="bg-green-600 hover:bg-green-700 text-white"
           >
             <Copy className="mr-2 h-4 w-4" />
             Копировать имя
