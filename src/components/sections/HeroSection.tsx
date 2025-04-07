@@ -7,7 +7,7 @@ const HeroSection: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
   
   const images = [
-   "https://i.ibb.co/LXpmDhzp/supawork-4e1c22a9ac344e088355ea42eadc1283.png"
+   "https://i.ibb.co/LXpmDhzp/supawork-4e1c22a9ac344e088355ea42eadc1283.png",
 "https://i.ibb.co/Y44xWNJ6/Comfy-UI-00001.png"
   ];
 
