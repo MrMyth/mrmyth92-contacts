@@ -5,6 +5,7 @@ import { Loader2 } from "lucide-react";
 const HeroSection: React.FC = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
+  const [showCredit, setShowCredit] = useState(true);
   
   const images = [
     "https://i.ibb.co/LXpmDhzp/supawork-4e1c22a9ac344e088355ea42eadc1283.png",
@@ -12,8 +13,8 @@ const HeroSection: React.FC = () => {
   ];
 
   const imageDescriptions = [
-    "Gaming-themed header image showing game environment",
-    "Scenic game landscape with atmospheric lighting"
+    "Киберспортивная сцена с игровым setup",
+    "Футуристический игровой ландшафт"
   ];
 
   const rotateImage = useCallback(() => {
@@ -25,6 +26,13 @@ const HeroSection: React.FC = () => {
     const interval = setInterval(rotateImage, 10000);
     return () => clearInterval(interval);
   }, [rotateImage]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowCredit(false);
+    }, 5000);
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleImageLoad = () => {
     setIsLoading(false);
@@ -38,6 +46,20 @@ const HeroSection: React.FC = () => {
             <Loader2 className="h-12 w-12 animate-spin text-green-500" />
           </div>
         )}
+        
+        <AnimatePresence>
+          {showCredit && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5 }}
+              className="absolute top-4 right-4 bg-black/70 text-white text-xs md:text-sm px-3 py-2 rounded-lg backdrop-blur-sm z-10"
+            >
+              Изображения созданы мной и отражают игры, в которые я играю
+            </motion.div>
+          )}
+        </AnimatePresence>
         
         <AnimatePresence mode="wait">
           <motion.img
@@ -55,20 +77,33 @@ const HeroSection: React.FC = () => {
           />
         </AnimatePresence>
         
-        <div className="absolute inset-0 flex items-start p-8">
-          <motion.div
-            initial={{ y: -20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.5 }}
-            className="text-white bg-gray-900/70 p-4 rounded-xl backdrop-blur-sm"
-          >
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2">
-              Дмитрий Старчиков
-            </h1>
-            <p className="text-lg md:text-xl text-green-300">
-              Геймер, стример, создатель контента
-            </p>
-          </motion.div>
+        <div className="absolute inset-0 flex items-end">
+          <div className="w-full bg-gray-900/80 p-6 backdrop-blur-sm">
+            <div className="max-w-6xl mx-auto flex justify-between items-end">
+              <motion.div
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.5 }}
+                className="text-white"
+              >
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2">
+                  Дмитрий Старчиков
+                </h1>
+                <p className="text-lg md:text-xl text-green-300">
+                  Геймер, стример, создатель контента
+                </p>
+              </motion.div>
+              
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.8 }}
+                className="hidden md:block text-gray-300 text-sm italic"
+              >
+                {imageDescriptions[currentImageIndex]}
+              </motion.div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
