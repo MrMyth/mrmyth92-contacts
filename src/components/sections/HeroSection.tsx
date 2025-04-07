@@ -119,7 +119,7 @@ const HeroSection: React.FC = () => {
         </motion.p>
         
         <p className="text-sm text-gray-500 dark:text-gray-400 italic">
-          Все изображения на сайте созданы мной и отражают игры, в которые я играю
+          Все изображения на в шапке сайта созданы мной и отражают игры, в которые я сейчас играю
         </p>
       </div>
     </section>
