@@ -7,8 +7,8 @@ const HeroSection: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
   
   const images = [
-   "https://i.ibb.co/LXpmDhzp/supawork-4e1c22a9ac344e088355ea42eadc1283.png",
-"https://i.ibb.co/Y44xWNJ6/Comfy-UI-00001.png"
+    "https://i.ibb.co/LXpmDhzp/supawork-4e1c22a9ac344e088355ea42eadc1283.png",
+    "https://i.ibb.co/Y44xWNJ6/Comfy-UI-00001.png"
   ];
 
   const imageDescriptions = [
@@ -55,12 +55,12 @@ const HeroSection: React.FC = () => {
           />
         </AnimatePresence>
         
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent flex items-end p-8">
+        <div className="absolute inset-0 flex items-center p-8">
           <motion.div
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
+            initial={{ x: -20, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.5 }}
-            className="text-white"
+            className="text-white max-w-md bg-gray-900/70 p-6 rounded-xl backdrop-blur-sm"
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-2">
               Дмитрий Старчиков
