@@ -55,17 +55,17 @@ const HeroSection: React.FC = () => {
           />
         </AnimatePresence>
         
-        <div className="absolute inset-0 flex items-center p-8">
+        <div className="absolute inset-0 flex items-start p-8">
           <motion.div
-            initial={{ x: -20, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
+            initial={{ y: -20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.5 }}
-            className="text-white max-w-md bg-gray-900/70 p-6 rounded-xl backdrop-blur-sm"
+            className="text-white bg-gray-900/70 p-4 rounded-xl backdrop-blur-sm"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-2">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2">
               Дмитрий Старчиков
             </h1>
-            <p className="text-xl md:text-2xl text-green-300">
+            <p className="text-lg md:text-xl text-green-300">
               Геймер, стример, создатель контента
             </p>
           </motion.div>
