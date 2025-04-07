@@ -103,12 +103,14 @@ const DiscordWidget = () => {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <div className="p-4 rounded-xl bg-gray-100">
+            <div className="space-y-2">
               <h3 className="text-xl font-semibold text-gray-900">Как присоединиться к серверу?</h3>
-              <p className="text-gray-700">
-                Чтобы зайти на сервер нажмите на "Зайти на сервер". Если приглашение не сработало, 
-                то используйте кнопку "Join Discord" в правом нижнем углу виджета.
-              </p>
+              <div className="p-4 rounded-xl bg-gray-100">
+                <p className="text-gray-700">
+                  Чтобы зайти на сервер нажмите на "Зайти на сервер". Если приглашение не сработало, 
+                  то используйте кнопку "Join Discord" в правом нижнем углу виджета.
+                </p>
+              </div>
             </div>
             
             <div className="grid gap-3">
