@@ -5,16 +5,10 @@ import { Loader2 } from "lucide-react";
 const HeroSection: React.FC = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
-  const [showCredit, setShowCredit] = useState(true);
   
   const images = [
     "https://i.ibb.co/LXpmDhzp/supawork-4e1c22a9ac344e088355ea42eadc1283.png",
     "https://i.ibb.co/Y44xWNJ6/Comfy-UI-00001.png"
-  ];
-
-  const imageDescriptions = [
-    "Киберспортивная сцена с игровым setup",
-    "Футуристический игровой ландшафт"
   ];
 
   const rotateImage = useCallback(() => {
@@ -27,19 +21,12 @@ const HeroSection: React.FC = () => {
     return () => clearInterval(interval);
   }, [rotateImage]);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowCredit(false);
-    }, 5000);
-    return () => clearTimeout(timer);
-  }, []);
-
   const handleImageLoad = () => {
     setIsLoading(false);
   };
 
   return (
-    <section className="mb-12 relative" aria-label="Header section">
+    <section className="mb-12" aria-label="Header section">
       <div className="relative h-[300px] md:h-[500px] lg:h-[600px] overflow-hidden rounded-xl shadow-2xl">
         {isLoading && (
           <div className="absolute inset-0 flex items-center justify-center bg-gray-900/20">
@@ -47,25 +34,15 @@ const HeroSection: React.FC = () => {
           </div>
         )}
         
-        <AnimatePresence>
-          {showCredit && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.5 }}
-              className="absolute top-4 right-4 bg-black/70 text-white text-xs md:text-sm px-3 py-2 rounded-lg backdrop-blur-sm z-10"
-            >
-              Изображения созданы мной и отражают игры, в которые я играю
-            </motion.div>
-          )}
-        </AnimatePresence>
+        <div className="absolute top-4 right-4 z-10 text-white text-xs md:text-sm italic">
+          Изображения созданы мной и отражают мои текущие игры
+        </div>
         
         <AnimatePresence mode="wait">
           <motion.img
             key={currentImageIndex}
             src={images[currentImageIndex]}
-            alt={imageDescriptions[currentImageIndex]}
+            alt="Игровая сцена"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -76,35 +53,25 @@ const HeroSection: React.FC = () => {
             onLoad={handleImageLoad}
           />
         </AnimatePresence>
-        
-        <div className="absolute inset-0 flex items-end">
-          <div className="w-full bg-gray-900/80 p-6 backdrop-blur-sm">
-            <div className="max-w-6xl mx-auto flex justify-between items-end">
-              <motion.div
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.5 }}
-                className="text-white"
-              >
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2">
-                  Дмитрий Старчиков
-                </h1>
-                <p className="text-lg md:text-xl text-green-300">
-                  Геймер, стример, создатель контента
-                </p>
-              </motion.div>
-              
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.8 }}
-                className="hidden md:block text-gray-300 text-sm italic"
-              >
-                {imageDescriptions[currentImageIndex]}
-              </motion.div>
-            </div>
-          </div>
-        </div>
+      </div>
+
+      <div className="mt-6 text-center">
+        <motion.h1
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.3 }}
+          className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2"
+        >
+          Дмитрий Старчиков
+        </motion.h1>
+        <motion.p
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.5 }}
+          className="text-lg md:text-xl text-green-500"
+        >
+          Геймер, стример, создатель контента
+        </motion.p>
       </div>
     </section>
   );
