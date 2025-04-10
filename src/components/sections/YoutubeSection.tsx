@@ -49,7 +49,7 @@ const YoutubeSection = () => {
                   <img 
                     src={channel.imageUrl} 
                     alt={channel.name}
-                    className="w-16 h-16 object-contain"
+                    className="w-12 h-12 object-contain"
                   />
                 </div>
               )}
@@ -59,7 +59,7 @@ const YoutubeSection = () => {
                   <img 
                     src={channel.imageUrl} 
                     alt={channel.name}
-                    className="w-16 h-16 object-contain"
+                    className="w-12 h-12 object-contain"
                   />
                 </div>
               )}
