@@ -16,7 +16,7 @@ const TwitchSection = () => {
           viewport={{ once: true }}
           className="text-center"
         >
-          <h2 className="text-3xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center gap-3">
+          <h2 className="text-3xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-blue-500 flex items-center justify-center gap-3">
             <Twitch className="h-8 w-8 text-[#9146FF]" />
             Twitch канал
           </h2>
@@ -46,7 +46,7 @@ const TwitchSection = () => {
           viewport={{ once: true }}
           className="text-center"
         >
-          <h2 className="text-3xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-600 flex items-center justify-center gap-3">
+          <h2 className="text-3xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-blue-500 flex items-center justify-center gap-3">
             <Tv className="h-8 w-8 text-[#2DED87]" />
             Trovo канал
           </h2>
