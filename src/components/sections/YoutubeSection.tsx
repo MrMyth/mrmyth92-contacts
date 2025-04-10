@@ -17,7 +17,8 @@ const YoutubeSection = () => {
       name: "Assassin's Creed",
       url: "https://www.youtube.com/@MrMyth92_AC",
       subscribeUrl: "https://www.youtube.com/@MrMyth92_AC?sub_confirmation=1",
-      description: "Мой Youtube канал по франшизе Assassin's Creed"
+      description: "Мой Youtube канал по франшизе Assassin's Creed",
+      imageUrl: "https://i.ibb.co/DgYqySqK/AC-Shadows-Logo-Crest-Color-1-1-1.png"
     }
   ];
 
