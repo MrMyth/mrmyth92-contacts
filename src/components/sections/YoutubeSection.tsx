@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Youtube, BellPlus } from "lucide-react";
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 const YoutubeSection = () => {
   const channels = [
@@ -47,24 +46,20 @@ const YoutubeSection = () => {
             <div className="flex items-center justify-center gap-4 mb-4">
               {channel.imageUrl && (
                 <div className="hidden md:block">
-                  <Image 
+                  <img 
                     src={channel.imageUrl} 
                     alt={channel.name}
-                    width={64}
-                    height={64}
-                    className="object-contain"
+                    className="w-16 h-16 object-contain"
                   />
                 </div>
               )}
               <p className="text-center text-gray-600">{channel.description}</p>
               {channel.imageUrl && (
                 <div className="hidden md:block">
-                  <Image 
+                  <img 
                     src={channel.imageUrl} 
                     alt={channel.name}
-                    width={64}
-                    height={64}
-                    className="object-contain"
+                    className="w-16 h-16 object-contain"
                   />
                 </div>
               )}
