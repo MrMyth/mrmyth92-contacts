@@ -1,9 +1,9 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Youtube, BellPlus } from "lucide-react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const YoutubeSection = () => {
   const channels = [
@@ -11,7 +11,8 @@ const YoutubeSection = () => {
       name: "The Division",
       url: "https://www.youtube.com/@MrMyth92_TC",
       subscribeUrl: "https://www.youtube.com/@MrMyth92_TC?sub_confirmation=1",
-      description: "Мой Youtube канал по франшизе The Division"
+      description: "Мой Youtube канал по франшизе The Division",
+      imageUrl: "https://i.ibb.co/GQ2cgwxd/thedivision2-icon1-1-1.png"
     },
     {
       name: "Assassin's Creed",
@@ -43,7 +44,31 @@ const YoutubeSection = () => {
             viewport={{ once: true }}
             className="mb-6"
           >
-            <p className="text-center text-gray-600 mb-4">{channel.description}</p>
+            <div className="flex items-center justify-center gap-4 mb-4">
+              {channel.imageUrl && (
+                <div className="hidden md:block">
+                  <Image 
+                    src={channel.imageUrl} 
+                    alt={channel.name}
+                    width={64}
+                    height={64}
+                    className="object-contain"
+                  />
+                </div>
+              )}
+              <p className="text-center text-gray-600">{channel.description}</p>
+              {channel.imageUrl && (
+                <div className="hidden md:block">
+                  <Image 
+                    src={channel.imageUrl} 
+                    alt={channel.name}
+                    width={64}
+                    height={64}
+                    className="object-contain"
+                  />
+                </div>
+              )}
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <motion.a
                 href={channel.url}
