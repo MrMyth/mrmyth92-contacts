@@ -1,6 +1,6 @@
 import React from "react";
 import { Card } from "@/components/ui/card";
-import { User, Gamepad2, Youtube, Twitch, Disc3, Paintbrush } from "lucide-react";
+import { User, Gamepad2, Youtube, Twitch, Disc3, Paintbrush, AlertCircle } from "lucide-react";
 import { motion } from "framer-motion";
 
 type BiographyItemProps = {
@@ -101,6 +101,22 @@ const AboutMeSection = () => {
                 <SkillItem key={index}>{skill}</SkillItem>
               ))}
             </div>
+
+            {/* Добавленное уведомление */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-r"
+            >
+              <div className="flex items-start">
+                <AlertCircle className="h-5 w-5 text-yellow-500 mr-2 mt-0.5 flex-shrink-0" />
+                <p className="text-yellow-700">
+                  В России сейчас много чего работает со сбоями, поэтому я предлагаю вам 4 платформы на ваш выбор. Выбирайте ту, что удобна вам, но не забудьте подписаться! Спасибо.
+                </p>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
         
