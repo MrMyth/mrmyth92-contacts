@@ -9,7 +9,7 @@ const navigationItems = [
   { label: "Ubisoft Connect", href: "#contacts-section" },
   { label: "Поддержка проектов", href: "#donation-section" },
   { label: "YouTube", href: "#youtube-section" },
-  { label: "Twitch", href: "#twitch-section" },
+  { label: "Twitch и Trovo", href: "#twitch-section" },
   { label: "VK", href: "#vk-section" },
   { label: "Discord", href: "#discord-section" },
   { label: "Контакты", href: "#contact-section" },
