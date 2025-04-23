@@ -34,6 +34,7 @@ const YoutubeSection = () => {
           <Youtube className="h-8 w-8 text-[#FF0000]" />
           YouTube каналы
         </h2>
+        <p className="text-center text-gray-600 mb-6">Мои Youtube каналы</p>
         
         {channels.map((channel, index) => (
           <motion.div
