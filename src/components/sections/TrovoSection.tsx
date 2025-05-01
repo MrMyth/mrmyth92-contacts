@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -14,8 +15,8 @@ const TrovoSection = () => {
         viewport={{ once: true }}
         className="text-center"
       >
-        <h2 className="text-3xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-[#1CB562] to-[#2DED87] flex items-center justify-center gap-3">
-          <TrovoIcon className="h-8 w-8" />
+        <h2 className="text-3xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-blue-500 flex items-center justify-center gap-3">
+          <TrovoIcon className="h-8 w-8 text-[#2DED87]" />
           Trovo канал
         </h2>
         <p className="text-gray-600 mb-6">Альтернативная платформа для моих прямых эфиров</p>
@@ -27,7 +28,7 @@ const TrovoSection = () => {
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
         >
-          <Button className="w-full bg-gradient-to-r from-[#1CB562] to-[#2DED87] hover:from-[#2DED87] hover:to-[#1CB562] text-white">
+          <Button className="w-full bg-[#2DED87] hover:bg-[#2DED87]/90 text-white">
             <TrovoIcon className="mr-2 h-5 w-5" />
             Посетить канал
           </Button>
