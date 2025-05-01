@@ -1,3 +1,4 @@
+
 import React, { useState, useCallback, memo, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
@@ -115,11 +116,12 @@ const NavigationMenu: React.FC = () => {
     >
       <div className="container mx-auto flex justify-between items-center">
         <motion.div 
-          className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#004d00] to-[#006400]"
+          className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#004d00] to-[#006400] flex flex-col items-start"
           whileHover={{ scale: 1.03 }}
           transition={{ duration: 0.2 }}
         >
-          MrMyth92 Dmitry Starchikov
+          <span>MrMyth92</span>
+          <span>Dmitry Starchikov</span>
         </motion.div>
 
         {/* Кнопка мобильного меню */}
