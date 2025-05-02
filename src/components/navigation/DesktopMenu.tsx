@@ -1,11 +1,7 @@
 
 import React from "react";
 import MenuButton from "./MenuButton";
-
-interface NavigationItem {
-  label: string;
-  href: string;
-}
+import { NavigationItem } from "@/data/navigationItems";
 
 interface DesktopMenuProps {
   items: NavigationItem[];

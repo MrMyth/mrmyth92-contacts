@@ -2,11 +2,7 @@
 import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import MobileMenuButton from "./MobileMenuButton";
-
-interface NavigationItem {
-  label: string;
-  href: string;
-}
+import { NavigationItem } from "@/data/navigationItems";
 
 interface MobileMenuProps {
   isOpen: boolean;
