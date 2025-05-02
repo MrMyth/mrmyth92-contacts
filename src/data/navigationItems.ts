@@ -2,8 +2,10 @@
 export interface NavigationItem {
   label: string;
   href: string;
+  icon?: JSX.Element; // Добавляем опциональное поле для иконки
 }
 
+// Группируем навигационные элементы по категориям для лучшей организации
 export const navigationItems: NavigationItem[] = [
   { label: "Обо мне", href: "#about-me-section" },
   { label: "Ubisoft Connect", href: "#contacts-section" },

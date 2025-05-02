@@ -11,6 +11,7 @@ interface MobileMenuProps {
   onNavigate: (href: string) => void;
 }
 
+// Оптимизированное мобильное меню с плавными анимациями
 const MobileMenu = ({ isOpen, items, activeSection, onNavigate }: MobileMenuProps) => {
   return (
     <AnimatePresence>
@@ -22,13 +23,14 @@ const MobileMenu = ({ isOpen, items, activeSection, onNavigate }: MobileMenuProp
           transition={{ duration: 0.3 }}
           className="md:hidden overflow-hidden"
         >
-          <div className="container mx-auto py-2 px-4 flex flex-col space-y-1 bg-white border-t border-gray-100">
+          <div className="container mx-auto py-2 px-4 flex flex-col space-y-1 bg-white border-t border-gray-100 shadow-lg rounded-b-lg">
             {items.map((item) => (
               <MobileMenuButton
                 key={item.href}
                 active={activeSection === item.href}
                 onClick={() => onNavigate(item.href)}
                 label={item.label}
+                icon={item.icon}
               />
             ))}
           </div>

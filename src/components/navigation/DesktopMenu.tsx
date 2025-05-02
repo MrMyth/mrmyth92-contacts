@@ -9,15 +9,17 @@ interface DesktopMenuProps {
   onNavigate: (href: string) => void;
 }
 
+// Оптимизированное десктопное меню с поддержкой иконок
 const DesktopMenu = ({ items, activeSection, onNavigate }: DesktopMenuProps) => {
   return (
-    <div className="hidden md:flex space-x-1">
+    <div className="hidden md:flex flex-wrap gap-1 justify-end">
       {items.map((item) => (
         <MenuButton
           key={item.href}
           active={activeSection === item.href}
           onClick={() => onNavigate(item.href)}
           label={item.label}
+          icon={item.icon}
         />
       ))}
     </div>
