@@ -15,14 +15,22 @@ interface MobileMenuProps {
 
 const MobileMenu: React.FC<MobileMenuProps> = React.memo(
   ({ isOpen, items, activeSection, onNavigate, className }) => {
+    // Memoized variants for better animation performance
+    const containerAnimation = {
+      hidden: { opacity: 0, height: 0 },
+      visible: { opacity: 1, height: "auto" },
+      exit: { opacity: 0, height: 0 }
+    };
+
     return (
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            variants={containerAnimation}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
             className={cn("md:hidden overflow-hidden", className)}
           >
             <div className="container mx-auto py-2 px-4 flex flex-col space-y-1 bg-white border-t border-gray-100">

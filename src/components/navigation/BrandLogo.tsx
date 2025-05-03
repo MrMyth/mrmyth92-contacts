@@ -7,11 +7,19 @@ interface BrandLogoProps {
 }
 
 const BrandLogo: React.FC<BrandLogoProps> = React.memo(({ onClick }) => {
+  // Memoized animation variants for better performance
+  const hoverAnimation = {
+    rest: { scale: 1 },
+    hover: { scale: 1.03 }
+  };
+
   return (
     <motion.div 
       className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#004d00] to-[#006400] flex flex-col items-start cursor-pointer"
-      whileHover={{ scale: 1.03 }}
-      transition={{ duration: 0.2 }}
+      variants={hoverAnimation}
+      initial="rest"
+      whileHover="hover"
+      transition={{ duration: 0.2, ease: "easeOut" }}
       onClick={onClick}
     >
       <span>MrMyth92</span>

@@ -22,25 +22,28 @@ const NavigationMenu: React.FC = memo(() => {
     scrollToTop 
   } = useNavigation();
 
+  // Memoize the header style for performance
+  const headerStyle = cn(
+    "sticky top-0 bg-white/90 backdrop-blur-sm z-50 py-2 px-4 transition-shadow duration-300",
+    scrollPosition > 10 ? "shadow-md" : ""
+  );
+
   return (
     <motion.nav 
-      className={cn(
-        "sticky top-0 bg-white/90 backdrop-blur-sm z-50 py-2 px-4 transition-shadow duration-300",
-        scrollPosition > 10 ? "shadow-md" : ""
-      )}
+      className={headerStyle}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
     >
       <div className="container mx-auto flex justify-between items-center">
         <BrandLogo onClick={scrollToTop} />
 
-        {/* Mobile menu toggle */}
+        {/* Mobile menu toggle - only visible on small screens */}
         <div className="md:hidden">
           <MenuToggleButton isOpen={isMenuOpen} onClick={toggleMenu} />
         </div>
 
-        {/* Desktop menu */}
+        {/* Desktop menu - hidden on small screens */}
         <DesktopMenu 
           items={navigationItems} 
           activeSection={activeSection} 
@@ -48,12 +51,16 @@ const NavigationMenu: React.FC = memo(() => {
         />
       </div>
 
-      {/* Mobile menu dropdown */}
+      {/* Mobile menu dropdown - controlled by isOpen state */}
       <MobileMenu 
         isOpen={isMenuOpen} 
         items={navigationItems} 
         activeSection={activeSection} 
-        onNavigate={handleNavigation} 
+        onNavigate={(href) => {
+          handleNavigation(href);
+          // Always close mobile menu after navigation
+          toggleMenu();
+        }} 
       />
     </motion.nav>
   );

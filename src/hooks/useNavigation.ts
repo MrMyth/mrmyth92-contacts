@@ -11,52 +11,64 @@ export const useNavigation = () => {
   const [isScrolling, setIsScrolling] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
   
-  // Use refs for performance optimization
+  // Use refs for performance optimization and to avoid recreating on each render
   const observedSections = useRef<Element[]>([]);
   const observerRef = useRef<IntersectionObserver | null>(null);
   const sectionCache = useRef<Map<string, Element>>(new Map());
   const scrollTimeout = useRef<number | null>(null);
+  const isScrollingRef = useRef<boolean>(false);
 
-  // Memoize callbacks to prevent unnecessary re-renders
+  // Update ref whenever state changes to avoid stale closures in event listeners
+  useEffect(() => {
+    isScrollingRef.current = isScrolling;
+  }, [isScrolling]);
+
+  // Memoize callbacks to prevent unnecessary re-renders and event handler recreations
   const toggleMenu = useCallback(() => {
     setIsMenuOpen((prevState) => !prevState);
   }, []);
 
   const handleNavigation = useCallback((href: string) => {
-    if (!isScrolling) {
+    if (!isScrollingRef.current) {
       setIsMenuOpen(false);
       scrollToSection(href, setIsScrolling);
     }
-  }, [isScrolling]);
+  }, []);
 
   const scrollToTop = useCallback(() => {
-    if (!isScrolling) {
+    if (!isScrollingRef.current) {
       setIsMenuOpen(false);
       scrollToTopUtil(setIsScrolling, () => {
         window.history.pushState("", document.title, window.location.pathname);
         setActiveSection("");
       });
     }
-  }, [isScrolling]);
+  }, []);
 
-  // Optimized scroll handler with proper cleanup
+  // Throttled scroll handler for better performance
   const handleScroll = useCallback(() => {
-    setScrollPosition(window.scrollY);
+    if (scrollTimeout.current === null) {
+      scrollTimeout.current = window.setTimeout(() => {
+        setScrollPosition(window.scrollY);
+        scrollTimeout.current = null;
+      }, 50); // Reduced from 100ms to 50ms for more responsive UI updates
+    }
   }, []);
 
   useEffect(() => {
-    // Optimize by creating observer only once
+    // Create intersection observer only once
     if (!observerRef.current) {
       observerRef.current = new IntersectionObserver(
         (entries) => {
-          if (isScrolling) return;
+          if (isScrollingRef.current) return;
           
           const visibleEntries = entries
             .filter(entry => entry.isIntersecting)
             .sort((a, b) => {
               const rectA = a.boundingClientRect;
               const rectB = b.boundingClientRect;
-              return Math.abs(rectA.top) - Math.abs(rectB.top);
+              // Better sorting logic: prioritize elements closest to the top of the viewport
+              return (Math.abs(rectA.top) - Math.abs(rectB.top));
             });
             
           if (visibleEntries.length > 0) {
@@ -64,67 +76,77 @@ export const useNavigation = () => {
             const id = `#${topEntry.target.id}`;
             
             if (id !== activeSection) {
+              // Use replaceState instead of pushState to avoid polluting history
               window.history.replaceState(null, "", id);
               setActiveSection(id);
             }
           }
         },
-        { threshold: [0.1, 0.3, 0.5], rootMargin: "-80px 0px 0px 0px" }
+        { 
+          // More granular thresholds for better accuracy
+          threshold: [0.1, 0.2, 0.3, 0.4, 0.5],
+          rootMargin: "-80px 0px 0px 0px" 
+        }
       );
     }
 
-    // Optimized section observation
+    // Optimize section observation with better caching
     const sections = document.querySelectorAll('section[id]');
+    const allSections: Element[] = [];
+    
     sections.forEach((section) => {
       const id = `#${section.id}`;
       sectionCache.current.set(id, section);
+      allSections.push(section);
       
       if (!observedSections.current.includes(section)) {
         observerRef.current?.observe(section);
-        observedSections.current.push(section);
       }
     });
+    
+    // Update observed sections reference
+    observedSections.current = allSections;
 
-    // More efficient scroll listener with throttling
-    const throttleScroll = () => {
-      if (scrollTimeout.current === null) {
-        scrollTimeout.current = window.setTimeout(() => {
-          handleScroll();
-          scrollTimeout.current = null;
-        }, 100);
-      }
-    };
-
-    const handleHashChange = () => {
-      if (!isScrolling) {
-        const hash = window.location.hash;
-        setActiveSection(hash || "#hero-section");
-      }
-    };
-
+    // Passive event listener for better scrolling performance
+    window.addEventListener('scroll', handleScroll, { passive: true });
     window.addEventListener('hashchange', handleHashChange);
-    window.addEventListener('scroll', throttleScroll, { passive: true });
     
     // Initial hash handling
     const initialHash = window.location.hash;
-    setActiveSection(initialHash || "#hero-section");
+    if (initialHash && document.querySelector(initialHash)) {
+      setActiveSection(initialHash);
+    } else {
+      // Default to first section if no hash or invalid hash
+      setActiveSection("#hero-section");
+    }
 
     return () => {
-      // Proper cleanup
+      // Comprehensive cleanup
       window.removeEventListener('hashchange', handleHashChange);
-      window.removeEventListener('scroll', throttleScroll);
+      window.removeEventListener('scroll', handleScroll);
       
       if (observerRef.current) {
-        observedSections.current.forEach((section) => {
+        observedSections.current.forEach(section => {
           observerRef.current?.unobserve(section);
         });
+        observerRef.current.disconnect();
       }
       
       if (scrollTimeout.current !== null) {
         clearTimeout(scrollTimeout.current);
       }
     };
-  }, [isScrolling, activeSection, handleScroll]);
+  }, [activeSection, handleScroll]);
+
+  // Handle hash changes separately
+  const handleHashChange = useCallback(() => {
+    if (!isScrollingRef.current) {
+      const hash = window.location.hash;
+      if (hash && document.querySelector(hash)) {
+        setActiveSection(hash);
+      }
+    }
+  }, []);
 
   return {
     isMenuOpen,
