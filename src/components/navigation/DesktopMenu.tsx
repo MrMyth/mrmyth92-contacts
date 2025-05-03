@@ -14,7 +14,7 @@ interface DesktopMenuProps {
 const DesktopMenu: React.FC<DesktopMenuProps> = React.memo(
   ({ items, activeSection, onNavigate, className }) => {
     return (
-      <div className={cn("hidden md:flex space-x-1", className)}>
+      <nav className={cn("hidden md:flex space-x-1", className)} role="menubar" aria-label="Навигация по сайту">
         {items.map((item) => (
           <MenuButton
             key={item.href}
@@ -23,7 +23,7 @@ const DesktopMenu: React.FC<DesktopMenuProps> = React.memo(
             label={item.label}
           />
         ))}
-      </div>
+      </nav>
     );
   }
 );

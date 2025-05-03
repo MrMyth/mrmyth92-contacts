@@ -1,9 +1,9 @@
 
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useState, useEffect, useCallback, useRef, useMemo } from "react";
 import { scrollToSection, scrollToTop as scrollToTopUtil } from "../utils/scrollUtils";
 
 /**
- * Optimized hook for managing navigation state and section tracking
+ * Оптимизированный хук для управления навигацией и отслеживания секций
  */
 export const useNavigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,33 +11,33 @@ export const useNavigation = () => {
   const [isScrolling, setIsScrolling] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
   
-  // Use refs for performance optimization and to avoid recreating on each render
+  // Используем рефы для оптимизации и предотвращения пересоздания при каждом рендере
   const observedSections = useRef<Element[]>([]);
   const observerRef = useRef<IntersectionObserver | null>(null);
   const sectionCache = useRef<Map<string, Element>>(new Map());
   const scrollTimeout = useRef<number | null>(null);
   const isScrollingRef = useRef<boolean>(false);
+  const activePositions = useRef<Map<string, number>>(new Map());
+  const lastScrollY = useRef<number>(0);
 
-  // Update ref whenever state changes to avoid stale closures in event listeners
+  // Обновляем реф при изменении состояния для избежания устаревших значений в обработчиках событий
   useEffect(() => {
     isScrollingRef.current = isScrolling;
   }, [isScrolling]);
 
-  // Memoize callbacks to prevent unnecessary re-renders and event handler recreations
+  // Мемоизируем функции для предотвращения ненужных повторных рендеров
   const toggleMenu = useCallback(() => {
     setIsMenuOpen((prevState) => !prevState);
   }, []);
 
   const handleNavigation = useCallback((href: string) => {
     if (!isScrollingRef.current) {
-      setIsMenuOpen(false);
       scrollToSection(href, setIsScrolling);
     }
   }, []);
 
   const scrollToTop = useCallback(() => {
     if (!isScrollingRef.current) {
-      setIsMenuOpen(false);
       scrollToTopUtil(setIsScrolling, () => {
         window.history.pushState("", document.title, window.location.pathname);
         setActiveSection("");
@@ -45,18 +45,61 @@ export const useNavigation = () => {
     }
   }, []);
 
-  // Throttled scroll handler for better performance
+  // Оптимизированный обработчик прокрутки с throttling
   const handleScroll = useCallback(() => {
+    // Определяем направление прокрутки
+    const currentScrollY = window.scrollY;
+    const isScrollingDown = currentScrollY > lastScrollY.current;
+    lastScrollY.current = currentScrollY;
+
+    // Используем throttling для улучшения производительности
     if (scrollTimeout.current === null) {
       scrollTimeout.current = window.setTimeout(() => {
         setScrollPosition(window.scrollY);
+        
+        // Проверяем, не находимся ли мы в процессе программной прокрутки
+        if (!isScrollingRef.current) {
+          // Находим активный раздел на основе сохраненных позиций и направления прокрутки
+          let bestSection = "";
+          let bestDistance = Infinity;
+          
+          activePositions.current.forEach((position, section) => {
+            const distance = Math.abs(currentScrollY - position);
+            
+            // Используем направление прокрутки для улучшения определения секции
+            if (distance < bestDistance ||
+                (isScrollingDown && currentScrollY >= position && position > (activePositions.current.get(bestSection) || 0)) ||
+                (!isScrollingDown && currentScrollY <= position && position < (activePositions.current.get(bestSection) || Infinity))) {
+              bestDistance = distance;
+              bestSection = section;
+            }
+          });
+          
+          // Обновляем URL только если есть значимое изменение
+          if (bestSection && bestSection !== activeSection) {
+            window.history.replaceState(null, "", bestSection);
+            setActiveSection(bestSection);
+          }
+        }
+        
         scrollTimeout.current = null;
-      }, 50); // Reduced from 100ms to 50ms for more responsive UI updates
+      }, 50);
+    }
+  }, [activeSection]);
+
+  // Мемоизированная функция для обработки изменений хэша
+  const handleHashChange = useCallback(() => {
+    if (!isScrollingRef.current) {
+      const hash = window.location.hash;
+      if (hash && document.querySelector(hash)) {
+        setActiveSection(hash);
+      }
     }
   }, []);
 
+  // Используем useEffect для настройки наблюдателя пересечений и обработчиков событий
   useEffect(() => {
-    // Create intersection observer only once
+    // Создаем наблюдатель пересечения только один раз
     if (!observerRef.current) {
       observerRef.current = new IntersectionObserver(
         (entries) => {
@@ -67,7 +110,7 @@ export const useNavigation = () => {
             .sort((a, b) => {
               const rectA = a.boundingClientRect;
               const rectB = b.boundingClientRect;
-              // Better sorting logic: prioritize elements closest to the top of the viewport
+              // Улучшенная логика сортировки: приоритет секциям ближе к верху области просмотра
               return (Math.abs(rectA.top) - Math.abs(rectB.top));
             });
             
@@ -75,22 +118,25 @@ export const useNavigation = () => {
             const topEntry = visibleEntries[0];
             const id = `#${topEntry.target.id}`;
             
-            if (id !== activeSection) {
-              // Use replaceState instead of pushState to avoid polluting history
+            // Сохраняем позицию секции для улучшения отслеживания
+            activePositions.current.set(id, topEntry.target.getBoundingClientRect().top + window.scrollY - 80);
+            
+            if (id !== activeSection && !isScrollingRef.current) {
+              // Используем replaceState вместо pushState, чтобы не засорять историю
               window.history.replaceState(null, "", id);
               setActiveSection(id);
             }
           }
         },
         { 
-          // More granular thresholds for better accuracy
+          // Более детальные пороги для лучшей точности
           threshold: [0.1, 0.2, 0.3, 0.4, 0.5],
           rootMargin: "-80px 0px 0px 0px" 
         }
       );
     }
 
-    // Optimize section observation with better caching
+    // Оптимизируем наблюдение за секциями с улучшенным кэшированием
     const sections = document.querySelectorAll('section[id]');
     const allSections: Element[] = [];
     
@@ -99,29 +145,32 @@ export const useNavigation = () => {
       sectionCache.current.set(id, section);
       allSections.push(section);
       
+      // Сохраняем начальные позиции для более точного отслеживания
+      activePositions.current.set(id, section.getBoundingClientRect().top + window.scrollY - 80);
+      
       if (!observedSections.current.includes(section)) {
         observerRef.current?.observe(section);
       }
     });
     
-    // Update observed sections reference
+    // Обновляем ссылку на наблюдаемые секции
     observedSections.current = allSections;
 
-    // Passive event listener for better scrolling performance
+    // Пассивный прослушиватель событий для улучшения производительности прокрутки
     window.addEventListener('scroll', handleScroll, { passive: true });
     window.addEventListener('hashchange', handleHashChange);
     
-    // Initial hash handling
+    // Обработка начального хэша
     const initialHash = window.location.hash;
     if (initialHash && document.querySelector(initialHash)) {
       setActiveSection(initialHash);
     } else {
-      // Default to first section if no hash or invalid hash
+      // По умолчанию используем первую секцию, если нет хэша или он недействителен
       setActiveSection("#hero-section");
     }
 
     return () => {
-      // Comprehensive cleanup
+      // Полная очистка ресурсов
       window.removeEventListener('hashchange', handleHashChange);
       window.removeEventListener('scroll', handleScroll);
       
@@ -136,24 +185,15 @@ export const useNavigation = () => {
         clearTimeout(scrollTimeout.current);
       }
     };
-  }, [activeSection, handleScroll]);
+  }, [activeSection, handleScroll, handleHashChange]);
 
-  // Handle hash changes separately
-  const handleHashChange = useCallback(() => {
-    if (!isScrollingRef.current) {
-      const hash = window.location.hash;
-      if (hash && document.querySelector(hash)) {
-        setActiveSection(hash);
-      }
-    }
-  }, []);
-
-  return {
+  // Мемоизируем возвращаемый объект, чтобы избежать пересоздания на каждом рендере
+  return useMemo(() => ({
     isMenuOpen,
     activeSection,
     scrollPosition,
     toggleMenu,
     handleNavigation,
     scrollToTop
-  };
+  }), [isMenuOpen, activeSection, scrollPosition, toggleMenu, handleNavigation, scrollToTop]);
 };

@@ -7,10 +7,10 @@ interface BrandLogoProps {
 }
 
 const BrandLogo: React.FC<BrandLogoProps> = React.memo(({ onClick }) => {
-  // Memoized animation variants for better performance
+  // Enhanced animation variants
   const hoverAnimation = {
-    rest: { scale: 1 },
-    hover: { scale: 1.03 }
+    rest: { scale: 1, transition: { duration: 0.2, ease: "easeOut" } },
+    hover: { scale: 1.03, transition: { duration: 0.2, ease: "easeOut" } }
   };
 
   return (
@@ -19,8 +19,16 @@ const BrandLogo: React.FC<BrandLogoProps> = React.memo(({ onClick }) => {
       variants={hoverAnimation}
       initial="rest"
       whileHover="hover"
-      transition={{ duration: 0.2, ease: "easeOut" }}
       onClick={onClick}
+      role="button"
+      tabIndex={0}
+      aria-label="Логотип, вернуться наверх"
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          onClick?.();
+        }
+      }}
     >
       <span>MrMyth92</span>
       <span>Dmitry Starchikov</span>

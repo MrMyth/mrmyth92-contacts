@@ -1,5 +1,5 @@
 
-import React, { memo } from "react";
+import React, { memo, useMemo } from "react";
 import { motion } from "framer-motion";
 import BrandLogo from "./navigation/BrandLogo";
 import MenuToggleButton from "./navigation/MenuToggleButton";
@@ -9,9 +9,6 @@ import { navigationItems } from "../data/navigationItems";
 import { useNavigation } from "../hooks/useNavigation";
 import { cn } from "@/lib/utils";
 
-/**
- * Main navigation component that handles both desktop and mobile navigation
- */
 const NavigationMenu: React.FC = memo(() => {
   const { 
     isMenuOpen, 
@@ -22,28 +19,32 @@ const NavigationMenu: React.FC = memo(() => {
     scrollToTop 
   } = useNavigation();
 
-  // Memoize the header style for performance
-  const headerStyle = cn(
-    "sticky top-0 bg-white/90 backdrop-blur-sm z-50 py-2 px-4 transition-shadow duration-300",
-    scrollPosition > 10 ? "shadow-md" : ""
+  // Используем useMemo для стилей заголовка, чтобы избежать лишних перерисовок
+  const headerStyle = useMemo(() => 
+    cn(
+      "sticky top-0 bg-white/90 backdrop-blur-sm z-50 py-2 px-4 transition-all duration-300",
+      scrollPosition > 10 ? "shadow-md" : ""
+    ), 
+    [scrollPosition]
   );
 
   return (
-    <motion.nav 
+    <motion.header 
       className={headerStyle}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
+      role="banner"
     >
       <div className="container mx-auto flex justify-between items-center">
         <BrandLogo onClick={scrollToTop} />
 
-        {/* Mobile menu toggle - only visible on small screens */}
+        {/* Переключатель мобильного меню */}
         <div className="md:hidden">
           <MenuToggleButton isOpen={isMenuOpen} onClick={toggleMenu} />
         </div>
 
-        {/* Desktop menu - hidden on small screens */}
+        {/* Десктопное меню */}
         <DesktopMenu 
           items={navigationItems} 
           activeSection={activeSection} 
@@ -51,18 +52,18 @@ const NavigationMenu: React.FC = memo(() => {
         />
       </div>
 
-      {/* Mobile menu dropdown - controlled by isOpen state */}
+      {/* Выпадающее мобильное меню */}
       <MobileMenu 
         isOpen={isMenuOpen} 
         items={navigationItems} 
         activeSection={activeSection} 
         onNavigate={(href) => {
           handleNavigation(href);
-          // Always close mobile menu after navigation
+          // Всегда закрываем мобильное меню после навигации
           toggleMenu();
         }} 
       />
-    </motion.nav>
+    </motion.header>
   );
 });
 

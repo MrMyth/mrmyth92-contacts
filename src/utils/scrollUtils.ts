@@ -1,13 +1,13 @@
 
 /**
- * Optimized smooth scrolling utilities with enhanced performance and better user experience
+ * Оптимизированные утилиты плавной прокрутки с улучшенной производительностью
  */
 
-// Type for callback function
+// Тип для функций обратного вызова
 type ScrollCallback = () => void;
 
 /**
- * Enhanced smooth scrolling utility with optimized animation and better performance
+ * Улучшенная утилита плавной прокрутки с оптимизированной анимацией
  */
 export const scrollToSection = (
   href: string, 
@@ -24,27 +24,33 @@ export const scrollToSection = (
     return;
   }
   
-  // Advanced smooth scroll implementation
+  // Улучшенная реализация плавной прокрутки
   const start = window.pageYOffset;
-  const target = element.getBoundingClientRect().top + start - 80; // Account for header height
-  const duration = 500;
+  const elementRect = element.getBoundingClientRect();
+  const headerOffset = 80; // Учитываем высоту шапки
+  const target = elementRect.top + start - headerOffset;
+  
+  // Адаптивное время анимации в зависимости от дистанции
+  const distance = Math.abs(target - start);
+  const duration = Math.min(1000, Math.max(500, distance * 0.4));
+  
   let startTime: number | null = null;
   let lastPos = window.pageYOffset;
   let rafId: number;
   let manualScroll = false;
 
-  // Enhanced animation function using RAF for better performance
+  // Улучшенная функция анимации с использованием RAF для плавности
   const animateScroll = (currentTime: number) => {
     if (!startTime) startTime = currentTime;
     const timeElapsed = currentTime - startTime;
     const progress = Math.min(timeElapsed / duration, 1);
     
-    // Better easing function for more natural motion
-    const newPos = start + (target - start) * easeInOutCubic(progress);
+    // Улучшенная функция плавности для более естественного движения
+    const newPos = start + (target - start) * easeOutQuint(progress);
     window.scrollTo(0, newPos);
     
-    // Improved user interruption detection
-    if (Math.abs(window.pageYOffset - lastPos) > 3 && Math.abs(window.pageYOffset - newPos) > 3) {
+    // Улучшенное определение ручного вмешательства пользователя
+    if (Math.abs(window.pageYOffset - lastPos) > 5 && Math.abs(window.pageYOffset - newPos) > 5) {
       manualScroll = true;
       completeScroll();
       return;
@@ -52,18 +58,25 @@ export const scrollToSection = (
     
     lastPos = window.pageYOffset;
     
-    if (timeElapsed < duration && !manualScroll) {
+    // Проверяем близость к цели для более точного завершения
+    const isCloseToTarget = Math.abs(window.pageYOffset - target) < 2;
+    
+    if ((timeElapsed < duration && !manualScroll && !isCloseToTarget)) {
       rafId = requestAnimationFrame(animateScroll);
     } else {
+      // Последний скролл точно к цели
+      if (!manualScroll && !isCloseToTarget) {
+        window.scrollTo(0, target);
+      }
       completeScroll();
     }
   };
 
   const completeScroll = () => {
-    cancelAnimationFrame(rafId); // Always cancel animation frame first
+    cancelAnimationFrame(rafId); // Всегда отменяем анимацию первым делом
     setIsScrolling(false);
     
-    // Only update history if we've completed the animation correctly
+    // Обновляем историю только если анимация завершилась корректно
     if (!manualScroll && sectionId) {
       window.history.pushState(null, "", `#${sectionId}`);
     }
@@ -71,10 +84,10 @@ export const scrollToSection = (
     if (onComplete) onComplete();
   };
 
-  // Start the animation loop
+  // Запускаем цикл анимации
   rafId = requestAnimationFrame(animateScroll);
   
-  // Safety cleanup timeout
+  // Таймаут безопасности для гарантированной отмены анимации
   setTimeout(() => {
     if (rafId) {
       cancelAnimationFrame(rafId);
@@ -84,7 +97,7 @@ export const scrollToSection = (
 };
 
 /**
- * Optimized scroll to top function with performance enhancements
+ * Оптимизированная функция прокрутки в начало с улучшениями производительности
  */
 export const scrollToTop = (
   setIsScrolling: (value: boolean) => void, 
@@ -99,7 +112,8 @@ export const scrollToTop = (
     return;
   }
   
-  const duration = Math.min(500, Math.max(300, start * 0.5)); // Adaptive duration based on scroll distance
+  // Адаптивная продолжительность на основе расстояния прокрутки
+  const duration = Math.min(800, Math.max(400, start * 0.4));
   let startTime: number | null = null;
   let rafId: number;
   let lastPos = start;
@@ -110,12 +124,12 @@ export const scrollToTop = (
     const timeElapsed = currentTime - startTime;
     const progress = Math.min(timeElapsed / duration, 1);
     
-    // Improved easing for scroll to top
-    const newPos = start * (1 - easeOutQuart(progress));
+    // Улучшенная функция плавности для прокрутки вверх
+    const newPos = start * (1 - easeOutQuint(progress));
     window.scrollTo(0, newPos);
     
-    // Better manual scroll detection
-    if (Math.abs(window.pageYOffset - lastPos) > 3 && Math.abs(window.pageYOffset - newPos) > 3) {
+    // Улучшенное определение ручного скролла
+    if (Math.abs(window.pageYOffset - lastPos) > 5 && Math.abs(window.pageYOffset - newPos) > 5) {
       manualScroll = true;
       completeAnimation();
       return;
@@ -123,9 +137,16 @@ export const scrollToTop = (
     
     lastPos = window.pageYOffset;
     
-    if (timeElapsed < duration && !manualScroll) {
+    // Проверка близости к верху для точного завершения
+    const isCloseToTop = window.pageYOffset < 2;
+    
+    if (timeElapsed < duration && !manualScroll && !isCloseToTop) {
       rafId = requestAnimationFrame(animateScroll);
     } else {
+      // Финальное перемещение в самый верх
+      if (!manualScroll && !isCloseToTop) {
+        window.scrollTo(0, 0);
+      }
       completeAnimation();
     }
   };
@@ -138,7 +159,7 @@ export const scrollToTop = (
 
   rafId = requestAnimationFrame(animateScroll);
   
-  // Safety cleanup timeout
+  // Таймаут безопасности
   setTimeout(() => {
     if (rafId) {
       cancelAnimationFrame(rafId);
@@ -148,7 +169,7 @@ export const scrollToTop = (
 };
 
 /**
- * Enhanced cubic easing function for smoother animations
+ * Улучшенная кубическая функция плавности для более плавных анимаций
  */
 export const easeInOutCubic = (t: number): number => {
   return t < 0.5 
@@ -157,8 +178,15 @@ export const easeInOutCubic = (t: number): number => {
 };
 
 /**
- * Additional easing function for better scroll to top experience
+ * Квинтическая функция плавности для улучшенного опыта прокрутки
  */
-export const easeOutQuart = (t: number): number => {
-  return 1 - Math.pow(1 - t, 4);
+export const easeOutQuint = (t: number): number => {
+  return 1 - Math.pow(1 - t, 5);
+};
+
+/**
+ * Экспоненциальная функция плавности для более естественного начала движения
+ */
+export const easeOutExpo = (t: number): number => {
+  return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
 };
