@@ -9,7 +9,7 @@ interface MobileMenuButtonProps {
   label: string;
 }
 
-const MobileMenuButton = ({ active, onClick, label }: MobileMenuButtonProps) => {
+const MobileMenuButton: React.FC<MobileMenuButtonProps> = React.memo(({ active, onClick, label }) => {
   return (
     <motion.button
       onClick={onClick}
@@ -25,6 +25,8 @@ const MobileMenuButton = ({ active, onClick, label }: MobileMenuButtonProps) => 
       {label}
     </motion.button>
   );
-};
+});
+
+MobileMenuButton.displayName = "MobileMenuButton";
 
 export default MobileMenuButton;

@@ -11,7 +11,7 @@ interface MobileMenuProps {
   onNavigate: (href: string) => void;
 }
 
-const MobileMenu = ({ isOpen, items, activeSection, onNavigate }: MobileMenuProps) => {
+const MobileMenu: React.FC<MobileMenuProps> = React.memo(({ isOpen, items, activeSection, onNavigate }) => {
   return (
     <AnimatePresence>
       {isOpen && (
@@ -36,6 +36,8 @@ const MobileMenu = ({ isOpen, items, activeSection, onNavigate }: MobileMenuProp
       )}
     </AnimatePresence>
   );
-};
+});
+
+MobileMenu.displayName = "MobileMenu";
 
 export default MobileMenu;

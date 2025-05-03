@@ -9,7 +9,7 @@ interface MenuButtonProps {
   label: string;
 }
 
-const MenuButton = ({ active, onClick, label }: MenuButtonProps) => {
+const MenuButton: React.FC<MenuButtonProps> = React.memo(({ active, onClick, label }) => {
   return (
     <motion.button
       onClick={onClick}
@@ -26,6 +26,8 @@ const MenuButton = ({ active, onClick, label }: MenuButtonProps) => {
       {label}
     </motion.button>
   );
-};
+});
+
+MenuButton.displayName = "MenuButton";
 
 export default MenuButton;

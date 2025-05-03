@@ -11,7 +11,7 @@ import { useNavigation } from "../hooks/useNavigation";
 /**
  * Main navigation component that handles both desktop and mobile navigation
  */
-const NavigationMenu: React.FC = () => {
+const NavigationMenu: React.FC = memo(() => {
   const { isMenuOpen, activeSection, toggleMenu, handleNavigation } = useNavigation();
 
   return (
@@ -46,6 +46,8 @@ const NavigationMenu: React.FC = () => {
       />
     </motion.nav>
   );
-};
+});
 
-export default memo(NavigationMenu);
+NavigationMenu.displayName = "NavigationMenu";
+
+export default NavigationMenu;

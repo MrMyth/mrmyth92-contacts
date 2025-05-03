@@ -9,7 +9,7 @@ interface DesktopMenuProps {
   onNavigate: (href: string) => void;
 }
 
-const DesktopMenu = ({ items, activeSection, onNavigate }: DesktopMenuProps) => {
+const DesktopMenu: React.FC<DesktopMenuProps> = React.memo(({ items, activeSection, onNavigate }) => {
   return (
     <div className="hidden md:flex space-x-1">
       {items.map((item) => (
@@ -22,6 +22,8 @@ const DesktopMenu = ({ items, activeSection, onNavigate }: DesktopMenuProps) => 
       ))}
     </div>
   );
-};
+});
+
+DesktopMenu.displayName = "DesktopMenu";
 
 export default DesktopMenu;

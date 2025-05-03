@@ -8,7 +8,7 @@ interface MenuToggleButtonProps {
   onClick: () => void;
 }
 
-const MenuToggleButton = ({ isOpen, onClick }: MenuToggleButtonProps) => {
+const MenuToggleButton: React.FC<MenuToggleButtonProps> = React.memo(({ isOpen, onClick }) => {
   return (
     <Button 
       onClick={onClick} 
@@ -24,6 +24,8 @@ const MenuToggleButton = ({ isOpen, onClick }: MenuToggleButtonProps) => {
       )}
     </Button>
   );
-};
+});
+
+MenuToggleButton.displayName = "MenuToggleButton";
 
 export default MenuToggleButton;
