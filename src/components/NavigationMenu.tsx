@@ -13,7 +13,14 @@ import { cn } from "@/lib/utils";
  * Main navigation component that handles both desktop and mobile navigation
  */
 const NavigationMenu: React.FC = memo(() => {
-  const { isMenuOpen, activeSection, scrollPosition, toggleMenu, handleNavigation, scrollToTop } = useNavigation();
+  const { 
+    isMenuOpen, 
+    activeSection, 
+    scrollPosition, 
+    toggleMenu, 
+    handleNavigation, 
+    scrollToTop 
+  } = useNavigation();
 
   return (
     <motion.nav 
@@ -28,12 +35,12 @@ const NavigationMenu: React.FC = memo(() => {
       <div className="container mx-auto flex justify-between items-center">
         <BrandLogo onClick={scrollToTop} />
 
-        {/* Мобильное меню */}
+        {/* Mobile menu toggle */}
         <div className="md:hidden">
           <MenuToggleButton isOpen={isMenuOpen} onClick={toggleMenu} />
         </div>
 
-        {/* Десктопное меню */}
+        {/* Desktop menu */}
         <DesktopMenu 
           items={navigationItems} 
           activeSection={activeSection} 
@@ -41,7 +48,7 @@ const NavigationMenu: React.FC = memo(() => {
         />
       </div>
 
-      {/* Выпадающее мобильное меню */}
+      {/* Mobile menu dropdown */}
       <MobileMenu 
         isOpen={isMenuOpen} 
         items={navigationItems} 

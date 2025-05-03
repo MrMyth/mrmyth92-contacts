@@ -1,6 +1,6 @@
 
 /**
- * Optimized smooth scrolling utility with easing function and improved performance
+ * Optimized smooth scrolling utility with requestAnimationFrame and easing
  */
 export const scrollToSection = (
   href: string, 
@@ -17,7 +17,7 @@ export const scrollToSection = (
     return;
   }
   
-  // Improved smooth scroll with requestAnimationFrame for better performance
+  // Performance-optimized smooth scroll implementation
   const start = window.pageYOffset;
   const target = element.getBoundingClientRect().top + start - 80; // Account for header height
   const duration = 500;
@@ -30,32 +30,35 @@ export const scrollToSection = (
     const timeElapsed = currentTime - startTime;
     const progress = Math.min(timeElapsed / duration, 1);
     
+    // Use optimized easing function for smooth animation
     const newPos = start + (target - start) * easeInOutCubic(progress);
     window.scrollTo(0, newPos);
     
-    // Exit early if user manually scrolled (detected by comparing positions)
-    if (Math.abs(lastPos - window.pageYOffset) < 1 && timeElapsed > 100) {
-      cancelAnimationFrame(rafId);
-      setIsScrolling(false);
-      if (sectionId) window.history.pushState(null, "", `#${sectionId}`);
-      if (onComplete) onComplete();
-      return;
-    }
-    
-    lastPos = window.pageYOffset;
-    
-    if (timeElapsed < duration) {
-      rafId = requestAnimationFrame(animateScroll);
+    // Check if user manually scrolled
+    if (Math.abs(lastPos - window.pageYOffset) > 1 || timeElapsed <= 100) {
+      lastPos = window.pageYOffset;
+      
+      if (timeElapsed < duration) {
+        rafId = requestAnimationFrame(animateScroll);
+      } else {
+        completeScroll();
+      }
     } else {
-      setIsScrolling(false);
-      if (sectionId) window.history.pushState(null, "", `#${sectionId}`);
-      if (onComplete) onComplete();
+      // User manually scrolled, cancel animation
+      cancelAnimationFrame(rafId);
+      completeScroll();
     }
+  };
+
+  const completeScroll = () => {
+    setIsScrolling(false);
+    if (sectionId) window.history.pushState(null, "", `#${sectionId}`);
+    if (onComplete) onComplete();
   };
 
   rafId = requestAnimationFrame(animateScroll);
   
-  // Safety timeout in case animation gets stuck
+  // Safety cleanup timeout
   setTimeout(() => {
     cancelAnimationFrame(rafId);
     setIsScrolling(false);
@@ -63,7 +66,7 @@ export const scrollToSection = (
 };
 
 /**
- * Smooth scroll to top function
+ * Optimized scroll to top function
  */
 export const scrollToTop = (
   setIsScrolling: (value: boolean) => void, 
@@ -72,6 +75,12 @@ export const scrollToTop = (
   setIsScrolling(true);
   
   const start = window.pageYOffset;
+  if (start === 0) {
+    setIsScrolling(false);
+    if (onComplete) onComplete();
+    return;
+  }
+  
   const duration = 500;
   let startTime: number | null = null;
   let rafId: number;
@@ -94,6 +103,7 @@ export const scrollToTop = (
 
   rafId = requestAnimationFrame(animateScroll);
   
+  // Safety cleanup timeout
   setTimeout(() => {
     cancelAnimationFrame(rafId);
     setIsScrolling(false);
@@ -101,8 +111,10 @@ export const scrollToTop = (
 };
 
 /**
- * Optimized easing function for smooth animation
+ * Optimized cubic easing function for smooth animation
  */
 export const easeInOutCubic = (t: number): number => {
-  return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  return t < 0.5 
+    ? 4 * t * t * t 
+    : 1 - Math.pow(-2 * t + 2, 3) / 2;
 };
