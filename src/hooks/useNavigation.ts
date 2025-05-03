@@ -1,16 +1,18 @@
 
 import { useState, useEffect, useCallback, useRef } from "react";
-import { scrollToSection } from "../utils/scrollUtils";
+import { scrollToSection, scrollToTop as scrollToTopUtil } from "../utils/scrollUtils";
 
 /**
- * Hook that manages navigation state and section tracking with improved performance
+ * Optimized hook for managing navigation state and section tracking
  */
 export const useNavigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
   const [isScrolling, setIsScrolling] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
   const observedSections = useRef<Element[]>([]);
   const observerRef = useRef<IntersectionObserver | null>(null);
+  const sectionCache = useRef<Map<string, Element>>(new Map());
 
   const toggleMenu = useCallback(() => {
     setIsMenuOpen((prevState) => !prevState);
@@ -24,6 +26,16 @@ export const useNavigation = () => {
     }
   }, [isScrolling]);
 
+  const scrollToTop = useCallback(() => {
+    if (!isScrolling) {
+      setIsMenuOpen(false);
+      scrollToTopUtil(setIsScrolling, () => {
+        window.history.pushState("", document.title, window.location.pathname);
+        setActiveSection("");
+      });
+    }
+  }, [isScrolling]);
+
   useEffect(() => {
     const handleHashChange = () => {
       if (!isScrolling) {
@@ -32,65 +44,76 @@ export const useNavigation = () => {
       }
     };
 
-    // Create the observer only once
+    // Create the observer only once with improved threshold handling
     if (!observerRef.current) {
       observerRef.current = new IntersectionObserver(
         (entries) => {
           if (isScrolling) return; // Skip if scrolling is active
           
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              const id = `#${entry.target.id}`;
-              
-              // Only update if actually changed
-              if (id !== activeSection) {
-                history.replaceState(null, "", id);
-                setActiveSection(id);
-              }
+          // Sort entries by their current y-position to find the one most in view
+          const visibleEntries = entries
+            .filter(entry => entry.isIntersecting)
+            .sort((a, b) => {
+              const rectA = a.boundingClientRect;
+              const rectB = b.boundingClientRect;
+              // Prioritize elements closer to the top of the viewport
+              return Math.abs(rectA.top) - Math.abs(rectB.top);
+            });
+            
+          if (visibleEntries.length > 0) {
+            const topEntry = visibleEntries[0];
+            const id = `#${topEntry.target.id}`;
+            
+            // Only update if actually changed
+            if (id !== activeSection) {
+              window.history.replaceState(null, "", id);
+              setActiveSection(id);
             }
-          });
+          }
         },
-        { threshold: 0.3, rootMargin: "-80px 0px 0px 0px" }
+        { threshold: [0.1, 0.3, 0.5], rootMargin: "-80px 0px 0px 0px" }
       );
     }
 
-    // Set up observers
+    // Optimized section observation setup - only observe new sections
     const sections = document.querySelectorAll('section[id]');
     sections.forEach((section) => {
+      // Cache sections for quicker access
+      const id = `#${section.id}`;
+      sectionCache.current.set(id, section);
+      
       if (!observedSections.current.includes(section)) {
         observerRef.current?.observe(section);
         observedSections.current.push(section);
       }
     });
 
-    // Shadow effect on scroll (debounced)
-    let scrollTimeout: ReturnType<typeof setTimeout>;
+    // Throttled scroll handler for shadow effect
     const handleScroll = () => {
-      clearTimeout(scrollTimeout);
-      scrollTimeout = setTimeout(() => {
-        const nav = document.querySelector('nav');
-        if (nav) {
-          if (window.scrollY > 10) {
-            nav.classList.add('shadow-md');
-          } else {
-            nav.classList.remove('shadow-md');
-          }
-        }
-      }, 10);
+      setScrollPosition(window.scrollY);
+    };
+
+    // Debounce the scroll event for better performance
+    let scrollTimeout: ReturnType<typeof setTimeout>;
+    const throttleScroll = () => {
+      if (!scrollTimeout) {
+        scrollTimeout = setTimeout(() => {
+          handleScroll();
+          scrollTimeout = 0 as unknown as ReturnType<typeof setTimeout>;
+        }, 100);
+      }
     };
 
     window.addEventListener('hashchange', handleHashChange);
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', throttleScroll, { passive: true });
     
-    // Initial hash handling
+    // Initial hash handling with fallback
     const initialHash = window.location.hash;
-    if (initialHash) {
-      setActiveSection(initialHash);
-    }
+    setActiveSection(initialHash || "#hero-section");
 
     return () => {
       window.removeEventListener('hashchange', handleHashChange);
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('scroll', throttleScroll);
       
       // Clean up observer
       if (observerRef.current) {
@@ -98,13 +121,18 @@ export const useNavigation = () => {
           observerRef.current?.unobserve(section);
         });
       }
+      
+      // Clear any pending timeouts
+      clearTimeout(scrollTimeout);
     };
   }, [isScrolling, activeSection]);
 
   return {
     isMenuOpen,
     activeSection,
+    scrollPosition,
     toggleMenu,
-    handleNavigation
+    handleNavigation,
+    scrollToTop
   };
 };
