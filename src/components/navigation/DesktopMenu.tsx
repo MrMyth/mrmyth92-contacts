@@ -2,6 +2,7 @@
 import React from "react";
 import MenuButton from "./MenuButton";
 import { NavigationItem } from "@/data/navigationItems";
+import { cn } from "@/lib/utils";
 
 interface DesktopMenuProps {
   items: NavigationItem[];
