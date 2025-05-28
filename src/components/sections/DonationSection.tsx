@@ -26,7 +26,7 @@ const DonationSection = () => {
       color: "bg-[#F15B3D] hover:bg-[#F15B3D]/90"
     },
     {
-      name: "Поддержать через Donate.stream/",
+      name: "Поддержать через Donate.stream",
       url: "https://donate.stream/mrmyth92",
       icon: <Gift className="h-5 w-5" />,
       color: "bg-[#6366F1] hover:bg-[#6366F1]/90"
