@@ -34,7 +34,7 @@ const MusicSection = () => {
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
           >
-            <Button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-8 py-3 text-lg">
+            <Button className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-3 text-lg">
               <Music className="mr-2 h-5 w-5" />
               Послушать музыку
             </Button>
