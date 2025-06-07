@@ -14,5 +14,6 @@ export const navigationItems: NavigationItem[] = [
   { label: "VK", href: "#vk-section" },
   { label: "Discord", href: "#discord-section" },
   { label: "Контакты", href: "#contact-section" },
+  { label: "Авторская музыка", href: "#music-section" },
   { label: "Обои на рабочий стол", href: "#ai-craft-section" },
 ];

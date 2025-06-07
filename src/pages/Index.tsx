@@ -6,6 +6,7 @@ import DonationSection from "@/components/sections/DonationSection";
 import YoutubeSection from "@/components/sections/YoutubeSection";
 import VKGroupSection from "@/components/sections/VKGroupSection";
 import ContactSection from "@/components/sections/ContactSection";
+import MusicSection from "@/components/sections/MusicSection";
 import DiscordWidget from "@/components/sections/DiscordWidget";
 import AiCraftSection from "@/components/sections/AiCraftSection";
 import CopyDataSection from "@/components/sections/CopyDataSection";
@@ -64,6 +65,9 @@ const Index = () => {
         </section>
         <section id="contact-section" className="scroll-mt-20">
           <ContactSection />
+        </section>
+        <section id="music-section" className="scroll-mt-20">
+          <MusicSection />
         </section>
         <section id="ai-craft-section" className="scroll-mt-20">
           <AiCraftSection />
