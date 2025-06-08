@@ -65,11 +65,11 @@ const Index = () => {
         <section id="music-section" className="scroll-mt-20">
           <MusicSection />
         </section>
-        <section id="contact-section" className="scroll-mt-20">
-          <ContactSection />
-        </section>
         <section id="ai-craft-section" className="scroll-mt-20">
           <AiCraftSection />
+        </section>
+        <section id="contact-section" className="scroll-mt-20">
+          <ContactSection />
         </section>
       </main>
       <Footer />
