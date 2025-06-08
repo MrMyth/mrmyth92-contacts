@@ -1,4 +1,3 @@
-
 import React, { useEffect } from "react";
 import HeroSection from "@/components/sections/HeroSection";
 import AboutMeSection from "@/components/sections/AboutMeSection";
@@ -63,11 +62,11 @@ const Index = () => {
         <section id="discord-section" className="scroll-mt-20">
           <DiscordWidget />
         </section>
-        <section id="contact-section" className="scroll-mt-20">
-          <ContactSection />
-        </section>
         <section id="music-section" className="scroll-mt-20">
           <MusicSection />
+        </section>
+        <section id="contact-section" className="scroll-mt-20">
+          <ContactSection />
         </section>
         <section id="ai-craft-section" className="scroll-mt-20">
           <AiCraftSection />
