@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -25,6 +26,18 @@ const AiCraftSection = () => {
       icon: (
         <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M12 0C5.373 0 0 5.373 0 12C0 18.627 5.373 24 12 24C18.627 24 24 18.627 24 12C24 5.373 18.627 0 12 0ZM17.855 8.212L15.87 17.176C15.725 17.764 15.389 17.904 14.898 17.635L11.893 15.409L10.45 16.793C10.295 16.948 10.164 17.079 9.862 17.079L10.068 14.024L15.615 9.038C15.852 8.827 15.565 8.709 15.256 8.921L8.51 13.292L5.55 12.401C4.973 12.22 4.961 11.845 5.669 11.562L17.021 7.166C17.502 6.993 17.916 7.274 17.855 8.212Z" fill="currentColor"/>
+        </svg>
+      )
+    },
+    { 
+      id: "onedrive",
+      name: "Посмотреть как папку",
+      url: "https://1drv.ms/f/c/f81a80f52b9810b8/EhKIJI89qnBKn6l-zIzCLQ4Bb22quWH4Tyq61wMJru_FaQ?e=zT2Hz5",
+      bgColor: "bg-[#0178D4] hover:bg-[#0178D4]/90",
+      icon: (
+        // folder icon
+        <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 7.5C3 6.12 4.12 5 5.5 5H9.38c.62 0 1.21.28 1.59.78L12.41 7H18.5A2.5 2.5 0 0121 9.5V18.5A2.5 2.5 0 0118.5 21h-13A2.5 2.5 0 013 18.5v-11z" />
         </svg>
       )
     },
