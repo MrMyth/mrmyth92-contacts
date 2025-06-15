@@ -33,7 +33,7 @@ const AiCraftSection = () => {
       id: "onedrive",
       name: "Посмотреть как папку",
       url: "https://1drv.ms/f/c/f81a80f52b9810b8/EhKIJI89qnBKn6l-zIzCLQ4Bb22quWH4Tyq61wMJru_FaQ?e=zT2Hz5",
-      bgColor: "bg-[#F7D154] hover:bg-[#ECD26C] text-[#513400]",
+      bgColor: "bg-[#0178D4] hover:bg-[#0178D4]/90",
       icon: (
         // folder icon
         <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
