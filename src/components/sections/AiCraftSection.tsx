@@ -59,7 +59,7 @@ const AiCraftSection = () => {
           <p className="text-gray-600">Авторские обои на рабочий стол</p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="flex flex-col gap-4">
           {socialLinks.map((link, index) => (
             <motion.a
               key={link.id}
