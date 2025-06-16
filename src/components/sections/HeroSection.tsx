@@ -5,7 +5,7 @@ const HeroSection: React.FC = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const [isAutoRotate, setIsAutoRotate] = useState(true);
-  const images = ["https://i.ibb.co/LXpmDhzp/supawork-4e1c22a9ac344e088355ea42eadc1283.png", "https://i.ibb.co/Y44xWNJ6/Comfy-UI-00001.png"];
+  const images = ["https://i.postimg.cc/0QLFg30n/supawork-4e1c22a9ac344e088355ea42eadc1283.png", "https://i.postimg.cc/wB4n23tS/Comfy-UI-00001.png"];
   const rotateImage = useCallback((direction: 'next' | 'prev') => {
     setIsLoading(true);
     setCurrentImageIndex(prevIndex => {
