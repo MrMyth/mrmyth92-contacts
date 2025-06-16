@@ -128,7 +128,7 @@ const AboutMeSection = () => {
           className="flex-shrink-0"
         >
           <img 
-            src="https://i.ibb.co/qdqTfTZ/my-ava.jpg" 
+            src="https://i.postimg.cc/zBL6c5K3/my-ava.jpg" 
             alt="Дмитрий Старчиков" 
             className="rounded-xl shadow-xl w-64 h-64 md:w-80 md:h-80 object-cover border-4 border-green-500/20" 
             loading="lazy" 
