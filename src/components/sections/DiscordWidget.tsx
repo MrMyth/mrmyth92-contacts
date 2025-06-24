@@ -48,7 +48,7 @@ const DiscordWidget = () => {
     },
     {
       name: "Разблокировка Discord в РФ",
-      url: "https://drive.google.com/file/d/1GEWBHezhE4-LJ9hMCk9oxg38dXf1tVSx/view",
+      url: "https://www.dropbox.com/scl/fo/56eaxni1xffpzc65e0qny/AJrvVoVtCNaJHQP-9-pa3JA?rlkey=cc5dgfsdjmgjbc75m2u8yc02f&e=2&dl=0",
       icon: <AlertCircle className="h-5 w-5" />,
       bgColor: "bg-[#5865F2] hover:bg-[#5865F2]/90",
     },
