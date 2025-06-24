@@ -11,14 +11,14 @@ const YoutubeSection = () => {
       url: "https://www.youtube.com/@MrMyth92_TC",
       subscribeUrl: "https://www.youtube.com/@MrMyth92_TC?sub_confirmation=1",
       description: "Мой Youtube канал по франшизе The Division",
-      imageUrl: "https://i.ibb.co/GQ2cgwxd/thedivision2-icon1-1-1.png"
+      imageUrl: "https://i.postimg.cc/rpHYWb3T/thedivision2-icon1-1-1.png"
     },
     {
       name: "Assassin's Creed",
       url: "https://www.youtube.com/@MrMyth92_AC",
       subscribeUrl: "https://www.youtube.com/@MrMyth92_AC?sub_confirmation=1",
       description: "Мой Youtube канал по франшизе Assassin's Creed",
-      imageUrl: "https://i.ibb.co/DgYqySqK/AC-Shadows-Logo-Crest-Color-1-1-1.png"
+      imageUrl: "https://i.postimg.cc/qqVbDKpZ/ACS.png"
     }
   ];
 
