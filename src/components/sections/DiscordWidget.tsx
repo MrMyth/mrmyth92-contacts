@@ -50,7 +50,21 @@ const DiscordWidget = () => {
       name: "Разблокировка Discord + YouTube + Twitch в РФ",
       url: "https://www.dropbox.com/scl/fo/56eaxni1xffpzc65e0qny/AJrvVoVtCNaJHQP-9-pa3JA?rlkey=cc5dgfsdjmgjbc75m2u8yc02f&e=2&dl=0",
       icon: <AlertCircle className="h-5 w-5" />,
-      bgColor: "bg-gradient-to-r from-[#5865F2] via-[#FF0000] to-[#9147FF] hover:opacity-90",
+      customButton: (
+        <div className="w-full relative group overflow-hidden rounded-md">
+          <div className="absolute inset-0 flex">
+            <div className="w-1/3 bg-[#5865F2]"></div>
+            <div className="w-1/3 bg-[#FF0000]"></div>
+            <div className="w-1/3 bg-[#9147FF]"></div>
+          </div>
+          <Button className="w-full relative bg-transparent hover:bg-black/10 text-white h-10">
+            <div className="flex items-center z-10">
+              <AlertCircle className="h-5 w-5 mr-2" />
+              Разблокировка Discord + YouTube + Twitch в РФ
+            </div>
+          </Button>
+        </div>
+      ),
     },
   ];
 
@@ -123,10 +137,12 @@ const DiscordWidget = () => {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  <Button className={`w-full ${link.bgColor} text-white`}>
-                    {link.icon}
-                    {link.name}
-                  </Button>
+                  {link.customButton || (
+                    <Button className={`w-full ${link.bgColor} text-white`}>
+                      {link.icon}
+                      {link.name}
+                    </Button>
+                  )}
                 </motion.a>
               ))}
             </div>
