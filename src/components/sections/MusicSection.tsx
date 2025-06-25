@@ -31,10 +31,11 @@ const MusicSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
             viewport={{ once: true }}
-            whileHover={{ scale: 1.03 }}
+            whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
+            className="w-full max-w-md"
           >
-            <Button className="bg-orange-500 text-white hover:bg-orange-600 px-8 py-3 text-lg">
+            <Button className="w-full bg-orange-500 text-white hover:bg-orange-600 h-10 px-4 py-2">
               <Music className="mr-2 h-5 w-5" />
               Послушать музыку
             </Button>
