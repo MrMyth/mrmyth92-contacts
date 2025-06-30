@@ -21,7 +21,7 @@ const AiCraftSection = () => {
     { 
       id: "telegram", 
       name: "Картины 21 века от AI", 
-      url: "https://t.me/AiCraftMyMyth92",
+      url: "https://t.me/MrMyth92_DS",
       bgColor: "bg-[#229ED9] hover:bg-[#229ED9]/90",
       icon: (
         <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
