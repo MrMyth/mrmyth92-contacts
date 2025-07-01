@@ -8,8 +8,8 @@ const TelegramSection = () => {
   const telegramLinks = [
     { 
       id: "telegram-channel",
-      name: "Картины 21 века от AI", 
-      url: "https://t.me/MrMyth92_DS",
+      name: "Написать в Telegram", 
+      url: "https://t.me/MrMyth92",
       bgColor: "bg-[#229ED9] hover:bg-[#229ED9]/90",
       icon: (
         <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -19,7 +19,7 @@ const TelegramSection = () => {
     },
     { 
       id: "telegram-second",
-      name: "Telegram канал", 
+      name: "Telegram публичная группа", 
       url: "https://t.me/MrMyth92_DS",
       bgColor: "bg-[#229ED9] hover:bg-[#229ED9]/90",
       icon: (
@@ -45,7 +45,7 @@ const TelegramSection = () => {
             </svg>
             Telegram
           </h2>
-          <p className="text-gray-600">Подпишитесь на мой Telegram канал</p>
+          <p className="text-gray-600">Все, что связано с Telegram</p>
         </div>
         
         <div className="flex flex-col gap-4">

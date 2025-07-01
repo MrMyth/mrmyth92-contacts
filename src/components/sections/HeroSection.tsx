@@ -92,7 +92,7 @@ const HeroSection: React.FC = () => {
         <p className="text-sm text-gray-500 dark:text-gray-400 italic mb-2">
           Все изображения в шапке сайта созданы мной и отражают игры, в которые я сейчас играю.
         </p>
-        <p className="text-sm font-bold text-red-500 dark:text-red-400 block">Информация на сайте обновлена: 15.06.2025, 13:40 (по Москве)</p>
+        <p className="text-sm font-bold text-red-500 dark:text-red-400 block">Информация на сайте обновлена: 01.07.2025, 16:00 (по Москве)</p>
       </div>
     </section>;
 };

@@ -8,7 +8,7 @@ const VKGroupSection = () => {
     {
       name: "Группа в VK",
       url: "https://vk.com/mrmyth92ds",
-      description: "Зеркало для роликов и стримов"
+      description: "VK публичная группа"
     },
     {
       name: "VK Видео",
