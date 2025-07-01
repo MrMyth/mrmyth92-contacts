@@ -13,7 +13,7 @@ export const navigationItems: NavigationItem[] = [
   { label: "VK", href: "#vk-section" },
   { label: "Авторская музыка", href: "#music-section" },
   { label: "Обои на рабочий стол", href: "#ai-craft-section" },
-  { label: "Discord", href: "#discord-section" },
   { label: "Telegram", href: "#telegram-section" },
+  { label: "Discord", href: "#discord-section" },
   { label: "Контакты", href: "#contact-section" },
 ];
