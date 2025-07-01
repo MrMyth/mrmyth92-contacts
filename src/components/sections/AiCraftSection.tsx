@@ -35,7 +35,6 @@ const AiCraftSection = () => {
       url: "https://1drv.ms/f/c/f81a80f52b9810b8/EhKIJI89qnBKn6l-zIzCLQ4Bb22quWH4Tyq61wMJru_FaQ?e=zT2Hz5",
       bgColor: "bg-[#0178D4] hover:bg-[#0178D4]/90",
       icon: (
-        // folder icon
         <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 7.5C3 6.12 4.12 5 5.5 5H9.38c.62 0 1.21.28 1.59.78L12.41 7H18.5A2.5 2.5 0 0121 9.5V18.5A2.5 2.5 0 0118.5 21h-13A2.5 2.5 0 013 18.5v-11z" />
         </svg>

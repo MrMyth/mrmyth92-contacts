@@ -1,4 +1,3 @@
-
 import React, { useEffect } from "react";
 import HeroSection from "@/components/sections/HeroSection";
 import AboutMeSection from "@/components/sections/AboutMeSection";
@@ -11,7 +10,6 @@ import DiscordWidget from "@/components/sections/DiscordWidget";
 import AiCraftSection from "@/components/sections/AiCraftSection";
 import CopyDataSection from "@/components/sections/CopyDataSection";
 import TwitchSection from "@/components/sections/TwitchSection";
-import TrovoSection from "@/components/sections/TrovoSection";
 import Footer from "@/components/Footer";
 import NavigationMenu from "@/components/NavigationMenu";
 
@@ -53,9 +51,6 @@ const Index = () => {
         </section>
         <section id="twitch-section" className="scroll-mt-20">
           <TwitchSection />
-        </section>
-        <section id="trovo-section" className="scroll-mt-20">
-          <TrovoSection />
         </section>
         <section id="vk-section" className="scroll-mt-20">
           <VKGroupSection />
