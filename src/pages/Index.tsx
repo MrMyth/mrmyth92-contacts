@@ -1,3 +1,4 @@
+
 import React, { useEffect } from "react";
 import HeroSection from "@/components/sections/HeroSection";
 import AboutMeSection from "@/components/sections/AboutMeSection";
@@ -7,6 +8,7 @@ import VKGroupSection from "@/components/sections/VKGroupSection";
 import ContactSection from "@/components/sections/ContactSection";
 import MusicSection from "@/components/sections/MusicSection";
 import DiscordWidget from "@/components/sections/DiscordWidget";
+import TelegramSection from "@/components/sections/TelegramSection";
 import AiCraftSection from "@/components/sections/AiCraftSection";
 import CopyDataSection from "@/components/sections/CopyDataSection";
 import TwitchSection from "@/components/sections/TwitchSection";
@@ -60,6 +62,9 @@ const Index = () => {
         </section>
         <section id="ai-craft-section" className="scroll-mt-20">
           <AiCraftSection />
+        </section>
+        <section id="telegram-section" className="scroll-mt-20">
+          <TelegramSection />
         </section>
         <section id="discord-section" className="scroll-mt-20">
           <DiscordWidget />
