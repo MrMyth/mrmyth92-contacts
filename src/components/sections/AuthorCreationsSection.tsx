@@ -16,7 +16,7 @@ const AuthorCreationsSection = () => {
     },
     {
       id: "wallpapers",
-      name: "Посмотреть как папку",
+      name: "Посмотреть обои на рабочий стол",
       url: "https://1drv.ms/f/c/f81a80f52b9810b8/EhKIJI89qnBKn6l-zIzCLQ4Bb22quWH4Tyq61wMJru_FaQ?e=zT2Hz5",
       bgColor: "bg-[#0178D4] hover:bg-[#0178D4]/90",
       icon: (
