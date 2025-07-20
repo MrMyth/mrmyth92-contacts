@@ -35,7 +35,7 @@ const TwitchSection = () => {
           </div>
           
           {/* Текстовая часть */}
-          <div className="flex-1 px-4 py-2 h-full flex flex-col justify-center">
+          <div className="flex-1 px-4 py-2 h-full flex flex-col justify-center text-left">
             <div className="text-sm font-semibold mb-1">
               Посетить канал
             </div>
