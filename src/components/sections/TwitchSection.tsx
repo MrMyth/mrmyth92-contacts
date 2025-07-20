@@ -27,11 +27,22 @@ const TwitchSection = () => {
           rel="noopener noreferrer"
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
+          className="flex items-center rounded-md overflow-hidden bg-[#9146FF] hover:bg-[#9146FF]/90 text-white min-h-[80px]"
         >
-          <Button className="w-full bg-[#9146FF] hover:bg-[#9146FF]/90 text-white">
-            <Twitch className="mr-2 h-5 w-5" />
-            Посетить канал
-          </Button>
+          {/* Иконка платформы */}
+          <div className="flex items-center justify-center bg-black/20 px-4 h-full min-h-[80px]">
+            <Twitch className="h-8 w-8" />
+          </div>
+          
+          {/* Текстовая часть */}
+          <div className="flex-1 px-4 py-2 h-full flex flex-col justify-center">
+            <div className="text-sm font-semibold mb-1">
+              Посетить канал
+            </div>
+            <div className="text-xs opacity-80">
+              @mrmyth1992
+            </div>
+          </div>
         </motion.a>
       </motion.div>
     </Card>

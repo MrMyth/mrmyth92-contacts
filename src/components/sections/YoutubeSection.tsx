@@ -73,23 +73,46 @@ const YoutubeSection = () => {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
+                className="flex items-center rounded-md overflow-hidden bg-[#FF0000] hover:bg-[#FF0000]/90 text-white min-h-[80px]"
               >
-                <Button className="w-full bg-[#FF0000] hover:bg-[#FF0000]/90 text-white">
-                  <Youtube className="mr-2 h-5 w-5" />
-                  Посетить канал
-                </Button>
+                {/* Иконка платформы */}
+                <div className="flex items-center justify-center bg-black/20 px-4 h-full min-h-[80px]">
+                  <Youtube className="h-8 w-8" />
+                </div>
+                
+                {/* Текстовая часть */}
+                <div className="flex-1 px-4 py-2 h-full flex flex-col justify-center">
+                  <div className="text-sm font-semibold mb-1">
+                    Посетить канал
+                  </div>
+                  <div className="text-xs opacity-80">
+                    @{channel.name}
+                  </div>
+                </div>
               </motion.a>
+              
               <motion.a
                 href={channel.subscribeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
+                className="flex items-center rounded-md overflow-hidden bg-[#FF0000] hover:bg-[#FF0000]/90 text-white min-h-[80px]"
               >
-                <Button className="w-full bg-[#FF0000] hover:bg-[#FF0000]/90 text-white">
-                  <BellPlus className="mr-2 h-5 w-5" />
-                  Подписаться
-                </Button>
+                {/* Иконка платформы */}
+                <div className="flex items-center justify-center bg-black/20 px-4 h-full min-h-[80px]">
+                  <BellPlus className="h-8 w-8" />
+                </div>
+                
+                {/* Текстовая часть */}
+                <div className="flex-1 px-4 py-2 h-full flex flex-col justify-center">
+                  <div className="text-sm font-semibold mb-1">
+                    Подписаться
+                  </div>
+                  <div className="text-xs opacity-80">
+                    @{channel.name}
+                  </div>
+                </div>
               </motion.a>
             </div>
           </motion.div>
