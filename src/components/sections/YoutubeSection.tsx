@@ -86,7 +86,7 @@ const YoutubeSection = () => {
                     Посетить канал
                   </div>
                   <div className="text-xs opacity-80">
-                    @{channel.name}
+                    {channel.url.split('@')[1]}
                   </div>
                 </div>
               </motion.a>
@@ -110,7 +110,7 @@ const YoutubeSection = () => {
                     Подписаться
                   </div>
                   <div className="text-xs opacity-80">
-                    @{channel.name}
+                    @{channel.url.split('@')[1]}
                   </div>
                 </div>
               </motion.a>
