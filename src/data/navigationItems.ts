@@ -6,7 +6,7 @@ export interface NavigationItem {
 
 export const navigationItems: NavigationItem[] = [
   { label: "Обо мне", href: "#about-me-section" },
-  { label: "Ubisoft Connect", href: "#contacts-section" },
+  { label: "Игровые платформы", href: "#contacts-section" },
   { label: "Поддержка проектов", href: "#donation-section" },
   { label: "YouTube", href: "#youtube-section" },
   { label: "Twitch", href: "#twitch-section" },
