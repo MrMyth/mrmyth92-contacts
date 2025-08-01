@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Copy, Gamepad2, Zap, ShoppingCart, Gamepad, Users } from "lucide-react";
+import { Copy, Gamepad2 } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 import { motion } from "framer-motion";
 
@@ -9,10 +9,10 @@ const CopyDataSection = () => {
   const { toast } = useToast();
   
   const gameServices = [
-    { name: "Ubisoft Connect", username: "MrMyth92", isCode: false, icon: Gamepad2 },
-    { name: "EA", username: "MrMyth92", isCode: false, icon: ShoppingCart },
-    { name: "Epic Games", username: "MrMyth1992", isCode: false, icon: Zap },
-    { name: "Steam", username: "882746935", isCode: true, icon: Users }
+    { name: "Ubisoft Connect", username: "MrMyth92", isCode: false, number: 1 },
+    { name: "EA", username: "MrMyth92", isCode: false, number: 2 },
+    { name: "Epic Games", username: "MrMyth1992", isCode: false, number: 3 },
+    { name: "Steam", username: "882746935", isCode: true, number: 4 }
   ];
 
   const handleCopyUsername = (serviceName: string, username: string, isCode: boolean) => {
@@ -41,7 +41,6 @@ const CopyDataSection = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
           {gameServices.map((service, index) => {
-            const IconComponent = service.icon;
             return (
               <motion.div
                 key={service.name}
@@ -52,7 +51,9 @@ const CopyDataSection = () => {
                 className="flex flex-col gap-3 p-4 bg-gray-100 rounded-xl"
               >
                 <div className="flex items-center gap-2">
-                  <IconComponent className="h-5 w-5 text-green-600" />
+                  <div className="flex items-center justify-center w-6 h-6 bg-green-600 text-white rounded-full text-sm font-bold">
+                    {service.number}
+                  </div>
                   <span className="text-lg font-semibold text-gray-900">
                     {service.name} {service.isCode ? "(код дружбы)" : ""}
                   </span>
