@@ -36,7 +36,7 @@ const CopyDataSection = () => {
       >
         <h2 className="text-3xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-blue-500 flex items-center justify-center gap-3">
           <Gamepad2 className="h-8 w-8 text-green-600" />
-          Игровые сервисы
+          Игровые платформы
         </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
