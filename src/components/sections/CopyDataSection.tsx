@@ -9,16 +9,18 @@ const CopyDataSection = () => {
   const { toast } = useToast();
   
   const gameServices = [
-    { name: "Ubisoft Connect", username: "MrMyth92" },
-    { name: "EA", username: "MrMyth92" },
-    { name: "Epic Games", username: "MrMyth1992" }
+    { name: "Ubisoft Connect", username: "MrMyth92", isCode: false },
+    { name: "EA", username: "MrMyth92", isCode: false },
+    { name: "Epic Games", username: "MrMyth1992", isCode: false },
+    { name: "Steam", username: "882746935", isCode: true }
   ];
 
-  const handleCopyUsername = (serviceName: string, username: string) => {
+  const handleCopyUsername = (serviceName: string, username: string, isCode: boolean) => {
     navigator.clipboard.writeText(username);
+    const type = isCode ? "код дружбы" : "имя";
     toast({
-      title: `${serviceName} имя скопировано`,
-      description: `Имя ${serviceName} было скопировано в буфер обмена`,
+      title: `${serviceName} ${type} скопировано`,
+      description: `${type.charAt(0).toUpperCase() + type.slice(1)} ${serviceName} было скопировано в буфер обмена`,
       duration: 2000,
     });
   };
@@ -48,10 +50,10 @@ const CopyDataSection = () => {
               className="flex flex-col sm:flex-row gap-4 items-center justify-center p-4 bg-gray-100 rounded-xl"
             >
               <p className="text-xl font-medium text-gray-900">
-                <span className="text-gray-600">{service.name}:</span> <span className="font-mono text-green-600">{service.username}</span>
+                <span className="text-gray-600">{service.name} {service.isCode ? "(код дружбы)" : ""}:</span> <span className="font-mono text-green-600">{service.username}</span>
               </p>
               <Button
-                onClick={() => handleCopyUsername(service.name, service.username)}
+                onClick={() => handleCopyUsername(service.name, service.username, service.isCode)}
                 className="bg-green-600 hover:bg-green-700 text-white"
               >
                 <Copy className="mr-2 h-4 w-4" />
