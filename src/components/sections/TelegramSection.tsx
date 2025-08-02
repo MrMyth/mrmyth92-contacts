@@ -83,6 +83,37 @@ const TelegramSection = () => {
               </div>
             </motion.a>
           ))}
+          
+          {/* Дополнительная кнопка скачивания */}
+          <motion.a
+            href="https://telegram.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            viewport={{ once: true }}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="flex items-center rounded-md overflow-hidden bg-gray-600 hover:bg-gray-600/90 text-white min-h-[80px]"
+          >
+            {/* Иконка платформы */}
+            <div className="flex items-center justify-center bg-black/20 px-4 h-full min-h-[80px]">
+              <svg className="h-8 w-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 0C5.373 0 0 5.373 0 12C0 18.627 5.373 24 12 24C18.627 24 24 18.627 24 12C24 5.373 18.627 0 12 0ZM17.855 8.212L15.87 17.176C15.725 17.764 15.389 17.904 14.898 17.635L11.893 15.409L10.45 16.793C10.295 16.948 10.164 17.079 9.862 17.079L10.068 14.024L15.615 9.038C15.852 8.827 15.565 8.709 15.256 8.921L8.51 13.292L5.55 12.401C4.973 12.22 4.961 11.845 5.669 11.562L17.021 7.166C17.502 6.993 17.916 7.274 17.855 8.212Z" fill="currentColor"/>
+              </svg>
+            </div>
+            
+            {/* Текстовая часть */}
+            <div className="flex-1 px-4 py-2 h-full flex flex-col justify-center">
+              <div className="text-sm font-semibold mb-1">
+                Дополнительно: скачать Telegram
+              </div>
+              <div className="text-xs opacity-80">
+                telegram.org
+              </div>
+            </div>
+          </motion.a>
         </div>
       </motion.div>
     </Card>
