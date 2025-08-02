@@ -117,6 +117,22 @@ const AboutMeSection = () => {
                 </p>
               </div>
             </motion.div>
+
+            {/* Второе уведомление */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+              viewport={{ once: true }}
+              className="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r"
+            >
+              <div className="flex items-start">
+                <AlertCircle className="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" />
+                <p className="text-blue-700">
+                  Для вашего удобства на сайте также есть кнопки на официальные сайты Telegram, WhatsApp и Discord. Это сделано для того, что вам не пришлось искать сайты этих программ.
+                </p>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
         
