@@ -75,7 +75,7 @@ const DiscordWidget = () => {
         }} viewport={{
           once: true
         }} className="space-y-4">
-            <h3 className="text-xl font-semibold text-gray-900">Виджет Discord сервера "From Russia"</h3>
+            <h3 className="text-xl font-semibold text-gray-900">Виджет Discord сервера "From Russia".</h3>
             <iframe src="https://discord.com/widget?id=835802952521351180&theme=light" width="100%" height="500" allowTransparency={true} frameBorder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts" className="rounded-xl border-2 border-purple-500/20 shadow-lg" title="Discord Widget" loading="lazy"></iframe>
           </motion.div>
 
