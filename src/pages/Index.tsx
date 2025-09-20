@@ -46,8 +46,8 @@ const Index = () => {
         <section id="contact-section" className="scroll-mt-20">
           <ContactSection />
         </section>
-        <section id="contacts-section" className="scroll-mt-20">
-          <CopyDataSection />
+        <section id="vk-section" className="scroll-mt-20">
+          <VKGroupSection />
         </section>
         <section id="discord-section" className="scroll-mt-20">
           <DiscordWidget />
@@ -58,8 +58,8 @@ const Index = () => {
         <section id="twitch-section" className="scroll-mt-20">
           <TwitchSection />
         </section>
-        <section id="vk-section" className="scroll-mt-20">
-          <VKGroupSection />
+        <section id="contacts-section" className="scroll-mt-20">
+          <CopyDataSection />
         </section>
         <section id="donation-section" className="scroll-mt-20">
           <DonationSection />
