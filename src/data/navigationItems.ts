@@ -7,12 +7,12 @@ export interface NavigationItem {
 export const navigationItems: NavigationItem[] = [
   { label: "Обо мне", href: "#about-me-section" },
   { label: "Telegram", href: "#telegram-section" },
-  { label: "Контакты", href: "#contact-section" },
   { label: "VK", href: "#vk-section" },
+  { label: "Контакты", href: "#contact-section" },
   { label: "Discord", href: "#discord-section" },
   { label: "YouTube", href: "#youtube-section" },
   { label: "Twitch", href: "#twitch-section" },
   { label: "Игровые платформы", href: "#contacts-section" },
-  { label: "Поддержка проектов", href: "#donation-section" },
   { label: "Создано автором", href: "#author-creations-section" },
+  { label: "Поддержка проектов", href: "#donation-section" },
 ];

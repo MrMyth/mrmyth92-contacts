@@ -97,6 +97,11 @@ const DiscordWidget = () => {
                 <p className="text-gray-700">Чтобы зайти на сервер нажмите на &quot;Зайти на сервер&quot;. Если приглашение не сработало, то используйте кнопку &quot;Join Discord&quot; в правом нижнем углу виджета. Если у вас проблемы с Discord, то как альтернативу вы можете использовать Telegram или VK группы из прошлых разделов.</p>
               </div>
             </div>
+
+            <div className="p-4 rounded-xl bg-blue-50 border-l-4 border-blue-500">
+              <h4 className="font-bold text-blue-900 mb-1">Основная игра сервера:</h4>
+              <p className="text-blue-800">Tom Clancy's The Division 2</p>
+            </div>
             
             <div className="grid gap-3">
               {socialLinks.map((link, index) => <motion.a key={index} href={link.url} target="_blank" rel="noopener noreferrer" whileHover={{
