@@ -95,21 +95,14 @@ const DiscordWidget = () => {
               <h3 className="text-xl font-semibold text-gray-900">Как присоединиться к серверу?</h3>
               <div className="p-4 rounded-xl bg-gray-100">
                 <p className="text-gray-700">Чтобы зайти на сервер нажмите на &quot;Зайти на сервер&quot;. Если приглашение не сработало, то используйте кнопку &quot;Join Discord&quot; в правом нижнем углу виджета. Если у вас проблемы с Discord, то как альтернативу вы можете использовать Telegram или VK группы из прошлых разделов.</p>
-                <p className="text-gray-700 mt-3"><span className="font-bold">Основная игра сервера:</span><br />Tom Clancy's The Division 2</p>
               </div>
             </div>
-            
-            <div className="grid gap-3">
-              {socialLinks.map((link, index) => <motion.a key={index} href={link.url} target="_blank" rel="noopener noreferrer" whileHover={{
-              scale: 1.02
-            }} whileTap={{
-              scale: 0.98
-            }}>
-                  <Button className={`w-full ${link.bgColor} text-white`}>
-                    {link.icon}
-                    {link.name}
-                  </Button>
-                </motion.a>)}
+
+            <div className="space-y-2">
+              <h3 className="text-xl font-semibold text-gray-900">Основная игра сервера:</h3>
+              <div className="p-4 rounded-xl bg-gray-100">
+                <p className="text-gray-700">Tom Clancy's The Division 2</p>
+              </div>
             </div>
 
             {/* Discord username */}
@@ -125,6 +118,19 @@ const DiscordWidget = () => {
                 Копировать
               </Button>
             </motion.div>
+            
+            <div className="grid gap-3">
+              {socialLinks.map((link, index) => <motion.a key={index} href={link.url} target="_blank" rel="noopener noreferrer" whileHover={{
+              scale: 1.02
+            }} whileTap={{
+              scale: 0.98
+            }}>
+                  <Button className={`w-full ${link.bgColor} text-white`}>
+                    {link.icon}
+                    {link.name}
+                  </Button>
+                </motion.a>)}
+            </div>
           </motion.div>
         </div>
       </motion.div>
