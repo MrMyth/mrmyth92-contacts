@@ -40,11 +40,17 @@ const Index = () => {
         <section id="about-me-section" className="scroll-mt-20">
           <AboutMeSection />
         </section>
+        <section id="telegram-section" className="scroll-mt-20">
+          <TelegramSection />
+        </section>
+        <section id="contact-section" className="scroll-mt-20">
+          <ContactSection />
+        </section>
         <section id="contacts-section" className="scroll-mt-20">
           <CopyDataSection />
         </section>
-        <section id="donation-section" className="scroll-mt-20">
-          <DonationSection />
+        <section id="discord-section" className="scroll-mt-20">
+          <DiscordWidget />
         </section>
         <section id="youtube-section" className="scroll-mt-20">
           <YoutubeSection />
@@ -55,14 +61,8 @@ const Index = () => {
         <section id="vk-section" className="scroll-mt-20">
           <VKGroupSection />
         </section>
-        <section id="telegram-section" className="scroll-mt-20">
-          <TelegramSection />
-        </section>
-        <section id="discord-section" className="scroll-mt-20">
-          <DiscordWidget />
-        </section>
-        <section id="contact-section" className="scroll-mt-20">
-          <ContactSection />
+        <section id="donation-section" className="scroll-mt-20">
+          <DonationSection />
         </section>
         <section id="author-creations-section" className="scroll-mt-20">
           <AuthorCreationsSection />
