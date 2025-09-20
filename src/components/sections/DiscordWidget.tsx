@@ -95,12 +95,8 @@ const DiscordWidget = () => {
               <h3 className="text-xl font-semibold text-gray-900">Как присоединиться к серверу?</h3>
               <div className="p-4 rounded-xl bg-gray-100">
                 <p className="text-gray-700">Чтобы зайти на сервер нажмите на &quot;Зайти на сервер&quot;. Если приглашение не сработало, то используйте кнопку &quot;Join Discord&quot; в правом нижнем углу виджета. Если у вас проблемы с Discord, то как альтернативу вы можете использовать Telegram или VK группы из прошлых разделов.</p>
+                <p className="text-gray-700 mt-3"><span className="font-bold">Основная игра сервера:</span><br />Tom Clancy's The Division 2</p>
               </div>
-            </div>
-
-            <div className="p-4 rounded-xl bg-blue-50 border-l-4 border-blue-500">
-              <h4 className="font-bold text-blue-900 mb-1">Основная игра сервера:</h4>
-              <p className="text-blue-800">Tom Clancy's The Division 2</p>
             </div>
             
             <div className="grid gap-3">
