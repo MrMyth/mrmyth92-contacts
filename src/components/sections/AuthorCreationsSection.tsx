@@ -10,7 +10,7 @@ const AuthorCreationsSection = () => {
     {
       id: "music",
       name: "Послушать музыку",
-      url: "https://disk.yandex.ru/d/CsRGP5m9_T_XKg",
+      url: "https://cloud.mail.ru/public/GX41/ugHEsFC2t",
       bgColor: "bg-orange-500 hover:bg-orange-600",
       icon: <Music className="mr-2 h-5 w-5" />
     },
