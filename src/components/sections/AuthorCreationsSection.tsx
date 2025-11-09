@@ -10,7 +10,7 @@ const AuthorCreationsSection = () => {
     id: "creative-works",
     name: "Посмотреть творческие работы",
     url: "https://cloud.mail.ru/public/tGzv/8rv5WXPWv",
-    bgColor: "bg-gradient-to-r from-orange-500 to-blue-500 hover:from-orange-600 hover:to-blue-600",
+    bgColor: "bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700",
     icon: (
       <>
         <Music className="mr-2 h-5 w-5" />
