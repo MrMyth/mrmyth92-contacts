@@ -10,6 +10,7 @@ import TelegramSection from "@/components/sections/TelegramSection";
 import CopyDataSection from "@/components/sections/CopyDataSection";
 import TwitchSection from "@/components/sections/TwitchSection";
 import AuthorCreationsSection from "@/components/sections/AuthorCreationsSection";
+import StreamRulesLink from "@/components/sections/StreamRulesLink";
 import Footer from "@/components/Footer";
 import NavigationMenu from "@/components/NavigationMenu";
 
@@ -66,6 +67,9 @@ const Index = () => {
         </section>
         <section id="donation-section" className="scroll-mt-20">
           <DonationSection />
+        </section>
+        <section id="stream-rules-link" className="scroll-mt-20 mt-8">
+          <StreamRulesLink />
         </section>
       </main>
       <Footer />
