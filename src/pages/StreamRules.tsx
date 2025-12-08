@@ -1,9 +1,11 @@
 import React from "react";
-import { Gamepad2, Volume2, Palette, MessageCircle, ArrowLeft } from "lucide-react";
+import { Gamepad2, Volume2, Palette, MessageCircle, ArrowLeft, Info } from "lucide-react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import NavigationMenu from "@/components/NavigationMenu";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 
 const rules = [
   {
@@ -45,40 +47,59 @@ const StreamRules = () => {
             </Button>
           </Link>
           
-          <h1 className="text-3xl md:text-4xl font-bold text-center mb-4 text-primary">
-            Правила стрима
-          </h1>
-          <p className="text-center text-muted-foreground mb-10">
-            Важная информация для зрителей моих трансляций
-          </p>
-          
-          <div className="grid gap-6">
-            {rules.map((rule, index) => (
-              <div 
-                key={rule.id}
-                className="bg-card border border-border rounded-xl p-6 shadow-lg card-hover-effect"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center">
-                    <rule.icon className="h-6 w-6 text-white" />
-                  </div>
-                  <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-2">
-                      <span className="text-sm font-medium text-muted-foreground">
-                        #{index + 1}
-                      </span>
-                      <h2 className="text-xl font-semibold text-foreground">
-                        {rule.title}
-                      </h2>
+          <Card className="p-8 mb-8 border-0 shadow-lg bg-gradient-to-br from-gray-50 to-white">
+            <motion.h1 
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="text-3xl font-bold mb-2 text-center text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-blue-500 flex items-center justify-center gap-3"
+            >
+              <Info className="h-8 w-8 text-green-600" />
+              Информация для зрителей
+            </motion.h1>
+            <motion.p 
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="text-center text-muted-foreground mb-10"
+            >
+              Важная информация о моих трансляциях
+            </motion.p>
+            
+            <div className="grid gap-6">
+              {rules.map((rule, index) => (
+                <motion.div 
+                  key={rule.id}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-card border border-border rounded-xl p-6 shadow-md card-hover-effect"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center">
+                      <rule.icon className="h-6 w-6 text-white" />
                     </div>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {rule.description}
-                    </p>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-3 mb-2">
+                        <span className="text-sm font-medium text-muted-foreground">
+                          #{index + 1}
+                        </span>
+                        <h2 className="text-xl font-semibold text-foreground">
+                          {rule.title}
+                        </h2>
+                      </div>
+                      <p className="text-muted-foreground leading-relaxed">
+                        {rule.description}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              </div>
-            ))}
-          </div>
+                </motion.div>
+              ))}
+            </div>
+          </Card>
         </div>
       </main>
       <Footer />
