@@ -1,5 +1,5 @@
 import React from "react";
-import { Gamepad2, Volume2, Palette, MessageCircle, ArrowLeft, Info } from "lucide-react";
+import { Gamepad2, Volume2, Palette, MessageCircle, ArrowLeft, Info, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import NavigationMenu from "@/components/NavigationMenu";
@@ -31,6 +31,12 @@ const rules = [
     icon: MessageCircle,
     title: "Общение в чате",
     description: "Пожалуйста, общайтесь со мной и другими зрителями в чате. Это поможет мне получить статус «Компаньона» Twitch."
+  },
+  {
+    id: 5,
+    icon: Clock,
+    title: "Время запуска стримов (МСК)",
+    description: "В период между 15 и 16 часами, либо около 20 часов. Пока что без привязки ко дню недели."
   }
 ];
 
