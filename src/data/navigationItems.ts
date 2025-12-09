@@ -14,5 +14,6 @@ export const navigationItems: NavigationItem[] = [
   { label: "Twitch", href: "#twitch-section" },
   { label: "Игровые платформы", href: "#contacts-section" },
   { label: "Создано автором", href: "#author-creations-section" },
+  { label: "Информация для зрителей", href: "/stream-rules" },
   { label: "Поддержка проектов", href: "#donation-section" },
 ];
