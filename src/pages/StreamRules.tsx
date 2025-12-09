@@ -219,6 +219,22 @@ const StreamRules = () => {
               ))}
             </div>
           </Card>
+
+          {/* Кнопка возврата внизу */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="flex justify-center mt-8"
+          >
+            <Link to="/">
+              <Button variant="outline" className="gap-2">
+                <ArrowLeft className="h-4 w-4" />
+                Вернуться на главную
+              </Button>
+            </Link>
+          </motion.div>
         </div>
       </main>
       <Footer />
