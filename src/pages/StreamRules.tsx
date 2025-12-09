@@ -1,11 +1,12 @@
-import React from "react";
-import { Gamepad2, Volume2, Palette, MessageCircle, ArrowLeft, Info, Clock, Heart, Terminal } from "lucide-react";
+import React, { useState } from "react";
+import { Gamepad2, Volume2, Palette, MessageCircle, ArrowLeft, Info, Clock, Heart, Terminal, Copy, Check } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import NavigationMenu from "@/components/NavigationMenu";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { toast } from "sonner";
 
 const rules = [
   {
@@ -54,6 +55,19 @@ const chatCommands = [
 ];
 
 const StreamRules = () => {
+  const [copiedCommand, setCopiedCommand] = useState<string | null>(null);
+
+  const copyToClipboard = async (command: string) => {
+    try {
+      await navigator.clipboard.writeText(command);
+      setCopiedCommand(command);
+      toast.success("Команда скопирована!");
+      setTimeout(() => setCopiedCommand(null), 2000);
+    } catch (err) {
+      toast.error("Не удалось скопировать");
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <NavigationMenu />
@@ -150,14 +164,29 @@ const StreamRules = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.3, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="flex items-center gap-4 bg-card border border-border rounded-lg p-4 shadow-sm"
+                  className="flex items-center justify-between gap-4 bg-card border border-border rounded-lg p-4 shadow-sm"
                 >
-                  <code className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-3 py-1 rounded-md font-mono text-sm font-semibold">
-                    {cmd.command}
-                  </code>
-                  <span className="text-muted-foreground">
-                    {cmd.description}
-                  </span>
+                  <div className="flex items-center gap-4">
+                    <code className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-3 py-1 rounded-md font-mono text-sm font-semibold">
+                      {cmd.command}
+                    </code>
+                    <span className="text-muted-foreground">
+                      {cmd.description}
+                    </span>
+                  </div>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => copyToClipboard(cmd.command)}
+                    className="flex-shrink-0 gap-2"
+                  >
+                    {copiedCommand === cmd.command ? (
+                      <Check className="h-4 w-4 text-green-500" />
+                    ) : (
+                      <Copy className="h-4 w-4" />
+                    )}
+                    {copiedCommand === cmd.command ? "Скопировано" : "Копировать"}
+                  </Button>
                 </motion.div>
               ))}
             </div>
