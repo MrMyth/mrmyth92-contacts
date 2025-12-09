@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Gamepad2, Volume2, Palette, MessageCircle, ArrowLeft, Info, Clock, Heart, Terminal, Copy, Check } from "lucide-react";
+import { Gamepad2, Volume2, Palette, MessageCircle, ArrowLeft, Info, Clock, Heart, Terminal, Copy, Check, Target } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import NavigationMenu from "@/components/NavigationMenu";
@@ -132,6 +132,34 @@ const StreamRules = () => {
                 </motion.div>
               ))}
             </div>
+          </Card>
+
+          {/* Цель текущего сбора */}
+          <Card className="p-8 mb-8 border-0 shadow-lg bg-gradient-to-br from-amber-50 to-orange-50">
+            <motion.h2 
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="text-3xl font-bold mb-2 text-center text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-500 flex items-center justify-center gap-3"
+            >
+              <Target className="h-8 w-8 text-amber-600" />
+              Цель текущего сбора
+            </motion.h2>
+            <motion.div 
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="bg-card border border-amber-200 rounded-xl p-6 shadow-md"
+            >
+              <div className="text-center">
+                <p className="text-4xl font-bold text-amber-600 mb-4">25 000 ₽</p>
+                <p className="text-muted-foreground leading-relaxed">
+                  Нужно на доступ к серверному железу для работы с более крутыми нейросетями.
+                </p>
+              </div>
+            </motion.div>
           </Card>
 
           {/* Команды для чата */}
