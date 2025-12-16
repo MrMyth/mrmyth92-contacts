@@ -212,7 +212,7 @@ const StreamRules = () => {
               className="bg-card border border-amber-200 rounded-xl p-6 shadow-md"
             >
               <div className="text-center">
-                <p className="text-4xl font-bold text-amber-600 mb-4">25 000 ₽</p>
+                <p className="text-4xl font-bold text-amber-600 mb-4">30 000 ₽</p>
                 <p className="text-muted-foreground leading-relaxed">
                   Нужно на доступ к серверному железу для работы с более крутыми нейросетями.
                 </p>
