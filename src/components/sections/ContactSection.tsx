@@ -42,7 +42,6 @@ const ContactSection = () => {
           </svg>
           Контакты
         </h2>
-        <p className="text-center text-gray-600 mb-6">Свяжитесь со мной удобным способом</p>
         
         {/* Контакты */}
         <div className="grid grid-cols-1 gap-4">
