@@ -13,7 +13,6 @@ import AuthorCreationsSection from "@/components/sections/AuthorCreationsSection
 import StreamRulesLink from "@/components/sections/StreamRulesLink";
 import Footer from "@/components/Footer";
 import NavigationMenu from "@/components/NavigationMenu";
-
 const Index = () => {
   // Обрабатываем начальную прокрутку к хэшу при загрузке страницы
   useEffect(() => {
@@ -22,19 +21,19 @@ const Index = () => {
       if (window.location.hash) {
         const element = document.querySelector(window.location.hash);
         if (element) {
-          element.scrollIntoView({ behavior: "smooth" });
+          element.scrollIntoView({
+            behavior: "smooth"
+          });
         }
       }
     };
-    
+
     // Небольшая задержка для гарантии полной загрузки компонентов
     setTimeout(handleInitialScroll, 100);
   }, []);
-
-  return (
-    <div className="min-h-screen bg-white text-black">
+  return <div className="min-h-screen bg-white text-black">
       <div className="bg-gradient-to-r from-green-600 to-green-700 text-white text-center py-2 px-4">
-        <span className="font-bold text-lg">MrMyth92Dmitry Starchikov</span>
+        <span className="font-bold text-lg">MrMyth92 Dmitry Starchikov</span>
       </div>
       <NavigationMenu />
       <main className="container px-4 py-8 mx-auto">
@@ -76,8 +75,6 @@ const Index = () => {
         </section>
       </main>
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
