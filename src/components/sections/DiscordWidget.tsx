@@ -77,7 +77,9 @@ const DiscordWidget = () => {
         }} className="space-y-4">
             <h3 className="text-xl font-semibold text-gray-900">Виджет Discord сервера "From Russia".</h3>
             <iframe src="https://discord.com/widget?id=835802952521351180&theme=light" width="100%" height="500" allowTransparency={true} frameBorder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts" className="rounded-xl border-2 border-purple-500/20 shadow-lg" title="Discord Widget" loading="lazy"></iframe>
-            <p className="text-red-600 font-bold text-sm mt-2">Если виджет не загрузился, значит у вас заблокирован Discord.</p>
+            <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 mt-3">
+              <p className="text-sm font-semibold text-amber-700">⚠️ Если виджет не загрузился, значит у вас заблокирован Discord.</p>
+            </div>
           </motion.div>
 
           {/* Links */}
