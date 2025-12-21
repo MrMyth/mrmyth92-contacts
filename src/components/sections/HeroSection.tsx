@@ -89,10 +89,13 @@ const HeroSection: React.FC = () => {
           Геймер, стример, создатель контента
         </motion.p>
         
-        <p className="text-sm text-gray-500 dark:text-gray-400 italic mb-2">
+        <p className="text-sm text-gray-500 dark:text-gray-400 italic mb-4">
           Все изображения в шапке сайта созданы мной и отражают игры, в которые я сейчас играю.
         </p>
-        <p className="text-sm font-bold text-red-500 dark:text-red-400 block">Информация на сайте обновлена: 01.08.2025, 13:15 (по Москве)</p>
+        
+        <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 max-w-xl mx-auto">
+          <p className="text-sm font-semibold text-amber-700">⚠️ Информация на сайте обновлена: 01.08.2025, 13:15 (по Москве)</p>
+        </div>
       </div>
     </section>;
 };

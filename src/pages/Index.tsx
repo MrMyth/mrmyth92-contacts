@@ -33,6 +33,9 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-white text-black">
+      <div className="bg-gradient-to-r from-green-600 to-green-700 text-white text-center py-2 px-4">
+        <span className="font-bold text-lg">MrMyth92Dmitry Starchikov</span>
+      </div>
       <NavigationMenu />
       <main className="container px-4 py-8 mx-auto">
         <section id="hero-section" className="scroll-mt-20">
