@@ -30,8 +30,7 @@ const BrandLogo: React.FC<BrandLogoProps> = React.memo(({ onClick }) => {
         }
       }}
     >
-      <span>MrMyth92</span>
-      <span>Dmitry Starchikov</span>
+      <span>🏠</span>
     </motion.div>
   );
 });
