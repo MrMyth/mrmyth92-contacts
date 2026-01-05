@@ -4,35 +4,37 @@ import { Card } from "@/components/ui/card";
 import { DollarSign, Gift, Copy } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const DonationSection = () => {
   const { toast } = useToast();
+  const { t } = useLanguage();
   const cardNumber = "2202200321251892";
 
   const handleCopyCard = () => {
     navigator.clipboard.writeText(cardNumber);
     toast({
-      title: "Номер карты скопирован",
-      description: "Номер карты скопирован в буфер обмена!",
+      title: t.donations.cardCopied,
+      description: t.donations.cardCopiedDesc,
       duration: 2000,
     });
   };
 
   const donationMethods = [
     {
-      name: "Поддержать на Boosty",
+      name: t.donations.boosty,
       url: "https://boosty.to/mrmyth92_ds/",
       icon: <Gift className="h-5 w-5" />,
       color: "bg-[#F15B3D] hover:bg-[#F15B3D]/90"
     },
     {
-      name: "Поддержать через Donate.stream",
+      name: t.donations.donateStream,
       url: "https://donate.stream/mrmyth92",
       icon: <Gift className="h-5 w-5" />,
       color: "bg-[#6366F1] hover:bg-[#6366F1]/90"
     },
     {
-      name: "Поддержать через Юмани",
+      name: t.donations.yoomoney,
       url: "https://yoomoney.ru/to/4100118249151359",
       icon: <Gift className="h-5 w-5" />,
       color: "bg-[#F59E0B] hover:bg-[#F59E0B]/90"
@@ -49,10 +51,10 @@ const DonationSection = () => {
       >
         <h2 className="text-3xl font-bold mb-2 text-center text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-blue-500 flex items-center justify-center gap-3">
           <Gift className="h-8 w-8 text-green-600" />
-          Прием пожертвований
+          {t.donations.title}
         </h2>
         <p className="text-center text-gray-600 mb-8">
-          Все способы, с помощью которых вы можете поддержать любой мой проект
+          {t.donations.subtitle}
         </p>
         
         {/* Bank Card */}
@@ -64,14 +66,14 @@ const DonationSection = () => {
           className="flex flex-col sm:flex-row gap-4 items-center justify-center mb-8 p-4 bg-gray-100 rounded-xl"
         >
           <p className="text-xl font-medium text-gray-900">
-            Номер карты: <span className="font-mono text-green-600">{cardNumber}</span>
+            {t.donations.cardNumber} <span className="font-mono text-green-600">{cardNumber}</span>
           </p>
           <Button
             onClick={handleCopyCard}
             className="bg-green-600 hover:bg-green-700 text-white"
           >
             <Copy className="mr-2 h-4 w-4" />
-            Копировать номер
+            {t.donations.copyNumber}
           </Button>
         </motion.div>
         

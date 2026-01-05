@@ -2,6 +2,7 @@ import React from "react";
 import { Card } from "@/components/ui/card";
 import { User, Gamepad2, Youtube, Twitch, Disc3, Paintbrush, AlertCircle } from "lucide-react";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 type BiographyItemProps = {
   label: string;
@@ -38,27 +39,21 @@ const SkillItem: React.FC<{ children: React.ReactNode }> = ({ children }) => (
 );
 
 const AboutMeSection = () => {
+  const { t } = useLanguage();
+  
   const biographyItems = [
     { 
       id: "name", 
-      label: "ФИО:", 
-      value: "Старчиков Дмитрий Олегович.",
+      label: t.about.fullName, 
+      value: t.about.fullNameValue,
       icon: <User className="h-4 w-4" />
     },
     { 
       id: "birthdate", 
-      label: "Дата рождения:", 
-      value: "11 сентября 1992 года.",
+      label: t.about.birthDate, 
+      value: t.about.birthDateValue,
       icon: <Disc3 className="h-4 w-4" />
     }
-  ];
-
-  const skills = [
-    "Я инвалид первой группы из-за врожденного заболевания. Но я веду активный образ жизни. Люблю компьютерные игры и все что, связано с ПК. Веду два Youtube канала по франшизам The Division & Assassin's Creed.",
-    "Игры обеих франшиз я стримлю на один Twitch канал.",
-    "Дополнительно все это зеркалится в мою группу в VK.",
-    "Профессиональная настройка Discord серверов.",
-    "Профессиональная работа в графических нейросетях, создание собственных изображений."
   ];
 
   return (
@@ -71,7 +66,7 @@ const AboutMeSection = () => {
         className="text-3xl font-bold mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-blue-500 flex items-center justify-center gap-3"
       >
         <User className="h-8 w-8 text-green-600" />
-        Немного обо мне
+        {t.about.title}
       </motion.h2>
       
       <div className="flex flex-col lg:flex-row gap-8 items-center">
@@ -94,10 +89,10 @@ const AboutMeSection = () => {
           >
             <h3 className="text-xl font-semibold text-gray-900 flex items-center gap-2">
               <Paintbrush className="h-5 w-5 text-green-600" />
-              Мои навыки и увлечения:
+              {t.about.skillsTitle}
             </h3>
             <div className="space-y-3 pl-2">
-              {skills.map((skill, index) => (
+              {t.about.skills.map((skill, index) => (
                 <SkillItem key={index}>{skill}</SkillItem>
               ))}
             </div>
@@ -113,7 +108,7 @@ const AboutMeSection = () => {
               <div className="flex items-start">
                 <AlertCircle className="h-5 w-5 text-yellow-500 mr-2 mt-0.5 flex-shrink-0" />
                 <p className="text-yellow-700">
-                  В России сейчас много чего работает со сбоями, поэтому я предлагаю вам 3 платформы на ваш выбор. Выбирайте ту, что удобна вам, но не забудьте подписаться! Спасибо.
+                  {t.about.warning1}
                 </p>
               </div>
             </motion.div>
@@ -129,7 +124,7 @@ const AboutMeSection = () => {
               <div className="flex items-start">
                 <AlertCircle className="h-5 w-5 text-yellow-500 mr-2 mt-0.5 flex-shrink-0" />
                 <p className="text-yellow-700">
-                  Для вашего удобства на сайте также есть кнопки на официальные сайты Telegram, WhatsApp и Discord. Это сделано для того, что вам не пришлось искать сайты этих программ.
+                  {t.about.warning2}
                 </p>
               </div>
             </motion.div>
@@ -145,7 +140,7 @@ const AboutMeSection = () => {
         >
           <img 
             src="https://i.postimg.cc/zBL6c5K3/my-ava.jpg" 
-            alt="Дмитрий Старчиков" 
+            alt={t.about.photoAlt} 
             className="rounded-xl shadow-xl w-64 h-64 md:w-80 md:h-80 object-cover border-4 border-green-500/20" 
             loading="lazy" 
           />

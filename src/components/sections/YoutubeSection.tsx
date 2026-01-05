@@ -3,21 +3,24 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Youtube, BellPlus } from "lucide-react";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const YoutubeSection = () => {
+  const { t } = useLanguage();
+  
   const channels = [
     {
       name: "The Division",
       url: "https://www.youtube.com/@MrMyth92_TC",
       subscribeUrl: "https://www.youtube.com/@MrMyth92_TC?sub_confirmation=1",
-      description: "Мой Youtube канал по франшизе The Division",
+      description: t.youtube.divisionDesc,
       imageUrl: "https://i.postimg.cc/rpHYWb3T/thedivision2-icon1-1-1.png"
     },
     {
       name: "Assassin's Creed",
       url: "https://www.youtube.com/@MrMyth92_AC",
       subscribeUrl: "https://www.youtube.com/@MrMyth92_AC?sub_confirmation=1",
-      description: "Мой Youtube канал по франшизе Assassin's Creed",
+      description: t.youtube.acDesc,
       imageUrl: "https://i.postimg.cc/qqVbDKpZ/ACS.png"
     }
   ];
@@ -32,9 +35,9 @@ const YoutubeSection = () => {
       >
         <h2 className="text-3xl font-bold mb-2 text-center text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-blue-500 flex items-center justify-center gap-3">
           <Youtube className="h-8 w-8 text-[#FF0000]" />
-          YouTube каналы
+          {t.youtube.title}
         </h2>
-        <p className="text-center text-gray-600 mb-6">Мои Youtube каналы</p>
+        <p className="text-center text-gray-600 mb-6">{t.youtube.subtitle}</p>
         
         {channels.map((channel, index) => (
           <motion.div
@@ -75,15 +78,12 @@ const YoutubeSection = () => {
                 whileTap={{ scale: 0.98 }}
                 className="flex items-center rounded-md overflow-hidden bg-[#FF0000] hover:bg-[#FF0000]/90 text-white min-h-[80px]"
               >
-                {/* Иконка платформы */}
                 <div className="flex items-center justify-center bg-black/20 px-4 h-full min-h-[80px]">
                   <Youtube className="h-8 w-8" />
                 </div>
-                
-                {/* Текстовая часть */}
                 <div className="flex-1 px-4 py-2 h-full flex flex-col justify-center">
                   <div className="text-sm font-semibold mb-1">
-                    Посетить канал
+                    {t.youtube.visitChannel}
                   </div>
                   <div className="text-xs opacity-80">
                     {channel.url.split('@')[1]}
@@ -99,15 +99,12 @@ const YoutubeSection = () => {
                 whileTap={{ scale: 0.98 }}
                 className="flex items-center rounded-md overflow-hidden bg-[#FF0000] hover:bg-[#FF0000]/90 text-white min-h-[80px]"
               >
-                {/* Иконка платформы */}
                 <div className="flex items-center justify-center bg-black/20 px-4 h-full min-h-[80px]">
                   <BellPlus className="h-8 w-8" />
                 </div>
-                
-                {/* Текстовая часть */}
                 <div className="flex-1 px-4 py-2 h-full flex flex-col justify-center">
                   <div className="text-sm font-semibold mb-1">
-                    Подписаться
+                    {t.youtube.subscribe}
                   </div>
                   <div className="text-xs opacity-80">
                     @{channel.url.split('@')[1]}

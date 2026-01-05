@@ -4,9 +4,11 @@ import { Card } from "@/components/ui/card";
 import { Copy, Gamepad2 } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const CopyDataSection = () => {
   const { toast } = useToast();
+  const { t } = useLanguage();
   
   const gameServices = [
     { name: "Ubisoft Connect", username: "MrMyth92", isCode: false, number: 1 },
@@ -17,10 +19,10 @@ const CopyDataSection = () => {
 
   const handleCopyUsername = (serviceName: string, username: string, isCode: boolean) => {
     navigator.clipboard.writeText(username);
-    const type = isCode ? "код дружбы" : "имя";
+    const type = isCode ? t.gaming.codeCopied : t.gaming.nameCopied;
     toast({
-      title: `${serviceName} ${type} скопировано`,
-      description: `${type.charAt(0).toUpperCase() + type.slice(1)} ${serviceName} было скопировано в буфер обмена`,
+      title: `${serviceName} ${type}`,
+      description: `${serviceName} ${t.gaming.copiedToClipboard}`,
       duration: 2000,
     });
   };
@@ -36,7 +38,7 @@ const CopyDataSection = () => {
       >
         <h2 className="text-3xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-blue-500 flex items-center justify-center gap-3">
           <Gamepad2 className="h-8 w-8 text-green-600" />
-          Игровые платформы
+          {t.gaming.title}
         </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
@@ -55,7 +57,7 @@ const CopyDataSection = () => {
                     {service.number}
                   </div>
                   <span className="text-lg font-semibold text-gray-900">
-                    {service.name} {service.isCode ? "(код дружбы)" : ""}
+                    {service.name} {service.isCode ? t.gaming.friendCode : ""}
                   </span>
                 </div>
                 <p className="text-base font-mono text-green-600 break-all">
@@ -67,7 +69,7 @@ const CopyDataSection = () => {
                   size="sm"
                 >
                   <Copy className="mr-2 h-4 w-4" />
-                  Копировать
+                  {t.gaming.copy}
                 </Button>
               </motion.div>
             );

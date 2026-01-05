@@ -7,64 +7,22 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { toast } from "sonner";
+import { useLanguage } from "@/i18n/LanguageContext";
 
-const rules = [
-  {
-    id: 1,
-    icon: Gamepad2,
-    title: "Особенности геймплея",
-    description: "Я геймер-инвалид. Правая сторона тела движется хуже левой. Поэтому я играю в неспешном режиме и прохожу побочные места и квесты. Но также прохожу и сюжет. Пожалуйста помните, что скоростные забеги только по сюжету не для меня!"
-  },
-  {
-    id: 2,
-    icon: Volume2,
-    title: "Аудио на стримах The Division 2",
-    description: "Когда я стримлю Tom Clancy's The Division 2 — вы слышите всё, что я говорю, но вы не слышите то, что мне говорят через Discord."
-  },
-  {
-    id: 3,
-    icon: Palette,
-    title: "Авторское оформление",
-    description: "Оформление канала полностью сделано мной, оно не заказное."
-  },
-  {
-    id: 4,
-    icon: MessageCircle,
-    title: "Общение в чате",
-    description: "Пожалуйста, общайтесь со мной и другими зрителями в чате. Это поможет мне получить статус «Компаньона» Twitch."
-  },
-  {
-    id: 5,
-    icon: Clock,
-    title: "Время запуска стримов (МСК)",
-    description: "В период между 15 и 16 часами, либо около 20 часов. Пока что без привязки ко дню недели."
-  },
-  {
-    id: 6,
-    icon: Heart,
-    title: "Поддержка стримов",
-    description: "Чем больше донатов, тем больше стримов."
-  }
-];
-
-const chatCommands = [
-  { command: "!site", description: "Контакты автора. Получить ссылку на сайт-визитку." },
-  { command: "!help", description: "Способы отправки пожертвований." },
-  { command: "!altcontect", description: "Список альтернативных платформ." },
-  { command: "!images", description: "Авторские обои на рабочий стол." }
-];
+const ruleIcons = [Gamepad2, Volume2, Palette, MessageCircle, Clock, Heart];
 
 const StreamRules = () => {
+  const { t } = useLanguage();
   const [copiedCommand, setCopiedCommand] = useState<string | null>(null);
 
   const copyToClipboard = async (command: string) => {
     try {
       await navigator.clipboard.writeText(command);
       setCopiedCommand(command);
-      toast.success("Команда скопирована!");
+      toast.success(t.streamRules.commandCopied);
       setTimeout(() => setCopiedCommand(null), 2000);
     } catch (err) {
-      toast.error("Не удалось скопировать");
+      toast.error(t.streamRules.copyFailed);
     }
   };
 
@@ -76,7 +34,7 @@ const StreamRules = () => {
           <Link to="/">
             <Button variant="ghost" className="mb-6 gap-2">
               <ArrowLeft className="h-4 w-4" />
-              Вернуться на главную
+              {t.streamRules.backToMain}
             </Button>
           </Link>
           
@@ -89,7 +47,7 @@ const StreamRules = () => {
               className="text-3xl font-bold mb-2 text-center text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-blue-500 flex items-center justify-center gap-3"
             >
               <Info className="h-8 w-8 text-green-600" />
-              Информация для зрителей
+              {t.streamRules.title}
             </motion.h1>
             <motion.p 
               initial={{ opacity: 0, y: 10 }}
@@ -98,43 +56,40 @@ const StreamRules = () => {
               viewport={{ once: true }}
               className="text-center text-muted-foreground mb-10"
             >
-              Важная информация о моих трансляциях
+              {t.streamRules.subtitle}
             </motion.p>
             
             <div className="grid gap-6">
-              {rules.map((rule, index) => (
-                <motion.div 
-                  key={rule.id}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="bg-card border border-border rounded-xl p-6 shadow-md card-hover-effect"
-                >
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center">
-                      <rule.icon className="h-6 w-6 text-white" />
-                    </div>
-                    <div className="flex-1">
-                      <div className="flex items-center gap-3 mb-2">
-                        <span className="text-sm font-medium text-muted-foreground">
-                          #{index + 1}
-                        </span>
-                        <h2 className="text-xl font-semibold text-foreground">
-                          {rule.title}
-                        </h2>
+              {t.streamRules.rules.map((rule, index) => {
+                const IconComponent = ruleIcons[index];
+                return (
+                  <motion.div 
+                    key={index}
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="bg-card border border-border rounded-xl p-6 shadow-md card-hover-effect"
+                  >
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center">
+                        <IconComponent className="h-6 w-6 text-white" />
                       </div>
-                      <p className="text-muted-foreground leading-relaxed">
-                        {rule.description}
-                      </p>
+                      <div className="flex-1">
+                        <div className="flex items-center gap-3 mb-2">
+                          <span className="text-sm font-medium text-muted-foreground">#{index + 1}</span>
+                          <h2 className="text-xl font-semibold text-foreground">{rule.title}</h2>
+                        </div>
+                        <p className="text-muted-foreground leading-relaxed">{rule.description}</p>
+                      </div>
                     </div>
-                  </div>
-                </motion.div>
-              ))}
+                  </motion.div>
+                );
+              })}
             </div>
           </Card>
 
-          {/* Команды для чата */}
+          {/* Chat Commands */}
           <Card className="p-8 mb-8 border-0 shadow-lg bg-gradient-to-br from-gray-50 to-white">
             <motion.h2 
               initial={{ opacity: 0, y: 10 }}
@@ -144,7 +99,7 @@ const StreamRules = () => {
               className="text-3xl font-bold mb-2 text-center text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-blue-500 flex items-center justify-center gap-3"
             >
               <Terminal className="h-8 w-8 text-green-600" />
-              Команды для чата
+              {t.streamRules.chatCommandsTitle}
             </motion.h2>
             <motion.p 
               initial={{ opacity: 0, y: 10 }}
@@ -153,11 +108,11 @@ const StreamRules = () => {
               viewport={{ once: true }}
               className="text-center text-muted-foreground mb-10"
             >
-              Полезные команды, которые можно использовать в чате стрима
+              {t.streamRules.chatCommandsSubtitle}
             </motion.p>
             
             <div className="grid gap-4">
-              {chatCommands.map((cmd, index) => (
+              {t.streamRules.chatCommands.map((cmd, index) => (
                 <motion.div 
                   key={cmd.command}
                   initial={{ opacity: 0, x: -10 }}
@@ -170,29 +125,18 @@ const StreamRules = () => {
                     <code className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-3 py-1 rounded-md font-mono text-sm font-semibold">
                       {cmd.command}
                     </code>
-                    <span className="text-muted-foreground">
-                      {cmd.description}
-                    </span>
+                    <span className="text-muted-foreground">{cmd.description}</span>
                   </div>
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    onClick={() => copyToClipboard(cmd.command)}
-                    className="flex-shrink-0 gap-2"
-                  >
-                    {copiedCommand === cmd.command ? (
-                      <Check className="h-4 w-4 text-green-500" />
-                    ) : (
-                      <Copy className="h-4 w-4" />
-                    )}
-                    {copiedCommand === cmd.command ? "Скопировано" : "Копировать"}
+                  <Button variant="outline" size="sm" onClick={() => copyToClipboard(cmd.command)} className="flex-shrink-0 gap-2">
+                    {copiedCommand === cmd.command ? <Check className="h-4 w-4 text-green-500" /> : <Copy className="h-4 w-4" />}
+                    {copiedCommand === cmd.command ? t.streamRules.copied : t.streamRules.copy}
                   </Button>
                 </motion.div>
               ))}
             </div>
           </Card>
 
-          {/* Цель текущего сбора */}
+          {/* Fundraising Goal */}
           <Card className="p-8 border-0 shadow-lg bg-gradient-to-br from-amber-50 to-orange-50">
             <motion.h2 
               initial={{ opacity: 0, y: 10 }}
@@ -202,7 +146,7 @@ const StreamRules = () => {
               className="text-3xl font-bold mb-2 text-center text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-500 flex items-center justify-center gap-3"
             >
               <Target className="h-8 w-8 text-amber-600" />
-              Цель текущего сбора
+              {t.streamRules.fundraisingTitle}
             </motion.h2>
             <motion.div 
               initial={{ opacity: 0, y: 10 }}
@@ -212,15 +156,13 @@ const StreamRules = () => {
               className="bg-card border border-amber-200 rounded-xl p-6 shadow-md"
             >
               <div className="text-center">
-                <p className="text-4xl font-bold text-amber-600 mb-4">30 000 ₽</p>
-                <p className="text-muted-foreground leading-relaxed">
-                  Нужно на доступ к серверному железу для работы с более крутыми нейросетями.
-                </p>
+                <p className="text-4xl font-bold text-amber-600 mb-4">{t.streamRules.fundraisingAmount}</p>
+                <p className="text-muted-foreground leading-relaxed">{t.streamRules.fundraisingDesc}</p>
               </div>
             </motion.div>
           </Card>
 
-          {/* Кнопка возврата внизу */}
+          {/* Back button */}
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -231,7 +173,7 @@ const StreamRules = () => {
             <Link to="/">
               <Button variant="outline" className="gap-2">
                 <ArrowLeft className="h-4 w-4" />
-                Вернуться на главную
+                {t.streamRules.backToMain}
               </Button>
             </Link>
           </motion.div>

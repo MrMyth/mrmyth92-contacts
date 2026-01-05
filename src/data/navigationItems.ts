@@ -1,19 +1,19 @@
 
 export interface NavigationItem {
-  label: string;
+  labelKey: keyof typeof import("@/i18n/translations/ru").ru.nav;
   href: string;
 }
 
 export const navigationItems: NavigationItem[] = [
-  { label: "Обо мне", href: "#about-me-section" },
-  { label: "Telegram", href: "#telegram-section" },
-  { label: "VK", href: "#vk-section" },
-  { label: "Контакты", href: "#contact-section" },
-  { label: "Discord", href: "#discord-section" },
-  { label: "YouTube", href: "#youtube-section" },
-  { label: "Twitch", href: "#twitch-section" },
-  { label: "Игровые платформы", href: "#contacts-section" },
-  { label: "Создано автором", href: "#author-creations-section" },
-  { label: "Информация для зрителей", href: "/stream-rules" },
-  { label: "Поддержка проектов", href: "#donation-section" },
+  { labelKey: "aboutMe", href: "#about-me-section" },
+  { labelKey: "telegram", href: "#telegram-section" },
+  { labelKey: "vk", href: "#vk-section" },
+  { labelKey: "contacts", href: "#contact-section" },
+  { labelKey: "discord", href: "#discord-section" },
+  { labelKey: "youtube", href: "#youtube-section" },
+  { labelKey: "twitch", href: "#twitch-section" },
+  { labelKey: "gamingPlatforms", href: "#contacts-section" },
+  { labelKey: "authorCreations", href: "#author-creations-section" },
+  { labelKey: "viewerInfo", href: "/stream-rules" },
+  { labelKey: "projectSupport", href: "#donation-section" },
 ];
