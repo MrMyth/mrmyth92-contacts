@@ -3,6 +3,7 @@ import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import MobileMenuButton from "./MobileMenuButton";
 import { NavigationItem } from "@/data/navigationItems";
+import { useLanguage } from "@/i18n/LanguageContext";
 import { cn } from "@/lib/utils";
 
 interface MobileMenuProps {
@@ -15,6 +16,8 @@ interface MobileMenuProps {
 
 const MobileMenu: React.FC<MobileMenuProps> = React.memo(
   ({ isOpen, items, activeSection, onNavigate, className }) => {
+    const { t } = useLanguage();
+    
     // Улучшенные варианты анимации
     const containerAnimation = {
       hidden: { opacity: 0, height: 0, transition: { duration: 0.2, ease: "easeInOut" } },
@@ -42,7 +45,7 @@ const MobileMenu: React.FC<MobileMenuProps> = React.memo(
             variants={containerAnimation}
             className={cn("md:hidden overflow-hidden", className)}
             role="menu"
-            aria-label="Мобильная навигация"
+            aria-label="Mobile navigation"
           >
             <div className="container mx-auto py-2 px-4 flex flex-col space-y-1 bg-white border-t border-gray-100">
               {items.map((item, index) => (
@@ -56,7 +59,7 @@ const MobileMenu: React.FC<MobileMenuProps> = React.memo(
                   <MobileMenuButton
                     active={activeSection === item.href}
                     onClick={() => onNavigate(item.href)}
-                    label={item.label}
+                    label={t.nav[item.labelKey]}
                   />
                 </motion.div>
               ))}

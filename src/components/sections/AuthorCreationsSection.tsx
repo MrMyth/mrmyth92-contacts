@@ -4,11 +4,13 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Music, Palette } from "lucide-react";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const AuthorCreationsSection = () => {
+  const { t } = useLanguage();
+  
   const creation = {
     id: "creative-works",
-    name: "Посмотреть творческие работы",
     url: "https://cloud.mail.ru/public/tGzv/8rv5WXPWv",
     bgColor: "bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700",
     icon: (
@@ -31,9 +33,9 @@ const AuthorCreationsSection = () => {
           <h2 className="text-3xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-blue-500 flex items-center justify-center gap-3">
             <Music className="h-8 w-8 text-green-600" />
             <Palette className="h-8 w-8 text-blue-600" />
-            Создано автором
+            {t.creations.title}
           </h2>
-          <p className="text-gray-600">Коллекция авторской музыки и обоев на рабочий стол</p>
+          <p className="text-gray-600">{t.creations.subtitle}</p>
         </div>
         
         <motion.a
@@ -49,7 +51,7 @@ const AuthorCreationsSection = () => {
         >
           <Button className={`w-full ${creation.bgColor} text-white`}>
             {creation.icon}
-            {creation.name}
+            {t.creations.viewWorks}
           </Button>
         </motion.a>
       </motion.div>

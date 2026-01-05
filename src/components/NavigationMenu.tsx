@@ -5,6 +5,7 @@ import BrandLogo from "./navigation/BrandLogo";
 import MenuToggleButton from "./navigation/MenuToggleButton";
 import DesktopMenu from "./navigation/DesktopMenu";
 import MobileMenu from "./navigation/MobileMenu";
+import LanguageSwitcher from "./LanguageSwitcher";
 import { navigationItems } from "../data/navigationItems";
 import { useNavigation } from "../hooks/useNavigation";
 import { cn } from "@/lib/utils";
@@ -38,9 +39,15 @@ const NavigationMenu: React.FC = memo(() => {
     >
       <div className="container mx-auto flex justify-between items-center">
         <BrandLogo onClick={scrollToTop} />
+        
+        {/* Language switcher for desktop */}
+        <div className="hidden md:flex items-center gap-2">
+          <LanguageSwitcher />
+        </div>
 
         {/* Переключатель мобильного меню */}
-        <div className="md:hidden">
+        <div className="md:hidden flex items-center gap-2">
+          <LanguageSwitcher />
           <MenuToggleButton isOpen={isMenuOpen} onClick={toggleMenu} />
         </div>
 

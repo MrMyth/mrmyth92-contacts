@@ -1,0 +1,223 @@
+export const en = {
+  // Navigation
+  nav: {
+    aboutMe: "About Me",
+    telegram: "Telegram",
+    vk: "VK",
+    contacts: "Contacts",
+    discord: "Discord",
+    youtube: "YouTube",
+    twitch: "Twitch",
+    gamingPlatforms: "Gaming Platforms",
+    authorCreations: "Author's Creations",
+    viewerInfo: "Viewer Information",
+    projectSupport: "Support Projects",
+  },
+
+  // Header
+  header: {
+    title: "MrMyth92 Dmitry Starchikov",
+  },
+
+  // Hero Section
+  hero: {
+    name: "Dmitry Starchikov",
+    subtitle: "Gamer, streamer, content creator",
+    imageDescription: "All images in the header are created by me and reflect the games I'm currently playing.",
+    updateNotice: "⚠️ Website updated: August 1, 2025, 13:15 (Moscow time)",
+    previousImage: "Previous image",
+    nextImage: "Next image",
+    goToImage: "Go to image",
+    gameScene: "Game scene",
+  },
+
+  // About Me Section
+  about: {
+    title: "A Little About Me",
+    fullName: "Full Name:",
+    fullNameValue: "Dmitry Olegovich Starchikov.",
+    birthDate: "Birth Date:",
+    birthDateValue: "September 11, 1992.",
+    skillsTitle: "My Skills and Hobbies:",
+    skills: [
+      "I have a first-degree disability due to a congenital condition. But I lead an active lifestyle. I love computer games and everything related to PCs. I run two YouTube channels for The Division & Assassin's Creed franchises.",
+      "I stream games from both franchises on one Twitch channel.",
+      "Additionally, everything is mirrored to my VK group.",
+      "Professional Discord server setup.",
+      "Professional work with graphic neural networks, creating original images.",
+    ],
+    warning1: "Many services are currently experiencing issues in Russia, so I offer you 3 platforms to choose from. Pick the one that's convenient for you, but don't forget to subscribe! Thank you.",
+    warning2: "For your convenience, the website also has buttons to official Telegram, WhatsApp, and Discord websites. This is so you don't have to search for these programs' websites.",
+    photoAlt: "Dmitry Starchikov",
+  },
+
+  // Telegram Section
+  telegram: {
+    title: "Telegram",
+    subtitle: "Everything related to Telegram",
+    writeButton: "Write",
+    groupButton: "Go to Group",
+    downloadButton: "Additional: Download Telegram",
+    publicGroup: "Telegram public group",
+  },
+
+  // VK Section
+  vk: {
+    title: "VK Channel and Group",
+    subtitle: "All links related to VK",
+    goToGroup: "Go to Group",
+    watchStreams: "Watch Streams",
+    goToProfile: "Go to Profile",
+    group: "VK Group",
+    video: "VK Video",
+    page: "VK Page",
+  },
+
+  // Contact Section
+  contacts: {
+    title: "Contacts",
+    subtitle: "Contact me in any convenient way",
+    whatsapp: "WhatsApp",
+    write: "Write",
+    download: "Download WhatsApp",
+    otherContacts: "Other Contacts",
+    ok: "Odnoklassniki",
+    goToProfile: "Go to Profile",
+    email: "Email",
+    sendEmail: "Send Email",
+  },
+
+  // Discord Section
+  discord: {
+    title: "Discord",
+    subtitle: "Everything related to Discord",
+    serverWidget: '"From Russia" Discord server widget.',
+    widgetWarning: "⚠️ If the widget didn't load, Discord might be blocked for you.",
+    howToJoin: "How to join the server?",
+    howToJoinDesc: 'To join the server, click "Join Server". If the invitation didn\'t work, use the "Join Discord" button in the bottom right corner of the widget. If you have problems with Discord, you can use Telegram or VK groups from previous sections as an alternative.',
+    mainGame: "Main server game:",
+    mainGameName: "Tom Clancy's The Division 2",
+    myNickname: "My Discord nickname:",
+    copy: "Copy",
+    nicknameCopied: "Discord nickname copied",
+    nicknameCopiedDesc: "Discord nickname was copied to clipboard",
+    joinServer: "Join Server",
+    aboutServer: "About Server",
+    downloadDiscord: "Download Discord",
+  },
+
+  // YouTube Section
+  youtube: {
+    title: "YouTube Channels",
+    subtitle: "My YouTube channels",
+    divisionDesc: "My YouTube channel for The Division franchise",
+    acDesc: "My YouTube channel for Assassin's Creed franchise",
+    visitChannel: "Visit Channel",
+    subscribe: "Subscribe",
+  },
+
+  // Twitch Section
+  twitch: {
+    title: "Twitch Channel",
+    subtitle: "All my live streams, regardless of the game",
+    visitChannel: "Visit Channel",
+  },
+
+  // Gaming Platforms Section
+  gaming: {
+    title: "Gaming Platforms",
+    friendCode: "(friend code)",
+    copy: "Copy",
+    nameCopied: "name copied",
+    codeCopied: "friend code copied",
+    copiedToClipboard: "was copied to clipboard",
+  },
+
+  // Author Creations Section
+  creations: {
+    title: "Author's Creations",
+    subtitle: "Collection of original music and desktop wallpapers",
+    viewWorks: "View Creative Works",
+  },
+
+  // Donation Section
+  donations: {
+    title: "Donations",
+    subtitle: "All ways you can support any of my projects",
+    cardNumber: "Card Number:",
+    copyNumber: "Copy Number",
+    cardCopied: "Card number copied",
+    cardCopiedDesc: "Card number copied to clipboard!",
+    boosty: "Support on Boosty",
+    donateStream: "Support via Donate.stream",
+    yoomoney: "Support via YooMoney",
+  },
+
+  // Stream Rules Link Section
+  streamRulesLink: {
+    title: "Viewer Information",
+    subtitle: "Learn important information about my streams before watching",
+    button: "Open Viewer Information",
+  },
+
+  // Stream Rules Page
+  streamRules: {
+    title: "Viewer Information",
+    subtitle: "Important information about my streams",
+    backToMain: "Back to Main",
+    rules: [
+      {
+        title: "Gameplay Features",
+        description: "I'm a gamer with a disability. The right side of my body moves worse than the left. That's why I play at a leisurely pace and complete side locations and quests. But I also complete the story. Please remember that speed runs focusing only on the story are not for me!",
+      },
+      {
+        title: "Audio on The Division 2 Streams",
+        description: "When I stream Tom Clancy's The Division 2 — you hear everything I say, but you don't hear what others tell me through Discord.",
+      },
+      {
+        title: "Original Design",
+        description: "The channel design is entirely made by me, it's not commissioned.",
+      },
+      {
+        title: "Chat Communication",
+        description: 'Please chat with me and other viewers in the chat. This will help me get Twitch "Affiliate" status.',
+      },
+      {
+        title: "Stream Start Times (Moscow Time)",
+        description: "Between 3 PM and 4 PM, or around 8 PM. Currently not tied to specific days of the week.",
+      },
+      {
+        title: "Stream Support",
+        description: "More donations = more streams.",
+      },
+    ],
+    chatCommandsTitle: "Chat Commands",
+    chatCommandsSubtitle: "Useful commands you can use in the stream chat",
+    chatCommands: [
+      { command: "!site", description: "Author's contacts. Get link to the business card website." },
+      { command: "!help", description: "Ways to send donations." },
+      { command: "!altcontect", description: "List of alternative platforms." },
+      { command: "!images", description: "Author's desktop wallpapers." },
+    ],
+    copy: "Copy",
+    copied: "Copied",
+    commandCopied: "Command copied!",
+    copyFailed: "Failed to copy",
+    fundraisingTitle: "Current Fundraising Goal",
+    fundraisingAmount: "30,000 ₽",
+    fundraisingDesc: "Needed for server hardware access to work with better neural networks.",
+  },
+
+  // Footer
+  footer: {
+    madeWith: "Made with",
+    forCommunity: "for the community",
+  },
+
+  // Language Switcher
+  language: {
+    ru: "RU",
+    en: "EN",
+    switchTo: "Switch to",
+  },
+};
