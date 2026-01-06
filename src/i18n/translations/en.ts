@@ -24,7 +24,7 @@ export const en = {
     name: "Dmitry Starchikov",
     subtitle: "Gamer, streamer, content creator",
     imageDescription: "All images in the header are created by me and reflect the games I'm currently playing.",
-    updateNotice: "⚠️ Website updated: August 1, 2025, 13:15 (Moscow time)",
+    updateNotice: "⚠️ Website updated: January 6, 2026, 9:35 (Moscow time)",
     previousImage: "Previous image",
     nextImage: "Next image",
     goToImage: "Go to image",
@@ -144,6 +144,7 @@ export const en = {
   donations: {
     title: "Donations",
     subtitle: "All ways you can support any of my projects",
+    internationalWarning: "⚠️ If you live outside of Russia, please use only Boosty for donations.",
     cardNumber: "Card Number:",
     copyNumber: "Copy Number",
     cardCopied: "Card number copied",
@@ -151,6 +152,11 @@ export const en = {
     boosty: "Support on Boosty",
     donateStream: "Support via Donate.stream",
     yoomoney: "Support via YooMoney",
+  },
+
+  // Page Title
+  pageTitle: {
+    main: "Dmitry Starchikov (MrMyth92) - Contacts and Projects.",
   },
 
   // Stream Rules Link Section
