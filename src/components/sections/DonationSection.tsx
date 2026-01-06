@@ -53,9 +53,16 @@ const DonationSection = () => {
           <Gift className="h-8 w-8 text-green-600" />
           {t.donations.title}
         </h2>
-        <p className="text-center text-gray-600 mb-8">
+        <p className="text-center text-gray-600 mb-6">
           {t.donations.subtitle}
         </p>
+        
+        {/* International Warning */}
+        <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-8">
+          <p className="text-yellow-800 text-center font-medium">
+            {t.donations.internationalWarning}
+          </p>
+        </div>
         
         {/* Bank Card */}
         <motion.div

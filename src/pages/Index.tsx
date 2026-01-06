@@ -13,7 +13,15 @@ import AuthorCreationsSection from "@/components/sections/AuthorCreationsSection
 import StreamRulesLink from "@/components/sections/StreamRulesLink";
 import Footer from "@/components/Footer";
 import NavigationMenu from "@/components/NavigationMenu";
+import { useLanguage } from "@/i18n/LanguageContext";
+
 const Index = () => {
+  const { t } = useLanguage();
+  
+  // Update document title based on language
+  useEffect(() => {
+    document.title = t.pageTitle.main;
+  }, [t]);
   // Обрабатываем начальную прокрутку к хэшу при загрузке страницы
   useEffect(() => {
     // Дождемся рендеринга компонентов
