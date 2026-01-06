@@ -13,6 +13,7 @@ import AuthorCreationsSection from "@/components/sections/AuthorCreationsSection
 import StreamRulesLink from "@/components/sections/StreamRulesLink";
 import Footer from "@/components/Footer";
 import NavigationMenu from "@/components/NavigationMenu";
+import ScrollToTop from "@/components/ScrollToTop";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 const Index = () => {
@@ -22,9 +23,9 @@ const Index = () => {
   useEffect(() => {
     document.title = t.pageTitle.main;
   }, [t]);
+
   // Обрабатываем начальную прокрутку к хэшу при загрузке страницы
   useEffect(() => {
-    // Дождемся рендеринга компонентов
     const handleInitialScroll = () => {
       if (window.location.hash) {
         const element = document.querySelector(window.location.hash);
@@ -35,11 +36,11 @@ const Index = () => {
         }
       }
     };
-
-    // Небольшая задержка для гарантии полной загрузки компонентов
     setTimeout(handleInitialScroll, 100);
   }, []);
-  return <div className="min-h-screen bg-white text-black">
+
+  return (
+    <div className="min-h-screen bg-background text-foreground">
       <div className="bg-gradient-to-r from-green-600 to-green-700 text-white text-center py-2 px-4">
         <span className="font-bold text-lg">MrMyth92 Dmitry Starchikov</span>
       </div>
@@ -83,6 +84,8 @@ const Index = () => {
         </section>
       </main>
       <Footer />
-    </div>;
+      <ScrollToTop />
+    </div>
+  );
 };
 export default Index;

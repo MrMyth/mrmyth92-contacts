@@ -22,7 +22,7 @@ const AuthorCreationsSection = () => {
   };
 
   return (
-    <Card className="p-8 mb-8 border-0 shadow-lg bg-gradient-to-br from-gray-50 to-white">
+    <Card className="p-8 mb-8 border-0 shadow-lg bg-gradient-to-br from-muted/50 to-card">
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -35,7 +35,7 @@ const AuthorCreationsSection = () => {
             <Palette className="h-8 w-8 text-blue-600" />
             {t.creations.title}
           </h2>
-          <p className="text-gray-600">{t.creations.subtitle}</p>
+          <p className="text-muted-foreground">{t.creations.subtitle}</p>
         </div>
         
         <motion.a

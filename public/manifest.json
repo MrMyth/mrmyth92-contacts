@@ -1,0 +1,23 @@
+{
+  "name": "MrMyth92 - Дмитрий Старчиков",
+  "short_name": "MrMyth92",
+  "description": "Старчиков Дмитрий Олегович (MrMyth92) - контакты и проекты",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#16a34a",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/imagesite.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

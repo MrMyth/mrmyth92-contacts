@@ -48,7 +48,7 @@ const DiscordWidget = () => {
   ];
   
   return (
-    <Card className="p-8 mb-8 border-0 shadow-lg bg-gradient-to-br from-gray-50 to-white">
+    <Card className="p-8 mb-8 border-0 shadow-lg bg-gradient-to-br from-muted/50 to-card">
       <motion.div 
         initial={{ opacity: 0, y: 10 }} 
         whileInView={{ opacity: 1, y: 0 }} 
@@ -62,7 +62,7 @@ const DiscordWidget = () => {
             </svg>
             {t.discord.title}
           </h2>
-          <p className="text-gray-600">{t.discord.subtitle}</p>
+          <p className="text-muted-foreground">{t.discord.subtitle}</p>
         </div>
         
         <div className="grid lg:grid-cols-2 gap-8">
@@ -74,7 +74,7 @@ const DiscordWidget = () => {
             viewport={{ once: true }} 
             className="space-y-4"
           >
-            <h3 className="text-xl font-semibold text-gray-900">{t.discord.serverWidget}</h3>
+            <h3 className="text-xl font-semibold text-foreground">{t.discord.serverWidget}</h3>
             <iframe 
               src="https://discord.com/widget?id=835802952521351180&theme=light" 
               width="100%" 
@@ -86,8 +86,8 @@ const DiscordWidget = () => {
               title="Discord Widget" 
               loading="lazy"
             ></iframe>
-            <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 mt-3">
-              <p className="text-sm font-semibold text-amber-700">{t.discord.widgetWarning}</p>
+            <div className="bg-amber-50 dark:bg-amber-900/30 border border-amber-200 dark:border-amber-700 rounded-lg p-3 mt-3">
+              <p className="text-sm font-semibold text-amber-700 dark:text-amber-300">{t.discord.widgetWarning}</p>
             </div>
           </motion.div>
 
@@ -100,26 +100,26 @@ const DiscordWidget = () => {
             className="space-y-6"
           >
             <div className="space-y-2">
-              <h3 className="text-xl font-semibold text-gray-900">{t.discord.howToJoin}</h3>
-              <div className="p-4 rounded-xl bg-gray-100">
-                <p className="text-gray-700">{t.discord.howToJoinDesc}</p>
+              <h3 className="text-xl font-semibold text-foreground">{t.discord.howToJoin}</h3>
+              <div className="p-4 rounded-xl bg-muted">
+                <p className="text-foreground">{t.discord.howToJoinDesc}</p>
               </div>
             </div>
 
             <div className="space-y-2">
-              <h3 className="text-xl font-semibold text-gray-900">{t.discord.mainGame}</h3>
-              <div className="p-4 rounded-xl bg-gray-100">
-                <p className="text-gray-700">{t.discord.mainGameName}</p>
+              <h3 className="text-xl font-semibold text-foreground">{t.discord.mainGame}</h3>
+              <div className="p-4 rounded-xl bg-muted">
+                <p className="text-foreground">{t.discord.mainGameName}</p>
               </div>
             </div>
 
             {/* Discord username */}
             <motion.div 
               whileHover={{ scale: 1.01 }} 
-              className="p-4 rounded-xl bg-gray-100 flex items-center gap-4"
+              className="p-4 rounded-xl bg-muted flex items-center gap-4"
             >
               <div>
-                <p className="font-medium text-gray-900">{t.discord.myNickname}</p>
+                <p className="font-medium text-foreground">{t.discord.myNickname}</p>
                 <p className="text-lg font-mono text-green-600">{discordUsername}</p>
               </div>
               <Button size="sm" onClick={handleCopyDiscordUsername} className="ml-auto bg-green-600 hover:bg-green-700">

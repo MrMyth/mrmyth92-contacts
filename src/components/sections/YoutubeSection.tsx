@@ -26,7 +26,7 @@ const YoutubeSection = () => {
   ];
 
   return (
-    <Card className="p-8 mb-8 border-0 shadow-lg bg-gradient-to-br from-gray-50 to-white">
+    <Card className="p-8 mb-8 border-0 shadow-lg bg-gradient-to-br from-muted/50 to-card">
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -37,7 +37,7 @@ const YoutubeSection = () => {
           <Youtube className="h-8 w-8 text-[#FF0000]" />
           {t.youtube.title}
         </h2>
-        <p className="text-center text-gray-600 mb-6">{t.youtube.subtitle}</p>
+        <p className="text-center text-muted-foreground mb-6">{t.youtube.subtitle}</p>
         
         {channels.map((channel, index) => (
           <motion.div
@@ -58,7 +58,7 @@ const YoutubeSection = () => {
                   />
                 </div>
               )}
-              <p className="text-center text-gray-600">{channel.description}</p>
+              <p className="text-center text-muted-foreground">{channel.description}</p>
               {channel.imageUrl && (
                 <div className="hidden md:block">
                   <img 

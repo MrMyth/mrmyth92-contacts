@@ -6,6 +6,7 @@ import MenuToggleButton from "./navigation/MenuToggleButton";
 import DesktopMenu from "./navigation/DesktopMenu";
 import MobileMenu from "./navigation/MobileMenu";
 import LanguageSwitcher from "./LanguageSwitcher";
+import ThemeToggle from "./ThemeToggle";
 import { navigationItems } from "../data/navigationItems";
 import { useNavigation } from "../hooks/useNavigation";
 import { cn } from "@/lib/utils";
@@ -23,7 +24,7 @@ const NavigationMenu: React.FC = memo(() => {
   // Используем useMemo для стилей заголовка, чтобы избежать лишних перерисовок
   const headerStyle = useMemo(() => 
     cn(
-      "sticky top-0 bg-white/90 backdrop-blur-sm z-50 py-2 px-4 transition-all duration-300",
+      "sticky top-0 bg-background/90 backdrop-blur-sm z-50 py-2 px-4 transition-all duration-300",
       scrollPosition > 10 ? "shadow-md" : ""
     ), 
     [scrollPosition]
@@ -40,13 +41,15 @@ const NavigationMenu: React.FC = memo(() => {
       <div className="container mx-auto flex justify-between items-center">
         <BrandLogo onClick={scrollToTop} />
         
-        {/* Language switcher for desktop */}
+        {/* Language switcher and theme toggle for desktop */}
         <div className="hidden md:flex items-center gap-2">
+          <ThemeToggle />
           <LanguageSwitcher />
         </div>
 
         {/* Переключатель мобильного меню */}
         <div className="md:hidden flex items-center gap-2">
+          <ThemeToggle />
           <LanguageSwitcher />
           <MenuToggleButton isOpen={isMenuOpen} onClick={toggleMenu} />
         </div>

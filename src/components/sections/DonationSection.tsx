@@ -42,7 +42,7 @@ const DonationSection = () => {
   ];
 
   return (
-    <Card className="p-8 mb-8 border-0 shadow-lg bg-gradient-to-br from-gray-50 to-white">
+    <Card className="p-8 mb-8 border-0 shadow-lg bg-gradient-to-br from-muted/50 to-card">
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -53,13 +53,13 @@ const DonationSection = () => {
           <Gift className="h-8 w-8 text-green-600" />
           {t.donations.title}
         </h2>
-        <p className="text-center text-gray-600 mb-6">
+        <p className="text-center text-muted-foreground mb-6">
           {t.donations.subtitle}
         </p>
         
         {/* International Warning */}
-        <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-8">
-          <p className="text-yellow-800 text-center font-medium">
+        <div className="bg-yellow-50 dark:bg-yellow-900/30 border border-yellow-200 dark:border-yellow-700 rounded-lg p-4 mb-8">
+          <p className="text-yellow-800 dark:text-yellow-300 text-center font-medium">
             {t.donations.internationalWarning}
           </p>
         </div>
@@ -70,9 +70,9 @@ const DonationSection = () => {
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
           viewport={{ once: true }}
-          className="flex flex-col sm:flex-row gap-4 items-center justify-center mb-8 p-4 bg-gray-100 rounded-xl"
+          className="flex flex-col sm:flex-row gap-4 items-center justify-center mb-8 p-4 bg-muted rounded-xl"
         >
-          <p className="text-xl font-medium text-gray-900">
+          <p className="text-xl font-medium text-foreground">
             {t.donations.cardNumber} <span className="font-mono text-green-600">{cardNumber}</span>
           </p>
           <Button

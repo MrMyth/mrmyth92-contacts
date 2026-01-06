@@ -10,7 +10,7 @@ const TwitchSection = () => {
   const { t } = useLanguage();
   
   return (
-    <Card className="p-8 mb-8 border-0 shadow-lg bg-gradient-to-br from-gray-50 to-white">
+    <Card className="p-8 mb-8 border-0 shadow-lg bg-gradient-to-br from-muted/50 to-card">
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -22,7 +22,7 @@ const TwitchSection = () => {
           <Twitch className="h-8 w-8 text-[#9146FF]" />
           {t.twitch.title}
         </h2>
-        <p className="text-gray-600 mb-6">{t.twitch.subtitle}</p>
+        <p className="text-muted-foreground mb-6">{t.twitch.subtitle}</p>
         
         <motion.a
           href="https://www.twitch.tv/mrmyth1992"

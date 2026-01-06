@@ -28,7 +28,7 @@ const CopyDataSection = () => {
   };
 
   return (
-    <Card className="p-8 mb-8 border-0 shadow-lg bg-gradient-to-br from-gray-50 to-white">
+    <Card className="p-8 mb-8 border-0 shadow-lg bg-gradient-to-br from-muted/50 to-card">
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -50,13 +50,13 @@ const CopyDataSection = () => {
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: 0.2 + index * 0.1 }}
                 viewport={{ once: true }}
-                className="flex flex-col gap-3 p-4 bg-gray-100 rounded-xl"
+                className="flex flex-col gap-3 p-4 bg-muted rounded-xl"
               >
                 <div className="flex items-center gap-2">
                   <div className="flex items-center justify-center w-6 h-6 bg-green-600 text-white rounded-full text-sm font-bold">
                     {service.number}
                   </div>
-                  <span className="text-lg font-semibold text-gray-900">
+                  <span className="text-lg font-semibold text-foreground">
                     {service.name} {service.isCode ? t.gaming.friendCode : ""}
                   </span>
                 </div>

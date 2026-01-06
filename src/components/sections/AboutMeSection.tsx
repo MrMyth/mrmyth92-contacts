@@ -19,8 +19,8 @@ const BiographyItem: React.FC<BiographyItemProps> = ({ label, value, icon }) => 
     className="flex items-start gap-3"
   >
     {icon && <span className="text-green-500 mt-1">{icon}</span>}
-    <p className="text-gray-800">
-      <span className="font-semibold text-gray-900">{label}</span> {value}
+    <p className="text-foreground">
+      <span className="font-semibold">{label}</span> {value}
     </p>
   </motion.div>
 );
@@ -34,7 +34,7 @@ const SkillItem: React.FC<{ children: React.ReactNode }> = ({ children }) => (
     className="flex items-start gap-3"
   >
     <span className="text-green-500 mt-1">•</span>
-    <p className="text-gray-800">{children}</p>
+    <p className="text-foreground">{children}</p>
   </motion.div>
 );
 
@@ -57,7 +57,7 @@ const AboutMeSection = () => {
   ];
 
   return (
-    <Card className="p-8 mb-8 border-0 shadow-lg bg-gradient-to-br from-gray-50 to-white">
+    <Card className="p-8 mb-8 border-0 shadow-lg bg-gradient-to-br from-muted/50 to-card">
       <motion.h2 
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -87,7 +87,7 @@ const AboutMeSection = () => {
             viewport={{ once: true }}
             className="pt-4 space-y-4"
           >
-            <h3 className="text-xl font-semibold text-gray-900 flex items-center gap-2">
+            <h3 className="text-xl font-semibold text-foreground flex items-center gap-2">
               <Paintbrush className="h-5 w-5 text-green-600" />
               {t.about.skillsTitle}
             </h3>
@@ -103,11 +103,11 @@ const AboutMeSection = () => {
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.4 }}
               viewport={{ once: true }}
-              className="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-r"
+              className="bg-yellow-50 dark:bg-yellow-900/30 border-l-4 border-yellow-400 p-4 rounded-r"
             >
               <div className="flex items-start">
                 <AlertCircle className="h-5 w-5 text-yellow-500 mr-2 mt-0.5 flex-shrink-0" />
-                <p className="text-yellow-700">
+                <p className="text-yellow-700 dark:text-yellow-300">
                   {t.about.warning1}
                 </p>
               </div>
@@ -119,11 +119,11 @@ const AboutMeSection = () => {
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.6 }}
               viewport={{ once: true }}
-              className="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-r"
+              className="bg-yellow-50 dark:bg-yellow-900/30 border-l-4 border-yellow-400 p-4 rounded-r"
             >
               <div className="flex items-start">
                 <AlertCircle className="h-5 w-5 text-yellow-500 mr-2 mt-0.5 flex-shrink-0" />
-                <p className="text-yellow-700">
+                <p className="text-yellow-700 dark:text-yellow-300">
                   {t.about.warning2}
                 </p>
               </div>

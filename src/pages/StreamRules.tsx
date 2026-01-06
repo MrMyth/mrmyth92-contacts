@@ -38,7 +38,7 @@ const StreamRules = () => {
             </Button>
           </Link>
           
-          <Card className="p-8 mb-8 border-0 shadow-lg bg-gradient-to-br from-gray-50 to-white">
+          <Card className="p-8 mb-8 border-0 shadow-lg bg-gradient-to-br from-muted/50 to-card">
             <motion.h1 
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -90,7 +90,7 @@ const StreamRules = () => {
           </Card>
 
           {/* Chat Commands */}
-          <Card className="p-8 mb-8 border-0 shadow-lg bg-gradient-to-br from-gray-50 to-white">
+          <Card className="p-8 mb-8 border-0 shadow-lg bg-gradient-to-br from-muted/50 to-card">
             <motion.h2 
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -137,7 +137,7 @@ const StreamRules = () => {
           </Card>
 
           {/* Fundraising Goal */}
-          <Card className="p-8 border-0 shadow-lg bg-gradient-to-br from-amber-50 to-orange-50">
+          <Card className="p-8 border-0 shadow-lg bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-900/30 dark:to-orange-900/30">
             <motion.h2 
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -153,7 +153,7 @@ const StreamRules = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
               viewport={{ once: true }}
-              className="bg-card border border-amber-200 rounded-xl p-6 shadow-md"
+              className="bg-card border border-amber-200 dark:border-amber-700 rounded-xl p-6 shadow-md"
             >
               <div className="text-center">
                 <p className="text-4xl font-bold text-amber-600 mb-4">{t.streamRules.fundraisingAmount}</p>
