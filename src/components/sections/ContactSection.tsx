@@ -59,7 +59,7 @@ const ContactSection = () => {
   ];
 
   return (
-    <Card className="p-8 mb-8 border-0 shadow-lg bg-gradient-to-br from-gray-50 to-white">
+    <Card className="p-8 mb-8 border-0 shadow-lg bg-gradient-to-br from-muted/50 to-card">
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -72,7 +72,7 @@ const ContactSection = () => {
           </svg>
           {t.contacts.title}
         </h2>
-        <p className="text-center text-gray-600 mb-6">{t.contacts.subtitle}</p>
+        <p className="text-center text-muted-foreground mb-6">{t.contacts.subtitle}</p>
         
         {/* WhatsApp подраздел */}
         <div className="mb-6">

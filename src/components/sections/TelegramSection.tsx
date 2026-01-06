@@ -36,7 +36,7 @@ const TelegramSection = () => {
   ];
 
   return (
-    <Card className="p-8 mb-8 border-0 shadow-lg bg-gradient-to-br from-gray-50 to-white">
+    <Card className="p-8 mb-8 border-0 shadow-lg bg-gradient-to-br from-muted/50 to-card">
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -50,7 +50,7 @@ const TelegramSection = () => {
             </svg>
             {t.telegram.title}
           </h2>
-          <p className="text-gray-600">{t.telegram.subtitle}</p>
+          <p className="text-muted-foreground">{t.telegram.subtitle}</p>
         </div>
         
         <div className="flex flex-col gap-4">
