@@ -25,7 +25,7 @@ const MenuButton: React.FC<MenuButtonProps> = React.memo(({ active, onClick, lab
         "px-4 py-2 rounded-md text-sm font-medium transition-colors",
         active
           ? "bg-gradient-to-r from-green-600 to-green-800 text-white shadow-sm"
-          : "text-gray-700 hover:bg-gray-100 hover:text-gray-900",
+          : "text-foreground/90 hover:bg-muted hover:text-foreground",
         className
       )}
       aria-current={active ? "page" : undefined}
