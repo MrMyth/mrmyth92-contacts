@@ -35,7 +35,7 @@ export const en = {
   about: {
     title: "A Little About Me",
     fullName: "Full Name:",
-    fullNameValue: "Dmitry Olegovich Starchikov.",
+    fullNameValue: "Dmitry Starchikov.",
     birthDate: "Birth Date:",
     birthDateValue: "September 11, 1992.",
     skillsTitle: "My Skills and Hobbies:",
