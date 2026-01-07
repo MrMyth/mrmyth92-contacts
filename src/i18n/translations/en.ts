@@ -40,7 +40,7 @@ export const en = {
     birthDateValue: "September 11, 1992.",
     skillsTitle: "My Skills and Hobbies:",
     skills: [
-      "I have a first-degree disability due to a congenital condition. But I lead an active lifestyle. I love computer games and everything related to PCs. I run two YouTube channels for The Division & Assassin's Creed franchises.",
+      "I have a significant physical disability due to a congenital condition. But I lead an active lifestyle. I love computer games and everything related to PCs. I run two YouTube channels for The Division & Assassin's Creed franchises.",
       "I stream games from both franchises on one Twitch channel.",
       "Additionally, everything is mirrored to my VK group.",
       "Professional Discord server setup.",
