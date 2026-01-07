@@ -5,10 +5,12 @@ import { Download, AlertCircle, Copy, ArrowRight } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/i18n/LanguageContext";
+import { useTheme } from "@/hooks/useTheme";
 
 const DiscordWidget = () => {
   const { toast } = useToast();
   const { t } = useLanguage();
+  const { theme } = useTheme();
   const discordUsername = "MrMyth92";
   
   const handleCopyDiscordUsername = () => {
@@ -76,7 +78,7 @@ const DiscordWidget = () => {
           >
             <h3 className="text-xl font-semibold text-foreground">{t.discord.serverWidget}</h3>
             <iframe 
-              src="https://discord.com/widget?id=835802952521351180&theme=light" 
+              src={`https://discord.com/widget?id=835802952521351180&theme=${theme}`}
               width="100%" 
               height="500" 
               allowTransparency={true} 
