@@ -78,6 +78,7 @@ const DiscordWidget = () => {
           >
             <h3 className="text-xl font-semibold text-foreground">{t.discord.serverWidget}</h3>
             <iframe 
+              key={theme}
               src={`https://discord.com/widget?id=835802952521351180&theme=${theme}`}
               width="100%" 
               height="500" 
