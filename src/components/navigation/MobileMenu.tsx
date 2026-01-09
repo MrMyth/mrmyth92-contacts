@@ -89,6 +89,7 @@ const MobileMenu: React.FC<MobileMenuProps> = React.memo(
                         onClick={() => onNavigate(item.href)}
                         label={t.nav[item.labelKey]}
                         variant="section"
+                        icon={item.icon}
                       />
                     </motion.div>
                   ))}
