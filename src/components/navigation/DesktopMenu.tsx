@@ -16,13 +16,14 @@ const DesktopMenu: React.FC<DesktopMenuProps> = React.memo(
     const { t } = useLanguage();
     
     return (
-      <nav className={cn("hidden md:flex space-x-1", className)} role="menubar" aria-label="Section navigation">
+      <nav className={cn("hidden md:flex flex-wrap justify-center gap-1", className)} role="menubar" aria-label="Section navigation">
         {items.map((item) => (
           <MenuButton
             key={item.href}
             active={activeSection === item.href}
             onClick={() => onNavigate(item.href)}
             label={t.nav[item.labelKey]}
+            icon={item.icon}
           />
         ))}
       </nav>
