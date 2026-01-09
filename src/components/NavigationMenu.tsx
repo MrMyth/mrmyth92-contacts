@@ -41,33 +41,37 @@ const NavigationMenu: React.FC = memo(() => {
       transition={{ duration: 0.5, ease: "easeOut" }}
       role="banner"
     >
-      <div className="container mx-auto flex justify-between items-center">
-        <BrandLogo onClick={scrollToTop} />
-        
-        {/* Меню страниц (залитые кнопки) */}
-        <PagesMenu items={pageNavigationItems} className="hidden md:flex" />
-        
-        {/* Language switcher and theme toggle for desktop */}
-        <div className="hidden md:flex items-center gap-2">
+      {/* Десктопная версия - пирамида */}
+      <div className="hidden md:flex flex-col items-center gap-2 container mx-auto">
+        {/* Первый ряд: переключатели языка и темы */}
+        <div className="flex items-center gap-2">
           <ThemeToggle />
           <LanguageSwitcher />
         </div>
-
-        {/* Переключатель мобильного меню */}
-        <div className="md:hidden flex items-center gap-2">
-          <ThemeToggle />
-          <LanguageSwitcher />
-          <MenuToggleButton isOpen={isMenuOpen} onClick={toggleMenu} />
-        </div>
-
-        {/* Десктопное меню разделов (только на главной) */}
+        
+        {/* Второй ряд: меню страниц */}
+        <PagesMenu items={pageNavigationItems} />
+        
+        {/* Третий ряд: меню разделов (только на главной) */}
         {isHomePage && (
           <DesktopMenu 
             items={sectionNavigationItems} 
             activeSection={activeSection} 
             onNavigate={handleNavigation} 
+            className="flex"
           />
         )}
+      </div>
+
+      {/* Мобильная версия */}
+      <div className="md:hidden container mx-auto flex justify-between items-center">
+        <BrandLogo onClick={scrollToTop} />
+        
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
+          <LanguageSwitcher />
+          <MenuToggleButton isOpen={isMenuOpen} onClick={toggleMenu} />
+        </div>
       </div>
 
       {/* Выпадающее мобильное меню */}
