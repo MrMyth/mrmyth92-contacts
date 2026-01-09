@@ -1,5 +1,11 @@
 export const ru = {
-  // Navigation
+  // Navigation - pages menu
+  pages: {
+    home: "Главная",
+    viewerInfo: "Информация для зрителей",
+  },
+
+  // Navigation - sections menu
   nav: {
     aboutMe: "Обо мне",
     telegram: "Telegram",

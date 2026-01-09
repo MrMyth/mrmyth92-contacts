@@ -1,12 +1,11 @@
-
 import React from "react";
 import MenuButton from "./MenuButton";
-import { NavigationItem } from "@/data/navigationItems";
+import { SectionItem } from "@/data/navigationItems";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { cn } from "@/lib/utils";
 
 interface DesktopMenuProps {
-  items: NavigationItem[];
+  items: SectionItem[];
   activeSection: string;
   onNavigate: (href: string) => void;
   className?: string;
@@ -17,7 +16,7 @@ const DesktopMenu: React.FC<DesktopMenuProps> = React.memo(
     const { t } = useLanguage();
     
     return (
-      <nav className={cn("hidden md:flex space-x-1", className)} role="menubar" aria-label="Site navigation">
+      <nav className={cn("hidden md:flex space-x-1", className)} role="menubar" aria-label="Section navigation">
         {items.map((item) => (
           <MenuButton
             key={item.href}
