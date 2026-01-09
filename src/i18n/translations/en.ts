@@ -1,5 +1,11 @@
 export const en = {
-  // Navigation
+  // Navigation - pages menu
+  pages: {
+    home: "Home",
+    viewerInfo: "Viewer Info",
+  },
+
+  // Navigation - sections menu
   nav: {
     aboutMe: "About Me",
     telegram: "Telegram",

@@ -1,13 +1,14 @@
-
 import React, { memo, useMemo } from "react";
 import { motion } from "framer-motion";
+import { useLocation } from "react-router-dom";
 import BrandLogo from "./navigation/BrandLogo";
 import MenuToggleButton from "./navigation/MenuToggleButton";
 import DesktopMenu from "./navigation/DesktopMenu";
 import MobileMenu from "./navigation/MobileMenu";
+import PagesMenu from "./navigation/PagesMenu";
 import LanguageSwitcher from "./LanguageSwitcher";
 import ThemeToggle from "./ThemeToggle";
-import { navigationItems } from "../data/navigationItems";
+import { pageNavigationItems, sectionNavigationItems } from "../data/navigationItems";
 import { useNavigation } from "../hooks/useNavigation";
 import { cn } from "@/lib/utils";
 
@@ -20,8 +21,10 @@ const NavigationMenu: React.FC = memo(() => {
     handleNavigation, 
     scrollToTop 
   } = useNavigation();
+  
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
 
-  // Используем useMemo для стилей заголовка, чтобы избежать лишних перерисовок
   const headerStyle = useMemo(() => 
     cn(
       "sticky top-0 bg-background/90 backdrop-blur-sm z-50 py-2 px-4 transition-all duration-300",
@@ -41,6 +44,9 @@ const NavigationMenu: React.FC = memo(() => {
       <div className="container mx-auto flex justify-between items-center">
         <BrandLogo onClick={scrollToTop} />
         
+        {/* Меню страниц (залитые кнопки) */}
+        <PagesMenu items={pageNavigationItems} className="hidden md:flex" />
+        
         {/* Language switcher and theme toggle for desktop */}
         <div className="hidden md:flex items-center gap-2">
           <ThemeToggle />
@@ -54,22 +60,25 @@ const NavigationMenu: React.FC = memo(() => {
           <MenuToggleButton isOpen={isMenuOpen} onClick={toggleMenu} />
         </div>
 
-        {/* Десктопное меню */}
-        <DesktopMenu 
-          items={navigationItems} 
-          activeSection={activeSection} 
-          onNavigate={handleNavigation} 
-        />
+        {/* Десктопное меню разделов (только на главной) */}
+        {isHomePage && (
+          <DesktopMenu 
+            items={sectionNavigationItems} 
+            activeSection={activeSection} 
+            onNavigate={handleNavigation} 
+          />
+        )}
       </div>
 
       {/* Выпадающее мобильное меню */}
       <MobileMenu 
         isOpen={isMenuOpen} 
-        items={navigationItems} 
-        activeSection={activeSection} 
+        sectionItems={sectionNavigationItems}
+        pageItems={pageNavigationItems}
+        activeSection={activeSection}
+        currentPath={location.pathname}
         onNavigate={(href) => {
           handleNavigation(href);
-          // Всегда закрываем мобильное меню после навигации
           toggleMenu();
         }} 
       />

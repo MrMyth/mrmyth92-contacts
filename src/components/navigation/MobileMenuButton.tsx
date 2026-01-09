@@ -1,4 +1,3 @@
-
 import React from "react";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
@@ -7,24 +6,30 @@ interface MobileMenuButtonProps {
   active: boolean;
   onClick: () => void;
   label: string;
+  variant?: "page" | "section";
   className?: string;
 }
 
 const MobileMenuButton: React.FC<MobileMenuButtonProps> = React.memo(
-  ({ active, onClick, label, className }) => {
+  ({ active, onClick, label, variant = "section", className }) => {
+    const isPage = variant === "page";
+    
     return (
       <motion.button
         onClick={onClick}
         className={cn(
           "px-4 py-3 rounded-md text-left text-sm font-medium transition-colors w-full",
-          active
-            ? "bg-gradient-to-r from-green-600 to-green-800 text-white"
-            : "text-gray-700 hover:bg-gray-50",
+          isPage
+            ? active
+              ? "bg-primary text-primary-foreground"
+              : "bg-primary/80 text-primary-foreground hover:bg-primary"
+            : active
+              ? "bg-gradient-to-r from-green-600 to-green-800 text-white"
+              : "text-foreground hover:bg-muted",
           className
         )}
         aria-current={active ? "page" : undefined}
         whileTap={{ scale: 0.98 }}
-        whileHover={{ backgroundColor: active ? undefined : "rgba(243, 244, 246, 1)" }}
         role="menuitem"
       >
         {label}
