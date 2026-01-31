@@ -83,9 +83,6 @@ export const en = {
   contacts: {
     title: "Contacts",
     subtitle: "Contact me in any convenient way",
-    whatsapp: "WhatsApp",
-    write: "Write",
-    download: "Download WhatsApp",
     otherContacts: "Other Contacts",
     ok: "Odnoklassniki",
     goToProfile: "Go to Profile",

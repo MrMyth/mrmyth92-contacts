@@ -83,9 +83,6 @@ export const ru = {
   contacts: {
     title: "Контакты",
     subtitle: "Свяжитесь со мной удобным способом",
-    whatsapp: "WhatsApp",
-    write: "Написать",
-    download: "Скачать WhatsApp",
     otherContacts: "Другие контакты",
     ok: "Одноклассники",
     goToProfile: "Перейти в профиль",
