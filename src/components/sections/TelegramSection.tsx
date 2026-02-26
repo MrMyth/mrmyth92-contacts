@@ -19,14 +19,14 @@ const TelegramSection = () => {
     { 
       id: "telegram-second",
       buttonText: t.telegram.groupButton,
-      username: "@MrMyth92_DS",
+      username: t.telegram.previewDesc,
       url: "https://t.me/MrMyth92_DS",
       bgColor: "bg-[#229ED9] hover:bg-[#229ED9]/90",
     },
     { 
       id: "telegram-public",
       buttonText: t.telegram.publicGroup,
-      username: t.telegram.publicGroup,
+      username: t.telegram.joinDesc,
       url: "https://t.me/+WkKIfu_LFrYxMzVi",
       bgColor: "bg-[#229ED9] hover:bg-[#229ED9]/90",
     },

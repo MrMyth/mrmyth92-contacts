@@ -63,8 +63,10 @@ export const en = {
     subtitle: "Everything related to Telegram",
     writeButton: "Write",
     groupButton: "Go to Group",
-    downloadButton: "Additional: Download Telegram",
+    previewDesc: "For content preview",
     publicGroup: "Telegram public group",
+    joinDesc: "To join the group",
+    downloadButton: "Additional: Download Telegram",
   },
 
   // VK Section
