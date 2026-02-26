@@ -23,6 +23,13 @@ const TelegramSection = () => {
       url: "https://t.me/MrMyth92_DS",
       bgColor: "bg-[#229ED9] hover:bg-[#229ED9]/90",
     },
+    { 
+      id: "telegram-public",
+      buttonText: t.telegram.publicGroup,
+      username: t.telegram.publicGroup,
+      url: "https://t.me/+WkKIfu_LFrYxMzVi",
+      bgColor: "bg-[#229ED9] hover:bg-[#229ED9]/90",
+    },
   ];
 
   return (

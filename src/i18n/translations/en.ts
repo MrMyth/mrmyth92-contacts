@@ -53,7 +53,7 @@ export const en = {
       "Professional work with graphic neural networks, creating original images.",
     ],
     warning1: "Many services are currently experiencing issues in Russia, so I offer you 3 platforms to choose from. Pick the one that's convenient for you, but don't forget to subscribe! Thank you.",
-    warning2: "For your convenience, the website also has buttons to official Telegram, WhatsApp, and Discord websites. This is so you don't have to search for these programs' websites.",
+    warning2: "For your convenience, the website also has buttons to official Telegram and Discord websites. This is so you don't have to search for these programs' websites.",
     photoAlt: "Dmitry Starchikov",
   },
 
