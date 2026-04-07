@@ -2,24 +2,21 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Download, Copy, ArrowRight, AlertCircle } from "lucide-react";
-import { useToast } from "@/components/ui/use-toast";
+import { toast } from "sonner";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { useTheme } from "@/hooks/useTheme";
 import { DiscordIcon } from "@/components/icons/SocialIcons";
 
 const DiscordWidget = () => {
-  const { toast } = useToast();
   const { t } = useLanguage();
   const { theme } = useTheme();
   const discordUsername = "MrMyth92";
   
   const handleCopyDiscordUsername = () => {
     navigator.clipboard.writeText(discordUsername);
-    toast({
-      title: t.discord.nicknameCopied,
+    toast.success(t.discord.nicknameCopied, {
       description: t.discord.nicknameCopiedDesc,
-      duration: 2000
     });
   };
   

@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Copy, ArrowRight } from "lucide-react";
-import { useToast } from "@/components/ui/use-toast";
+import { toast } from "sonner";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 interface SocialLinkCardProps {
@@ -30,7 +30,6 @@ const SocialLinkCard: React.FC<SocialLinkCardProps> = ({
   copyValue,
   rotation = 6,
 }) => {
-  const { toast } = useToast();
   const { t } = useLanguage();
 
   const handleCopy = (e: React.MouseEvent) => {

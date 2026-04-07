@@ -1,16 +1,15 @@
 import React from "react";
 import { Card } from "@/components/ui/card";
-import { User, Gamepad2, Youtube, Twitch, Disc3, Paintbrush, AlertCircle } from "lucide-react";
+import { User, Gamepad2, Youtube, Twitch, Disc3, Paintbrush, AlertCircle, Info } from "lucide-react";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 type BiographyItemProps = {
   label: string;
   value: string;
-  icon?: React.ReactNode;
 };
 
-const BiographyItem: React.FC<BiographyItemProps> = ({ label, value, icon }) => (
+const BiographyItem: React.FC<BiographyItemProps> = ({ label, value }) => (
   <motion.div 
     initial={{ opacity: 0, x: -10 }}
     whileInView={{ opacity: 1, x: 0 }}
@@ -18,7 +17,7 @@ const BiographyItem: React.FC<BiographyItemProps> = ({ label, value, icon }) => 
     viewport={{ once: true, margin: "-50px" }}
     className="flex items-start gap-3"
   >
-    {icon && <span className="text-green-500 mt-1">{icon}</span>}
+    <span className="text-green-500 mt-1">•</span>
     <p className="text-foreground">
       <span className="font-semibold">{label}</span> {value}
     </p>
@@ -45,14 +44,12 @@ const AboutMeSection = () => {
     { 
       id: "name", 
       label: t.about.fullName, 
-      value: t.about.fullNameValue,
-      icon: <User className="h-4 w-4" />
+      value: t.about.fullNameValue
     },
     { 
       id: "birthdate", 
       label: t.about.birthDate, 
-      value: t.about.birthDateValue,
-      icon: <Disc3 className="h-4 w-4" />
+      value: t.about.birthDateValue
     }
   ];
 
@@ -94,26 +91,34 @@ const AboutMeSection = () => {
             <p className="text-xl font-medium text-gradient-secondary">{t.about.subtitle}</p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {biographyItems.map((item) => (
-              <BiographyItem 
-                key={item.id} 
-                label={item.label} 
-                value={item.value}
-                icon={item.icon}
-              />
-            ))}
-          </div>
-
           <div className="space-y-8">
-            <h3 className="text-2xl font-bold tracking-tight flex items-center gap-3 text-gradient-secondary">
-              <Paintbrush className="h-6 w-6 text-green-600" />
-              {t.about.skillsTitle}
-            </h3>
-            <div className="grid grid-cols-1 gap-4">
-              {t.about.skills.map((skill, index) => (
-                <SkillItem key={index}>{skill}</SkillItem>
-              ))}
+            <div className="space-y-4">
+              <h3 className="text-2xl font-bold tracking-tight flex items-center gap-3 text-gradient-secondary">
+                <Info className="h-6 w-6 text-green-600" />
+                {t.about.personalInfoTitle}
+              </h3>
+              <div className="flex flex-col gap-4">
+                {biographyItems.map((item) => (
+                  <BiographyItem 
+                    key={item.id} 
+                    label={item.label} 
+                    value={item.value}
+                    icon={item.icon}
+                  />
+                ))}
+              </div>
+            </div>
+
+            <div className="space-y-8">
+              <h3 className="text-2xl font-bold tracking-tight flex items-center gap-3 text-gradient-secondary">
+                <Paintbrush className="h-6 w-6 text-green-600" />
+                {t.about.skillsTitle}
+              </h3>
+              <div className="grid grid-cols-1 gap-4">
+                {t.about.skills.map((skill, index) => (
+                  <SkillItem key={index}>{skill}</SkillItem>
+                ))}
+              </div>
             </div>
           </div>
 

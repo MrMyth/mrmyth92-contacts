@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Loader2, ChevronLeft, ChevronRight } from "lucide-react";
+import { Loader2, AlertCircle, ChevronLeft, ChevronRight } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 const HeroSection: React.FC = () => {
@@ -143,7 +143,7 @@ const HeroSection: React.FC = () => {
         
         <div className="bg-amber-500/10 border border-amber-500/20 rounded-2xl p-6 flex items-start gap-4">
           <div className="p-2 bg-amber-500/20 rounded-lg text-amber-600">
-            <Loader2 className="h-5 w-5 animate-spin" />
+            <AlertCircle className="h-5 w-5" />
           </div>
           <p className="text-sm font-bold text-amber-700 dark:text-amber-300 leading-tight">
             {t.hero.updateNotice}

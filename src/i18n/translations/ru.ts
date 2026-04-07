@@ -50,6 +50,7 @@ export const ru = {
   about: {
     title: "Немного обо мне",
     subtitle: "Моя история и профессиональные навыки",
+    personalInfoTitle: "Личная информация:",
     fullName: "ФИО:",
     fullNameValue: "Старчиков Дмитрий Олегович.",
     birthDate: "Дата рождения:",

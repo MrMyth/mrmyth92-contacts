@@ -2,21 +2,18 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { DollarSign, Gift, Copy } from "lucide-react";
-import { useToast } from "@/components/ui/use-toast";
+import { toast } from "sonner";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 const DonationSection = () => {
-  const { toast } = useToast();
   const { t } = useLanguage();
   const cardNumber = "2202200321251892";
 
   const handleCopyCard = () => {
     navigator.clipboard.writeText(cardNumber);
-    toast({
-      title: t.donations.cardCopied,
+    toast.success(t.donations.cardCopied, {
       description: t.donations.cardCopiedDesc,
-      duration: 2000,
     });
   };
 
