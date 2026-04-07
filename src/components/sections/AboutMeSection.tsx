@@ -57,96 +57,100 @@ const AboutMeSection = () => {
   ];
 
   return (
-    <Card className="p-8 mb-8 border-0 shadow-lg bg-gradient-to-br from-muted/50 to-card">
-      <motion.h2 
-        initial={{ opacity: 0, y: 10 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        viewport={{ once: true }}
-        className="text-3xl font-bold mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-blue-500 flex items-center justify-center gap-3"
-      >
-        <User className="h-8 w-8 text-green-600" />
-        {t.about.title}
-      </motion.h2>
-      
-      <div className="flex flex-col lg:flex-row gap-8 items-center">
-        <div className="flex-1 space-y-4 text-left">
-          {biographyItems.map((item) => (
-            <BiographyItem 
-              key={item.id} 
-              label={item.label} 
-              value={item.value}
-              icon={item.icon}
+    <section className="py-24 border-t border-border/50">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+        {/* Image Column */}
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          viewport={{ once: true }}
+          className="lg:col-span-5 relative"
+        >
+          <div className="aspect-[4/5] overflow-hidden rounded-[2.5rem] shadow-2xl">
+            <img 
+              src="/images/my-ava.jpg" 
+              alt={t.about.photoAlt} 
+              className="w-full h-full object-cover transition-all duration-700" 
+              loading="lazy" 
             />
-          ))}
-          
+          </div>
+          <div className="absolute -bottom-8 -right-8 w-48 h-48 bg-green-600/10 rounded-full blur-3xl -z-10" />
+        </motion.div>
+
+        {/* Content Column */}
+        <div className="lg:col-span-7 space-y-12">
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="pt-4 space-y-4"
+            className="space-y-2 pb-8 border-b border-border/50"
           >
-            <h3 className="text-xl font-semibold text-foreground flex items-center gap-2">
-              <Paintbrush className="h-5 w-5 text-green-600" />
+            <h2 className="text-4xl md:text-6xl font-black tracking-tighter uppercase flex items-center gap-4 text-gradient-primary">
+              <User className="h-10 w-10 text-green-600" />
+              {t.about.title}
+            </h2>
+            <p className="text-xl font-medium text-gradient-secondary">{t.about.subtitle}</p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {biographyItems.map((item) => (
+              <BiographyItem 
+                key={item.id} 
+                label={item.label} 
+                value={item.value}
+                icon={item.icon}
+              />
+            ))}
+          </div>
+
+          <div className="space-y-8">
+            <h3 className="text-2xl font-bold tracking-tight flex items-center gap-3 text-gradient-secondary">
+              <Paintbrush className="h-6 w-6 text-green-600" />
               {t.about.skillsTitle}
             </h3>
-            <div className="space-y-3 pl-2">
+            <div className="grid grid-cols-1 gap-4">
               {t.about.skills.map((skill, index) => (
                 <SkillItem key={index}>{skill}</SkillItem>
               ))}
             </div>
+          </div>
 
-            {/* Добавленное уведомление */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-8">
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.4 }}
               viewport={{ once: true }}
-              className="bg-yellow-50 dark:bg-yellow-900/30 border-l-4 border-yellow-400 p-4 rounded-r"
+              className="bg-amber-500/5 border border-amber-500/10 p-6 rounded-3xl"
             >
-              <div className="flex items-start">
-                <AlertCircle className="h-5 w-5 text-yellow-500 mr-2 mt-0.5 flex-shrink-0" />
-                <p className="text-yellow-700 dark:text-yellow-300">
+              <div className="flex items-start gap-4">
+                <AlertCircle className="h-6 w-6 text-amber-500 flex-shrink-0 mt-1" />
+                <p className="text-sm text-amber-700 dark:text-amber-300 font-medium leading-relaxed">
                   {t.about.warning1}
                 </p>
               </div>
             </motion.div>
 
-            {/* Второе уведомление */}
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.6 }}
               viewport={{ once: true }}
-              className="bg-yellow-50 dark:bg-yellow-900/30 border-l-4 border-yellow-400 p-4 rounded-r"
+              className="bg-blue-500/5 border border-blue-500/10 p-6 rounded-3xl"
             >
-              <div className="flex items-start">
-                <AlertCircle className="h-5 w-5 text-yellow-500 mr-2 mt-0.5 flex-shrink-0" />
-                <p className="text-yellow-700 dark:text-yellow-300">
+              <div className="flex items-start gap-4">
+                <AlertCircle className="h-6 w-6 text-blue-500 flex-shrink-0 mt-1" />
+                <p className="text-sm text-blue-700 dark:text-blue-300 font-medium leading-relaxed">
                   {t.about.warning2}
                 </p>
               </div>
             </motion.div>
-          </motion.div>
+          </div>
         </div>
-        
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-          className="flex-shrink-0"
-        >
-          <img 
-            src="https://i.postimg.cc/zBL6c5K3/my-ava.jpg" 
-            alt={t.about.photoAlt} 
-            className="rounded-xl shadow-xl w-64 h-64 md:w-80 md:h-80 object-cover border-4 border-green-500/20" 
-            loading="lazy" 
-          />
-        </motion.div>
       </div>
-    </Card>
+    </section>
   );
 };
 

@@ -1,19 +1,8 @@
 import React, { useEffect } from "react";
-import HeroSection from "@/components/sections/HeroSection";
 import AboutMeSection from "@/components/sections/AboutMeSection";
-import DonationSection from "@/components/sections/DonationSection";
-import YoutubeSection from "@/components/sections/YoutubeSection";
-import VKGroupSection from "@/components/sections/VKGroupSection";
-import ContactSection from "@/components/sections/ContactSection";
-import DiscordWidget from "@/components/sections/DiscordWidget";
-import TelegramSection from "@/components/sections/TelegramSection";
-import CopyDataSection from "@/components/sections/CopyDataSection";
-import TwitchSection from "@/components/sections/TwitchSection";
-import AuthorCreationsSection from "@/components/sections/AuthorCreationsSection";
 import StreamRulesLink from "@/components/sections/StreamRulesLink";
-import Footer from "@/components/Footer";
-import NavigationMenu from "@/components/NavigationMenu";
-import ScrollToTop from "@/components/ScrollToTop";
+import PCSpecsLink from "@/components/sections/PCSpecsLink";
+import Layout from "@/components/Layout";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 const Index = () => {
@@ -40,52 +29,22 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <div className="bg-gradient-to-r from-green-600 to-green-700 text-white text-center py-2 px-4">
-        <span className="font-bold text-lg">MrMyth92 Dmitry Starchikov</span>
-      </div>
-      <NavigationMenu />
-      <main className="container px-4 py-8 mx-auto">
-        <section id="hero-section" className="scroll-mt-20">
-          <HeroSection />
-        </section>
+    <Layout>
+      <div className="space-y-12">
         <section id="about-me-section" className="scroll-mt-20">
           <AboutMeSection />
         </section>
-        <section id="telegram-section" className="scroll-mt-20">
-          <TelegramSection />
+        
+        <section id="setup-link-section" className="scroll-mt-20">
+          <PCSpecsLink />
         </section>
-        <section id="vk-section" className="scroll-mt-20">
-          <VKGroupSection />
-        </section>
-        <section id="contact-section" className="scroll-mt-20">
-          <ContactSection />
-        </section>
-        <section id="discord-section" className="scroll-mt-20">
-          <DiscordWidget />
-        </section>
-        <section id="youtube-section" className="scroll-mt-20">
-          <YoutubeSection />
-        </section>
-        <section id="twitch-section" className="scroll-mt-20">
-          <TwitchSection />
-        </section>
-        <section id="contacts-section" className="scroll-mt-20">
-          <CopyDataSection />
-        </section>
-        <section id="author-creations-section" className="scroll-mt-20">
-          <AuthorCreationsSection />
-        </section>
-        <section id="donation-section" className="scroll-mt-20">
-          <DonationSection />
-        </section>
-        <section id="stream-rules-link" className="scroll-mt-20 mt-8">
+
+        <section id="stream-rules-link-section" className="scroll-mt-20">
           <StreamRulesLink />
         </section>
-      </main>
-      <Footer />
-      <ScrollToTop />
-    </div>
+      </div>
+    </Layout>
   );
 };
+
 export default Index;

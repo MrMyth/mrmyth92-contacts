@@ -33,22 +33,25 @@ const TelegramSection = () => {
   ];
 
   return (
-    <Card className="p-8 mb-8 border-0 shadow-lg bg-gradient-to-br from-muted/50 to-card">
+    <section className="py-16">
       <motion.div
-        initial={{ opacity: 0, y: 10 }}
+        initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.8 }}
         viewport={{ once: true }}
+        className="space-y-12"
       >
-        <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-blue-500 flex items-center justify-center gap-3">
-            <TelegramIcon className="h-8 w-8 text-[#229ED9]" />
-            {t.telegram.title}
-          </h2>
-          <p className="text-muted-foreground">{t.telegram.subtitle}</p>
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-border/50">
+          <div className="space-y-2">
+            <h2 className="text-4xl md:text-6xl font-black tracking-tighter uppercase flex items-center gap-4 text-gradient-primary">
+              <TelegramIcon className="h-10 w-10 text-[#229ED9]" />
+              {t.telegram.title}
+            </h2>
+            <p className="text-xl font-medium text-gradient-secondary">{t.telegram.subtitle}</p>
+          </div>
         </div>
         
-        <div className="flex flex-col gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {telegramLinks.map((link, index) => (
             <SocialLinkCard
               key={link.id}
@@ -61,18 +64,17 @@ const TelegramSection = () => {
             />
           ))}
           
-          {/* Дополнительная кнопка скачивания */}
           <SocialLinkCard
             href="https://telegram.org/"
             icon={<TelegramIcon />}
             buttonText={t.telegram.downloadButton}
             username="telegram.org"
-            bgColor="bg-gray-600 hover:bg-gray-600/90"
-            index={2}
+            bgColor="bg-gray-600"
+            index={3}
           />
         </div>
       </motion.div>
-    </Card>
+    </section>
   );
 };
 

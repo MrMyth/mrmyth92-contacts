@@ -1,23 +1,17 @@
 import React from "react";
-import { Card } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/i18n/LanguageContext";
-import { VKIcon } from "@/components/icons/SocialIcons";
+import { OKIcon } from "@/components/icons/SocialIcons";
 import SocialLinkCard from "@/components/ui/SocialLinkCard";
 
-const VKGroupSection = () => {
+const OKSection = () => {
   const { t } = useLanguage();
   
-  const vkLinks = [
+  const okLinks = [
     {
-      buttonText: t.vk.goToGroup,
-      username: "@mrmyth92ds",
-      url: "https://vk.com/mrmyth92ds",
-    },
-    {
-      buttonText: t.vk.goToProfile,
-      username: "@mrmyth92",
-      url: "https://vk.com/mrmyth92",
+      buttonText: t.contacts.okProfile,
+      username: "@MrMyth92",
+      url: "https://ok.ru/profile/519663632974",
     }
   ];
 
@@ -33,22 +27,22 @@ const VKGroupSection = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-border/50">
           <div className="space-y-2">
             <h2 className="text-4xl md:text-6xl font-black tracking-tighter uppercase flex items-center gap-4 text-gradient-primary">
-              <VKIcon className="h-10 w-10 text-[#0077FF]" />
-              {t.vk.title}
+              <OKIcon className="h-10 w-10 text-[#EE8208]" />
+              {t.contacts.ok}
             </h2>
-            <p className="text-xl font-medium text-gradient-secondary">{t.vk.subtitle}</p>
+            <p className="text-xl font-medium text-gradient-secondary">{t.contacts.okProfile}</p>
           </div>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {vkLinks.map((link, index) => (
+          {okLinks.map((link, index) => (
             <SocialLinkCard
               key={index}
               href={link.url}
-              icon={<VKIcon />}
+              icon={<OKIcon />}
               buttonText={link.buttonText}
               username={link.username}
-              bgColor="bg-[#0077FF]"
+              bgColor="bg-[#EE8208]"
               index={index}
             />
           ))}
@@ -58,4 +52,4 @@ const VKGroupSection = () => {
   );
 };
 
-export default VKGroupSection;
+export default OKSection;

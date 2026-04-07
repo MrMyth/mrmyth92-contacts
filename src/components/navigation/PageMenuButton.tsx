@@ -10,30 +10,29 @@ interface PageMenuButtonProps {
 }
 
 const PageMenuButton: React.FC<PageMenuButtonProps> = React.memo(({ active, onClick, label, className }) => {
-  const buttonAnimation = {
-    rest: { scale: 1, transition: { duration: 0.2, type: "spring", stiffness: 400, damping: 17 } },
-    hover: { scale: 1.05, transition: { duration: 0.2, type: "spring", stiffness: 400, damping: 17 } },
-    tap: { scale: 0.95, transition: { duration: 0.1 } }
-  };
-
   return (
     <motion.button
       onClick={onClick}
       className={cn(
-        "px-4 py-2 rounded-md text-sm font-medium transition-colors",
+        "relative px-4 py-2 text-sm font-bold uppercase tracking-widest transition-colors",
         active
-          ? "bg-primary text-primary-foreground shadow-sm"
-          : "bg-primary/80 text-primary-foreground hover:bg-primary",
+          ? "text-green-600"
+          : "text-muted-foreground hover:text-foreground",
         className
       )}
       aria-current={active ? "page" : undefined}
-      variants={buttonAnimation}
-      initial="rest"
-      whileHover="hover"
-      whileTap="tap"
+      whileHover={{ y: -2 }}
+      whileTap={{ scale: 0.95 }}
       role="menuitem"
     >
       {label}
+      {active && (
+        <motion.div
+          layoutId="activeTab"
+          className="absolute bottom-0 left-0 right-0 h-0.5 bg-green-600 mx-4"
+          transition={{ type: "spring", stiffness: 380, damping: 30 }}
+        />
+      )}
     </motion.button>
   );
 });

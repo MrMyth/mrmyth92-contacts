@@ -7,13 +7,16 @@ interface BrandLogoProps {
 }
 
 const BrandLogo: React.FC<BrandLogoProps> = React.memo(({ onClick }) => {
-  // Enhanced animation variants
-  const hoverAnimation = {
-    rest: { scale: 1, transition: { duration: 0.2, ease: "easeOut" } },
-    hover: { scale: 1.03, transition: { duration: 0.2, ease: "easeOut" } }
-  };
-
-  return null;
+  return (
+    <motion.button
+      onClick={onClick}
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      className="flex items-center gap-2 group"
+    >
+      {/* Nickname removed as requested */}
+    </motion.button>
+  );
 });
 
 BrandLogo.displayName = "BrandLogo";

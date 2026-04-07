@@ -1,82 +1,79 @@
 import React from "react";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Copy, Gamepad2 } from "lucide-react";
-import { useToast } from "@/components/ui/use-toast";
+import { Gamepad2 } from "lucide-react";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/i18n/LanguageContext";
+import SocialLinkCard from "@/components/ui/SocialLinkCard";
 
 const CopyDataSection = () => {
-  const { toast } = useToast();
   const { t } = useLanguage();
   
   const gameServices = [
-    { name: "Ubisoft Connect", username: "MrMyth92", isCode: false, number: 1 },
-    { name: "EA", username: "MrMyth92", isCode: false, number: 2 },
-    { name: "Epic Games", username: "MrMyth1992", isCode: false, number: 3 },
-    { name: "Steam", username: "882746935", isCode: true, number: 4 }
+    { 
+      name: "Ubisoft Connect", 
+      username: "MrMyth92", 
+      copyValue: "MrMyth92",
+      icon: <Gamepad2 />, 
+      color: "bg-[#0070FF] hover:bg-[#0070FF]/90",
+      rotation: -12,
+      number: 1 
+    },
+    { 
+      name: "EA", 
+      username: "MrMyth92", 
+      copyValue: "MrMyth92",
+      icon: <Gamepad2 />, 
+      color: "bg-[#FF4747] hover:bg-[#FF4747]/90",
+      rotation: 8,
+      number: 2 
+    },
+    { 
+      name: "Epic Games", 
+      username: "MrMyth1992", 
+      copyValue: "MrMyth1992",
+      icon: <Gamepad2 />, 
+      color: "bg-[#F4D124] hover:bg-[#F4D124]/90",
+      textColor: "text-black",
+      rotation: -5,
+      number: 3 
+    },
+    { 
+      name: "Steam", 
+      username: "882746935", 
+      copyValue: "882746935",
+      icon: <Gamepad2 />, 
+      color: "bg-[#1b2838] hover:bg-[#1b2838]/90",
+      rotation: 15,
+      number: 4,
+      isCode: true
+    }
   ];
 
-  const handleCopyUsername = (serviceName: string, username: string, isCode: boolean) => {
-    navigator.clipboard.writeText(username);
-    const type = isCode ? t.gaming.codeCopied : t.gaming.nameCopied;
-    toast({
-      title: `${serviceName} ${type}`,
-      description: `${serviceName} ${t.gaming.copiedToClipboard}`,
-      duration: 2000,
-    });
-  };
-
   return (
-    <Card className="p-8 mb-8 border-0 shadow-lg bg-gradient-to-br from-muted/50 to-card">
+    <section className="py-16">
       <motion.div
-        initial={{ opacity: 0, y: 10 }}
+        initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.8 }}
         viewport={{ once: true }}
-        className="text-center"
+        className="space-y-12"
       >
-        <h2 className="text-3xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-blue-500 flex items-center justify-center gap-3">
-          <Gamepad2 className="h-8 w-8 text-green-600" />
-          {t.gaming.title}
-        </h2>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
-          {gameServices.map((service, index) => {
-            return (
-              <motion.div
-                key={service.name}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ delay: 0.2 + index * 0.1 }}
-                viewport={{ once: true }}
-                className="flex flex-col gap-3 p-4 bg-muted rounded-xl"
-              >
-                <div className="flex items-center gap-2">
-                  <div className="flex items-center justify-center w-6 h-6 bg-green-600 text-white rounded-full text-sm font-bold">
-                    {service.number}
-                  </div>
-                  <span className="text-lg font-semibold text-foreground">
-                    {service.name} {service.isCode ? t.gaming.friendCode : ""}
-                  </span>
-                </div>
-                <p className="text-base font-mono text-green-600 break-all">
-                  {service.username}
-                </p>
-                <Button
-                  onClick={() => handleCopyUsername(service.name, service.username, service.isCode)}
-                  className="bg-green-600 hover:bg-green-700 text-white w-full"
-                  size="sm"
-                >
-                  <Copy className="mr-2 h-4 w-4" />
-                  {t.gaming.copy}
-                </Button>
-              </motion.div>
-            );
-          })}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+          {gameServices.map((service, index) => (
+            <SocialLinkCard
+              key={service.name}
+              icon={service.icon}
+              buttonText={service.name + (service.isCode ? ` ${t.gaming.friendCode}` : "")}
+              username={service.username}
+              bgColor={service.color}
+              textColor={service.textColor}
+              copyValue={service.copyValue}
+              rotation={service.rotation}
+              index={index}
+            />
+          ))}
         </div>
       </motion.div>
-    </Card>
+    </section>
   );
 };
 

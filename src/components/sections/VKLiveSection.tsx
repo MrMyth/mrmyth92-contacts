@@ -1,26 +1,12 @@
 import React from "react";
-import { Card } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { VKIcon } from "@/components/icons/SocialIcons";
 import SocialLinkCard from "@/components/ui/SocialLinkCard";
 
-const VKGroupSection = () => {
+const VKLiveSection = () => {
   const { t } = useLanguage();
   
-  const vkLinks = [
-    {
-      buttonText: t.vk.goToGroup,
-      username: "@mrmyth92ds",
-      url: "https://vk.com/mrmyth92ds",
-    },
-    {
-      buttonText: t.vk.goToProfile,
-      username: "@mrmyth92",
-      url: "https://vk.com/mrmyth92",
-    }
-  ];
-
   return (
     <section className="py-16">
       <motion.div
@@ -34,28 +20,25 @@ const VKGroupSection = () => {
           <div className="space-y-2">
             <h2 className="text-4xl md:text-6xl font-black tracking-tighter uppercase flex items-center gap-4 text-gradient-primary">
               <VKIcon className="h-10 w-10 text-[#0077FF]" />
-              {t.vk.title}
+              {t.vk.vkLive}
             </h2>
-            <p className="text-xl font-medium text-gradient-secondary">{t.vk.subtitle}</p>
+            <p className="text-xl font-medium text-gradient-secondary">{t.vk.vkLiveDesc}</p>
           </div>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {vkLinks.map((link, index) => (
-            <SocialLinkCard
-              key={index}
-              href={link.url}
-              icon={<VKIcon />}
-              buttonText={link.buttonText}
-              username={link.username}
-              bgColor="bg-[#0077FF]"
-              index={index}
-            />
-          ))}
+          <SocialLinkCard
+            href="https://live.vkvideo.ru/mrmyth92"
+            icon={<VKIcon />}
+            buttonText={t.vk.vkLive}
+            username="@mrmyth92"
+            bgColor="bg-[#0077FF]"
+            index={0}
+          />
         </div>
       </motion.div>
     </section>
   );
 };
 
-export default VKGroupSection;
+export default VKLiveSection;

@@ -2,7 +2,16 @@ export const ru = {
   // Navigation - pages menu
   pages: {
     home: "Главная",
+    streams: "Стримы и видео",
+    socials: "Соцсети",
+    socialsSubtitle: "Мои официальные сообщества и группы",
+    music: "Авторская музыка",
+    wallpapers: "Авторские обои на рабочий стол",
+    gaming: "Игровые платформы",
+    support: "Поддержка",
+    contact: "Email",
     viewerInfo: "Информация для зрителей",
+    setup: "Мой ПК / Железо",
   },
 
   // Navigation - sections menu
@@ -10,7 +19,7 @@ export const ru = {
     aboutMe: "Обо мне",
     telegram: "Telegram",
     vk: "VK",
-    contacts: "Контакты",
+    contacts: "Email",
     discord: "Discord",
     youtube: "YouTube",
     twitch: "Twitch",
@@ -40,6 +49,7 @@ export const ru = {
   // About Me Section
   about: {
     title: "Немного обо мне",
+    subtitle: "Моя история и профессиональные навыки",
     fullName: "ФИО:",
     fullNameValue: "Старчиков Дмитрий Олегович.",
     birthDate: "Дата рождения:",
@@ -75,7 +85,9 @@ export const ru = {
     subtitle: "Все ссылки связанные с VK",
     goToGroup: "Перейти в группу",
     watchStreams: "Смотреть стримы",
-    goToProfile: "Перейти в профиль",
+    vkLive: "VK Live канал",
+    vkLiveDesc: "Полное зеркало обоих каналов",
+    goToProfile: "Профиль VK",
     group: "Группа в VK",
     video: "VK Видео",
     page: "Страница в VK",
@@ -83,13 +95,14 @@ export const ru = {
 
   // Contact Section
   contacts: {
-    title: "Контакты",
-    subtitle: "Свяжитесь со мной удобным способом",
+    title: "Email",
+    subtitle: "Свяжитесь со мной по электронной почте",
     otherContacts: "Другие контакты",
     ok: "Одноклассники",
-    goToProfile: "Перейти в профиль",
+    okProfile: "Профиль Одноклассники",
     email: "Email",
     sendEmail: "Отправить письмо",
+    copyEmail: "Копировать Email",
   },
 
   // Discord Section
@@ -131,8 +144,10 @@ export const ru = {
   // Gaming Platforms Section
   gaming: {
     title: "Игровые платформы",
+    subtitle: "ID и способы подключения",
     friendCode: "(код дружбы)",
     copy: "Копировать",
+    copyBtn: "Копировать",
     nameCopied: "имя скопировано",
     codeCopied: "код дружбы скопирован",
     copiedToClipboard: "было скопировано в буфер обмена",
@@ -151,12 +166,17 @@ export const ru = {
     subtitle: "Все способы, с помощью которых вы можете поддержать любой мой проект",
     internationalWarning: "⚠️ Если вы живёте не в России, для пожертвований используйте только Boosty.",
     cardNumber: "Номер карты:",
+    sberbankHint: "(Сбербанк)",
     copyNumber: "Копировать номер",
     cardCopied: "Номер карты скопирован",
     cardCopiedDesc: "Номер карты скопирован в буфер обмена!",
     boosty: "Поддержать на Boosty",
     donateStream: "Поддержать через Donate.stream",
     yoomoney: "Поддержать через Юмани",
+    fundraisingTitle: "Цель текущего сбора",
+    fundraisingSubtitle: "Ваша помощь помогает развивать качество контента",
+    fundraisingAmount: "30 000 ₽",
+    fundraisingDesc: "Нужно на доступ к серверному железу для работы с более крутыми нейросетями.",
   },
 
   // Page Title
@@ -214,9 +234,57 @@ export const ru = {
     copied: "Скопировано",
     commandCopied: "Команда скопирована!",
     copyFailed: "Не удалось скопировать",
-    fundraisingTitle: "Цель текущего сбора",
-    fundraisingAmount: "30 000 ₽",
-    fundraisingDesc: "Нужно на доступ к серверному железу для работы с более крутыми нейросетями.",
+  },
+
+  // Setup / PC Specs
+  setup: {
+    title: "Мой ПК / Железо",
+    subtitle: "Характеристики моего игрового и рабочего места",
+    categories: {
+      core: "Основные компоненты",
+      storage: "Накопители",
+      cooling: "Охлаждение и корпус",
+      peripherals: "Периферия",
+      os: "Операционная система",
+    },
+    specs: {
+      cpu: "Процессор",
+      cpuValue: "Intel Core i5 13600KF, OEM",
+      gpu: "Видеокарта",
+      gpuValue: "GIGABYTE NVIDIA GeForce RTX 4070TI, GV-N407TGAMING OC-12GD",
+      ram: "Оперативная память",
+      ramValue: "Kingston Fury Beast KF556C40BBK2-32 DDR5 - 2x 16ГБ (Суммарно 32 ГБ)",
+      motherboard: "Материнская плата",
+      motherboardValue: "GIGABYTE Z690 GAMING X DDR5 (Rev. 1.0)",
+      ssd1: "SSD (Система)",
+      ssd1Value: "SSD накопитель WD Black SN850 WDS500G1XHE 500ГБ",
+      ssd2: "SSD (Интерфейсы нейросетей и игры)",
+      ssd2Value: "SSD накопитель WD Black SN770 WDS100T3X0E 1ТБ",
+      hdd: "Жесткий диск",
+      hddValue: "Seagate Barracuda ST2000DM008 2ТБ",
+      psu: "Блок питания",
+      psuValue: "Thermaltake Toughpower iRGB Plus, 1000Вт, черный",
+      cooler: "Охлаждение CPU",
+      coolerValue: "DeepCool AG620",
+      case: "Корпус",
+      caseValue: "ATX Fractal Design Define 7 Compact, белый",
+      fans: "Вентиляторы",
+      fansValue: "ID-COOLING WF-14025-XT BLACK",
+      monitor: "Монитор",
+      monitorValue: "MSI Optix MAG321QR",
+      mic: "Микрофон",
+      micValue: "Takstar Tak55",
+      mouse: "Мышь",
+      mouseValue: "Razer DeathAdder V2",
+      soundCard: "Звуковая карта",
+      soundCardValue: "Steinberg UR22C Внешняя звуковая карта с USB",
+      headphones: "Наушники",
+      headphonesValue: "SIMGOT EM6L PHOENIX",
+      keyboard: "Клавиатура",
+      keyboardValue: "Redragon APAS K535-KR",
+      os: "ОС",
+      osValue: "Windows 11 25H2 Pro",
+    }
   },
 
   // Footer
@@ -230,5 +298,10 @@ export const ru = {
     ru: "RU",
     en: "EN",
     switchTo: "Переключить на",
+  },
+  // Navigation
+  navigation: {
+    next: "Следующая часть",
+    previous: "Предыдущая часть",
   },
 };

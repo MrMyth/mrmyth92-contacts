@@ -1,11 +1,11 @@
 import React from "react";
-import { Info } from "lucide-react";
+import { Zap } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/i18n/LanguageContext";
 
-const StreamRulesLink = () => {
+const PCSpecsLink = () => {
   const { t } = useLanguage();
   
   return (
@@ -23,14 +23,14 @@ const StreamRulesLink = () => {
           <div className="space-y-4 text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start gap-4">
               <div className="p-3 bg-green-600/10 rounded-2xl">
-                <Info className="h-8 w-8 text-green-600" />
+                <Zap className="h-8 w-8 text-green-600" />
               </div>
               <h2 className="text-3xl md:text-4xl font-black tracking-tighter uppercase text-gradient-primary">
-                {t.streamRulesLink.title}
+                {t.setup.title}
               </h2>
             </div>
             <p className="text-lg font-medium text-gradient-secondary max-w-md">
-              {t.streamRulesLink.subtitle}
+              {t.setup.subtitle}
             </p>
           </div>
           
@@ -39,9 +39,9 @@ const StreamRulesLink = () => {
             whileTap={{ scale: 0.95 }}
             className="w-full md:w-auto"
           >
-            <Link to="/stream-rules">
+            <Link to="/setup">
               <Button className="w-full md:w-auto h-14 px-10 rounded-2xl bg-green-600 hover:bg-green-700 text-white font-black uppercase tracking-widest shadow-lg shadow-green-600/20">
-                {t.streamRulesLink.button}
+                {t.pages.setup}
               </Button>
             </Link>
           </motion.div>
@@ -51,4 +51,4 @@ const StreamRulesLink = () => {
   );
 };
 
-export default StreamRulesLink;
+export default PCSpecsLink;

@@ -2,7 +2,16 @@ export const en = {
   // Navigation - pages menu
   pages: {
     home: "Home",
+    streams: "Streams and Videos",
+    socials: "Socials",
+    socialsSubtitle: "My official communities and groups",
+    music: "Author's Music",
+    wallpapers: "Author's Desktop Wallpapers",
+    gaming: "Gaming Platforms",
+    support: "Support",
+    contact: "Email",
     viewerInfo: "Viewer Info",
+    setup: "My PC / Hardware",
   },
 
   // Navigation - sections menu
@@ -10,7 +19,7 @@ export const en = {
     aboutMe: "About Me",
     telegram: "Telegram",
     vk: "VK",
-    contacts: "Contacts",
+    contacts: "Email",
     discord: "Discord",
     youtube: "YouTube",
     twitch: "Twitch",
@@ -40,6 +49,7 @@ export const en = {
   // About Me Section
   about: {
     title: "A Little About Me",
+    subtitle: "My story and professional skills",
     fullName: "Full Name:",
     fullNameValue: "Dmitry Starchikov.",
     birthDate: "Birth Date:",
@@ -75,7 +85,9 @@ export const en = {
     subtitle: "All links related to VK",
     goToGroup: "Go to Group",
     watchStreams: "Watch Streams",
-    goToProfile: "Go to Profile",
+    vkLive: "VK Live Channel",
+    vkLiveDesc: "Full mirror of both channels",
+    goToProfile: "VK Profile",
     group: "VK Group",
     video: "VK Video",
     page: "VK Page",
@@ -83,13 +95,14 @@ export const en = {
 
   // Contact Section
   contacts: {
-    title: "Contacts",
-    subtitle: "Contact me in any convenient way",
+    title: "Email",
+    subtitle: "Contact me via email",
     otherContacts: "Other Contacts",
     ok: "Odnoklassniki",
-    goToProfile: "Go to Profile",
+    okProfile: "Odnoklassniki Profile",
     email: "Email",
     sendEmail: "Send Email",
+    copyEmail: "Copy Email",
   },
 
   // Discord Section
@@ -131,8 +144,10 @@ export const en = {
   // Gaming Platforms Section
   gaming: {
     title: "Gaming Platforms",
+    subtitle: "Game IDs & Connects",
     friendCode: "(friend code)",
     copy: "Copy",
+    copyBtn: "Copy",
     nameCopied: "name copied",
     codeCopied: "friend code copied",
     copiedToClipboard: "was copied to clipboard",
@@ -151,12 +166,17 @@ export const en = {
     subtitle: "All ways you can support any of my projects",
     internationalWarning: "⚠️ If you live outside of Russia, please use only Boosty for donations.",
     cardNumber: "Card Number:",
+    sberbankHint: "(Sberbank)",
     copyNumber: "Copy Number",
     cardCopied: "Card number copied",
     cardCopiedDesc: "Card number copied to clipboard!",
     boosty: "Support on Boosty",
     donateStream: "Support via Donate.stream",
     yoomoney: "Support via YooMoney",
+    fundraisingTitle: "Current Fundraising Goal",
+    fundraisingSubtitle: "Your support helps improve content quality",
+    fundraisingAmount: "30,000 ₽",
+    fundraisingDesc: "Needed for server hardware access to work with better neural networks.",
   },
 
   // Page Title
@@ -214,9 +234,57 @@ export const en = {
     copied: "Copied",
     commandCopied: "Command copied!",
     copyFailed: "Failed to copy",
-    fundraisingTitle: "Current Fundraising Goal",
-    fundraisingAmount: "30,000 ₽",
-    fundraisingDesc: "Needed for server hardware access to work with better neural networks.",
+  },
+
+  // Setup / PC Specs
+  setup: {
+    title: "My PC / Hardware",
+    subtitle: "Specifications of my gaming and workspace",
+    categories: {
+      core: "Core Components",
+      storage: "Storage",
+      cooling: "Cooling & Case",
+      peripherals: "Peripherals",
+      os: "Operating System",
+    },
+    specs: {
+      cpu: "Processor",
+      cpuValue: "Intel Core i5 13600KF, OEM",
+      gpu: "Graphics Card",
+      gpuValue: "GIGABYTE NVIDIA GeForce RTX 4070TI, GV-N407TGAMING OC-12GD",
+      ram: "Memory",
+      ramValue: "Kingston Fury Beast KF556C40BBK2-32 DDR5 - 2x 16GB (Total 32 GB)",
+      motherboard: "Motherboard",
+      motherboardValue: "GIGABYTE Z690 GAMING X DDR5 (Rev. 1.0)",
+      ssd1: "SSD (System)",
+      ssd1Value: "WD Black SN850 WDS500G1XHE 500GB",
+      ssd2: "SSD (Neural Network Interfaces & Games)",
+      ssd2Value: "WD Black SN770 WDS100T3X0E 1TB",
+      hdd: "Hard Drive",
+      hddValue: "Seagate Barracuda ST2000DM008 2TB",
+      psu: "Power Supply",
+      psuValue: "Thermaltake Toughpower iRGB Plus, 1000W, Black",
+      cooler: "CPU Cooler",
+      coolerValue: "DeepCool AG620",
+      case: "Case",
+      caseValue: "ATX Fractal Design Define 7 Compact, White",
+      fans: "Case Fans",
+      fansValue: "ID-COOLING WF-14025-XT BLACK",
+      monitor: "Monitor",
+      monitorValue: "MSI Optix MAG321QR",
+      mic: "Microphone",
+      micValue: "Takstar Tak55",
+      mouse: "Mouse",
+      mouseValue: "Razer DeathAdder V2",
+      soundCard: "Sound Card",
+      soundCardValue: "Steinberg UR22C External USB Sound Card",
+      headphones: "Headphones",
+      headphonesValue: "SIMGOT EM6L PHOENIX",
+      keyboard: "Keyboard",
+      keyboardValue: "Redragon APAS K535-KR",
+      os: "OS",
+      osValue: "Windows 11 25H2 Pro",
+    }
   },
 
   // Footer
@@ -230,5 +298,10 @@ export const en = {
     ru: "RU",
     en: "EN",
     switchTo: "Switch to",
+  },
+  // Navigation
+  navigation: {
+    next: "Next part",
+    previous: "Previous part",
   },
 };

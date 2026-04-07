@@ -14,6 +14,14 @@ export interface SectionItem {
 // Меню страниц (залитые кнопки, слева)
 export const pageNavigationItems: PageItem[] = [
   { labelKey: "home", href: "/" },
+  { labelKey: "streams", href: "/streams" },
+  { labelKey: "socials", href: "/socials" },
+  { labelKey: "contact", href: "/email" },
+  { labelKey: "gaming", href: "/gaming" },
+  { labelKey: "music", href: "/music" },
+  { labelKey: "wallpapers", href: "/wallpapers" },
+  { labelKey: "support", href: "/support" },
+  { labelKey: "setup", href: "/setup" },
   { labelKey: "viewerInfo", href: "/stream-rules" },
 ];
 
@@ -22,11 +30,9 @@ export const sectionNavigationItems: SectionItem[] = [
   { labelKey: "aboutMe", href: "#about-me-section", icon: User },
   { labelKey: "telegram", href: "#telegram-section", icon: Send },
   { labelKey: "vk", href: "#vk-section", icon: Users },
-  { labelKey: "contacts", href: "#contact-section", icon: Mail },
+  { labelKey: "contacts", href: "#email-section", icon: Mail },
   { labelKey: "discord", href: "#discord-section", icon: MessageCircle },
-  { labelKey: "youtube", href: "#youtube-section", icon: Youtube },
-  { labelKey: "twitch", href: "#twitch-section", icon: Twitch },
-  { labelKey: "gamingPlatforms", href: "#contacts-section", icon: Gamepad2 },
+  { labelKey: "gamingPlatforms", href: "/gaming", icon: Gamepad2 },
   { labelKey: "authorCreations", href: "#author-creations-section", icon: Palette },
   { labelKey: "projectSupport", href: "#donation-section", icon: DollarSign },
 ];

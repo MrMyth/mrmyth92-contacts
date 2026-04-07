@@ -5,47 +5,42 @@ import { Card } from "@/components/ui/card";
 import { Twitch } from "lucide-react";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/i18n/LanguageContext";
+import SocialLinkCard from "@/components/ui/SocialLinkCard";
 
 const TwitchSection = () => {
   const { t } = useLanguage();
   
   return (
-    <Card className="p-8 mb-8 border-0 shadow-lg bg-gradient-to-br from-muted/50 to-card">
+    <section className="py-16">
       <motion.div
-        initial={{ opacity: 0, y: 10 }}
+        initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.8 }}
         viewport={{ once: true }}
-        className="text-center"
+        className="space-y-12"
       >
-        <h2 className="text-3xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-blue-500 flex items-center justify-center gap-3">
-          <Twitch className="h-8 w-8 text-[#9146FF]" />
-          {t.twitch.title}
-        </h2>
-        <p className="text-muted-foreground mb-6">{t.twitch.subtitle}</p>
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-border/50">
+          <div className="space-y-2">
+            <h2 className="text-4xl md:text-6xl font-black tracking-tighter uppercase flex items-center gap-4 text-gradient-primary">
+              <Twitch className="h-10 w-10 text-[#9146FF]" />
+              {t.twitch.title}
+            </h2>
+            <p className="text-xl font-medium text-gradient-secondary">{t.twitch.subtitle}</p>
+          </div>
+        </div>
         
-        <motion.a
-          href="https://www.twitch.tv/mrmyth1992"
-          target="_blank"
-          rel="noopener noreferrer"
-          whileHover={{ scale: 1.02 }}
-          whileTap={{ scale: 0.98 }}
-          className="flex items-center rounded-md overflow-hidden bg-[#9146FF] hover:bg-[#9146FF]/90 text-white min-h-[80px]"
-        >
-          <div className="flex items-center justify-center bg-black/20 px-4 h-full min-h-[80px]">
-            <Twitch className="h-8 w-8" />
-          </div>
-          <div className="flex-1 px-4 py-2 h-full flex flex-col justify-center text-left">
-            <div className="text-sm font-semibold mb-1">
-              {t.twitch.visitChannel}
-            </div>
-            <div className="text-xs opacity-80">
-              @mrmyth1992
-            </div>
-          </div>
-        </motion.a>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <SocialLinkCard
+            href="https://www.twitch.tv/mrmyth1992"
+            icon={<Twitch />}
+            buttonText={t.twitch.visitChannel}
+            username="@mrmyth1992"
+            bgColor="bg-[#9146FF]"
+            index={0}
+          />
+        </div>
       </motion.div>
-    </Card>
+    </section>
   );
 };
 

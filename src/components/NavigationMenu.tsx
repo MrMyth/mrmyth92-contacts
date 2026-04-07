@@ -27,7 +27,7 @@ const NavigationMenu: React.FC = memo(() => {
 
   const headerStyle = useMemo(() => 
     cn(
-      "sticky top-0 bg-background/90 backdrop-blur-sm z-50 py-2 px-4 transition-all duration-300",
+      "relative bg-background/90 backdrop-blur-sm z-50 py-2 px-4 transition-all duration-300",
       scrollPosition > 10 ? "shadow-md" : ""
     ), 
     [scrollPosition]
@@ -41,35 +41,24 @@ const NavigationMenu: React.FC = memo(() => {
       transition={{ duration: 0.5, ease: "easeOut" }}
       role="banner"
     >
-      {/* Десктопная версия - пирамида */}
-      <div className="hidden md:flex flex-col items-center gap-2 container mx-auto">
-        {/* Первый ряд: переключатели языка и темы */}
-        <div className="flex items-center gap-2">
+      {/* Row for Switchers - Moved above menu */}
+      <div className="container mx-auto flex justify-end items-center py-2 border-b border-border/10">
+        <div className="flex items-center gap-4">
           <ThemeToggle />
           <LanguageSwitcher />
         </div>
-        
-        {/* Второй ряд: меню страниц */}
-        <PagesMenu items={pageNavigationItems} />
-        
-        {/* Третий ряд: меню разделов (только на главной) */}
-        {isHomePage && (
-          <DesktopMenu 
-            items={sectionNavigationItems} 
-            activeSection={activeSection} 
-            onNavigate={handleNavigation} 
-            className="flex"
-          />
-        )}
       </div>
 
-      {/* Мобильная версия */}
-      <div className="md:hidden container mx-auto flex justify-between items-center">
-        <BrandLogo onClick={scrollToTop} />
+      <div className="container mx-auto flex items-center h-16 relative">
+        <div className="absolute left-0">
+          <BrandLogo onClick={() => handleNavigation("/")} />
+        </div>
         
-        <div className="flex items-center gap-2">
-          <ThemeToggle />
-          <LanguageSwitcher />
+        <div className="hidden md:flex flex-1 justify-center">
+          <PagesMenu items={pageNavigationItems} />
+        </div>
+
+        <div className="md:hidden absolute right-0 flex items-center gap-2">
           <MenuToggleButton isOpen={isMenuOpen} onClick={toggleMenu} />
         </div>
       </div>
@@ -77,7 +66,7 @@ const NavigationMenu: React.FC = memo(() => {
       {/* Выпадающее мобильное меню */}
       <MobileMenu 
         isOpen={isMenuOpen} 
-        sectionItems={sectionNavigationItems}
+        sectionItems={[]}
         pageItems={pageNavigationItems}
         activeSection={activeSection}
         currentPath={location.pathname}

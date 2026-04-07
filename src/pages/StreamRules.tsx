@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-import { Gamepad2, Volume2, Palette, MessageCircle, ArrowLeft, Info, Clock, Heart, Terminal, Copy, Check, Target } from "lucide-react";
+import { Gamepad2, Volume2, Palette, MessageCircle, ArrowLeft, Info, Clock, Heart, Terminal, Copy, Check } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import NavigationMenu from "@/components/NavigationMenu";
-import Footer from "@/components/Footer";
+import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 import { toast } from "sonner";
 import { useLanguage } from "@/i18n/LanguageContext";
 
@@ -27,160 +25,105 @@ const StreamRules = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <NavigationMenu />
-      <main className="container px-4 py-8 mx-auto">
-        <div className="max-w-4xl mx-auto">
-          <Link to="/">
-            <Button variant="ghost" className="mb-6 gap-2">
-              <ArrowLeft className="h-4 w-4" />
-              {t.streamRules.backToMain}
-            </Button>
-          </Link>
-          
-          <Card className="p-8 mb-8 border-0 shadow-lg bg-gradient-to-br from-muted/50 to-card">
-            <motion.h1 
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-              className="text-3xl font-bold mb-2 text-center text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-blue-500 flex items-center justify-center gap-3"
-            >
-              <Info className="h-8 w-8 text-green-600" />
-              {t.streamRules.title}
-            </motion.h1>
-            <motion.p 
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="text-center text-muted-foreground mb-10"
-            >
-              {t.streamRules.subtitle}
-            </motion.p>
-            
-            <div className="grid gap-6">
-              {t.streamRules.rules.map((rule, index) => {
-                const IconComponent = ruleIcons[index];
-                return (
-                  <motion.div 
-                    key={index}
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="bg-card border border-border rounded-xl p-6 shadow-md card-hover-effect"
-                  >
-                    <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center">
-                        <IconComponent className="h-6 w-6 text-white" />
-                      </div>
-                      <div className="flex-1">
-                        <div className="flex items-center gap-3 mb-2">
-                          <span className="text-sm font-medium text-muted-foreground">#{index + 1}</span>
-                          <h2 className="text-xl font-semibold text-foreground">{rule.title}</h2>
-                        </div>
-                        <p className="text-muted-foreground leading-relaxed">{rule.description}</p>
-                      </div>
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </Card>
-
-          {/* Chat Commands */}
-          <Card className="p-8 mb-8 border-0 shadow-lg bg-gradient-to-br from-muted/50 to-card">
-            <motion.h2 
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-              className="text-3xl font-bold mb-2 text-center text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-blue-500 flex items-center justify-center gap-3"
-            >
-              <Terminal className="h-8 w-8 text-green-600" />
-              {t.streamRules.chatCommandsTitle}
-            </motion.h2>
-            <motion.p 
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="text-center text-muted-foreground mb-10"
-            >
-              {t.streamRules.chatCommandsSubtitle}
-            </motion.p>
-            
-            <div className="grid gap-4">
-              {t.streamRules.chatCommands.map((cmd, index) => (
-                <motion.div 
-                  key={cmd.command}
-                  initial={{ opacity: 0, x: -10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.3, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="flex items-center justify-between gap-4 bg-card border border-border rounded-lg p-4 shadow-sm"
-                >
-                  <div className="flex items-center gap-4">
-                    <code className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-3 py-1 rounded-md font-mono text-sm font-semibold">
-                      {cmd.command}
-                    </code>
-                    <span className="text-muted-foreground">{cmd.description}</span>
-                  </div>
-                  <Button variant="outline" size="sm" onClick={() => copyToClipboard(cmd.command)} className="flex-shrink-0 gap-2">
-                    {copiedCommand === cmd.command ? <Check className="h-4 w-4 text-green-500" /> : <Copy className="h-4 w-4" />}
-                    {copiedCommand === cmd.command ? t.streamRules.copied : t.streamRules.copy}
-                  </Button>
-                </motion.div>
-              ))}
-            </div>
-          </Card>
-
-          {/* Fundraising Goal */}
-          <Card className="p-8 border-0 shadow-lg bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-900/30 dark:to-orange-900/30">
-            <motion.h2 
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-              className="text-3xl font-bold mb-2 text-center text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-500 flex items-center justify-center gap-3"
-            >
-              <Target className="h-8 w-8 text-amber-600" />
-              {t.streamRules.fundraisingTitle}
-            </motion.h2>
-            <motion.div 
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="bg-card border border-amber-200 dark:border-amber-700 rounded-xl p-6 shadow-md"
-            >
-              <div className="text-center">
-                <p className="text-4xl font-bold text-amber-600 mb-4">{t.streamRules.fundraisingAmount}</p>
-                <p className="text-muted-foreground leading-relaxed">{t.streamRules.fundraisingDesc}</p>
-              </div>
-            </motion.div>
-          </Card>
-
-          {/* Back button */}
+    <Layout>
+      <div className="max-w-5xl mx-auto space-y-24 py-12">
+        <section className="space-y-16">
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="flex justify-center mt-8"
+            className="space-y-6"
           >
-            <Link to="/">
-              <Button variant="outline" className="gap-2">
-                <ArrowLeft className="h-4 w-4" />
-                {t.streamRules.backToMain}
-              </Button>
-            </Link>
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-border/50">
+              <div className="space-y-2">
+                <h1 className="text-4xl md:text-6xl font-black tracking-tighter uppercase flex items-center gap-4 text-gradient-primary">
+                  <Info className="h-10 w-10 text-green-600" />
+                  {t.streamRules.title}
+                </h1>
+                <p className="text-xl font-medium text-gradient-secondary">{t.streamRules.subtitle}</p>
+              </div>
+            </div>
           </motion.div>
-        </div>
-      </main>
-      <Footer />
-    </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {t.streamRules.rules.map((rule, index) => {
+              const IconComponent = ruleIcons[index % ruleIcons.length];
+              return (
+                <motion.div 
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="group p-8 rounded-[2.5rem] bg-card border border-border/50 hover:border-green-600/30 transition-all duration-500 space-y-6"
+                >
+                  <div className="flex items-center justify-between">
+                    <div className="w-14 h-14 rounded-2xl bg-green-600/10 flex items-center justify-center text-green-600 group-hover:scale-110 transition-transform duration-500">
+                      <IconComponent className="h-7 w-7" />
+                    </div>
+                    <span className="text-4xl font-black tracking-tighter text-muted-foreground/20">0{index + 1}</span>
+                  </div>
+                  <div className="space-y-2">
+                    <h2 className="text-2xl font-black tracking-tight uppercase text-gradient-primary">{rule.title}</h2>
+                    <p className="text-muted-foreground leading-relaxed font-medium">{rule.description}</p>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </section>
+
+        {/* Chat Commands */}
+        <section className="space-y-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="space-y-6"
+          >
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-border/50">
+              <div className="space-y-2">
+                <h2 className="text-4xl md:text-6xl font-black tracking-tighter uppercase flex items-center gap-4 text-gradient-primary">
+                  <Terminal className="h-10 w-10 text-green-600" />
+                  {t.streamRules.chatCommandsTitle}
+                </h2>
+                <p className="text-xl font-medium text-gradient-secondary">{t.streamRules.chatCommandsSubtitle}</p>
+              </div>
+            </div>
+          </motion.div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {t.streamRules.chatCommands.map((cmd, index) => (
+              <motion.div 
+                key={cmd.command}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.05 }}
+                viewport={{ once: true }}
+                className="group flex items-center justify-between gap-4 bg-card border border-border/50 rounded-2xl p-6 hover:border-green-600/30 transition-all duration-300"
+              >
+                <div className="flex flex-col gap-1">
+                  <code className="text-lg font-black tracking-tighter text-green-600 uppercase">
+                    {cmd.command}
+                  </code>
+                  <span className="text-sm text-muted-foreground font-medium">{cmd.description}</span>
+                </div>
+                <Button 
+                  variant="ghost" 
+                  size="sm" 
+                  onClick={() => copyToClipboard(cmd.command)} 
+                  className="flex-shrink-0 h-10 w-10 rounded-xl hover:bg-green-600 hover:text-white transition-all duration-300"
+                >
+                  {copiedCommand === cmd.command ? <Check className="h-5 w-5" /> : <Copy className="h-5 w-5" />}
+                </Button>
+              </motion.div>
+            ))}
+          </div>
+        </section>
+      </div>
+    </Layout>
   );
 };
 

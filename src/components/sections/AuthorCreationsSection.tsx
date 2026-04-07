@@ -6,56 +6,87 @@ import { Music, Palette } from "lucide-react";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/i18n/LanguageContext";
 
-const AuthorCreationsSection = () => {
+interface AuthorCreationsSectionProps {
+  type?: "music" | "wallpapers" | "all";
+}
+
+const AuthorCreationsSection: React.FC<AuthorCreationsSectionProps> = ({ type = "all" }) => {
   const { t } = useLanguage();
   
-  const creation = {
-    id: "creative-works",
-    url: "https://cloud.mail.ru/public/tGzv/8rv5WXPWv",
-    bgColor: "bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700",
-    icon: (
-      <>
-        <Music className="mr-2 h-5 w-5" />
-        <Palette className="mr-2 h-5 w-5" />
-      </>
-    )
-  };
+  const musicUrl = "https://drive.google.com/drive/folders/1TMDEbFXi1OuY4uguSz6jzooTquFfB8-9?usp=drive_link";
+  const wallpapersUrl = "https://cloud.mail.ru/public/tGzv/8rv5WXPWv";
+
+  const items = [
+    {
+      id: "music",
+      title: t.pages.music,
+      url: musicUrl,
+      icon: <Music className="h-12 w-12 text-white drop-shadow-lg" />,
+      smallIcon: <Music className="h-6 w-6" />,
+      show: type === "music" || type === "all"
+    },
+    {
+      id: "wallpapers",
+      title: t.pages.wallpapers,
+      url: wallpapersUrl,
+      icon: <Palette className="h-12 w-12 text-white drop-shadow-lg" />,
+      smallIcon: <Palette className="h-6 w-6" />,
+      show: type === "wallpapers" || type === "all"
+    }
+  ].filter(item => item.show);
 
   return (
-    <Card className="p-8 mb-8 border-0 shadow-lg bg-gradient-to-br from-muted/50 to-card">
+    <section className="py-16">
       <motion.div
-        initial={{ opacity: 0, y: 10 }}
+        initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.8 }}
         viewport={{ once: true }}
+        className="space-y-12"
       >
-        <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-blue-500 flex items-center justify-center gap-3">
-            <Music className="h-8 w-8 text-green-600" />
-            <Palette className="h-8 w-8 text-blue-600" />
-            {t.creations.title}
-          </h2>
-          <p className="text-muted-foreground">{t.creations.subtitle}</p>
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-border/50">
+          <div className="space-y-2">
+            <h2 className="text-4xl md:text-6xl font-black tracking-tighter uppercase flex items-center gap-4 text-gradient-primary">
+              <Palette className="h-10 w-10 text-green-600" />
+              {type === "music" ? t.pages.music : type === "wallpapers" ? t.pages.wallpapers : t.creations.title}
+            </h2>
+            <p className="text-xl font-medium text-gradient-secondary">{t.creations.subtitle}</p>
+          </div>
         </div>
         
-        <motion.a
-          href={creation.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          whileHover={{ scale: 1.03 }}
-          whileTap={{ scale: 0.98 }}
-          className="w-full"
-        >
-          <Button className={`w-full ${creation.bgColor} text-white`}>
-            {creation.icon}
-            {t.creations.viewWorks}
-          </Button>
-        </motion.a>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {items.map((item) => (
+            <motion.a
+              key={item.id}
+              href={item.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ y: -5 }}
+              whileTap={{ scale: 0.98 }}
+              className="group relative block aspect-video md:aspect-[21/9] overflow-hidden rounded-[2.5rem] bg-card border border-border/50 shadow-2xl"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20 group-hover:scale-110 transition-transform duration-700" />
+              <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center space-y-6">
+                <div className="flex gap-4">
+                  {item.icon}
+                </div>
+                <div className="space-y-2">
+                  <h3 className="text-3xl md:text-4xl font-black tracking-tighter text-white uppercase drop-shadow-md">
+                    {item.title}
+                  </h3>
+                  <p className="text-white/70 font-medium tracking-widest uppercase text-xs">
+                    {item.id === "music" ? "Google Drive" : "Cloud.Mail.ru Archive"}
+                  </p>
+                </div>
+                <div className="w-16 h-16 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all duration-500">
+                  {item.smallIcon}
+                </div>
+              </div>
+            </motion.a>
+          ))}
+        </div>
       </motion.div>
-    </Card>
+    </section>
   );
 };
 

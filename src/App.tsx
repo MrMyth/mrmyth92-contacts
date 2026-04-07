@@ -6,7 +6,15 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "@/i18n/LanguageContext";
 import Index from "./pages/Index";
+import Streams from "./pages/Streams";
+import Socials from "./pages/Socials";
+import Music from "./pages/Music";
+import Wallpapers from "./pages/Wallpapers";
+import Gaming from "./pages/Gaming";
+import Support from "./pages/Support";
+import Email from "./pages/Email";
 import StreamRules from "./pages/StreamRules";
+import PCSpecs from "./pages/PCSpecs";
 
 // Создание и настройка клиента для запросов
 const queryClient = new QueryClient({
@@ -28,7 +36,15 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/streams" element={<Streams />} />
+            <Route path="/socials" element={<Socials />} />
+            <Route path="/music" element={<Music />} />
+            <Route path="/wallpapers" element={<Wallpapers />} />
+            <Route path="/gaming" element={<Gaming />} />
+            <Route path="/support" element={<Support />} />
+            <Route path="/email" element={<Email />} />
             <Route path="/stream-rules" element={<StreamRules />} />
+            <Route path="/setup" element={<PCSpecs />} />
           </Routes>
         </BrowserRouter>
       </TooltipProvider>
