@@ -14,18 +14,15 @@ export const ru = {
     setup: "Мой ПК / Железо",
   },
 
-  // Navigation - sections menu
+  // Navigation - section labels (used in sections if needed, but not in menu anymore)
   nav: {
     aboutMe: "Обо мне",
     telegram: "Telegram",
     vk: "VK",
     contacts: "Email",
     discord: "Discord",
-    youtube: "YouTube",
-    twitch: "Twitch",
     gamingPlatforms: "Игровые платформы",
     authorCreations: "Создано автором",
-    viewerInfo: "Информация для зрителей",
     projectSupport: "Поддержка проектов",
   },
 

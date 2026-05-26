@@ -1,22 +1,20 @@
 import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import MobileMenuButton from "./MobileMenuButton";
-import { SectionItem, PageItem } from "@/data/navigationItems";
+import { PageItem } from "@/data/navigationItems";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { cn } from "@/lib/utils";
 
 interface MobileMenuProps {
   isOpen: boolean;
-  sectionItems: SectionItem[];
   pageItems: PageItem[];
-  activeSection: string;
   currentPath: string;
   onNavigate: (href: string) => void;
   className?: string;
 }
 
 const MobileMenu: React.FC<MobileMenuProps> = React.memo(
-  ({ isOpen, sectionItems, pageItems, activeSection, currentPath, onNavigate, className }) => {
+  ({ isOpen, pageItems, currentPath, onNavigate, className }) => {
     const { t } = useLanguage();
     
     const containerAnimation = {
@@ -48,7 +46,7 @@ const MobileMenu: React.FC<MobileMenuProps> = React.memo(
           >
             <div className="container mx-auto py-2 px-4 flex flex-col space-y-1 bg-background border-t border-border">
               {/* Меню страниц */}
-              <div className="pb-2 mb-2 border-b border-border">
+              <div className="pb-2">
                 <span className="text-xs text-muted-foreground uppercase tracking-wide mb-1 block">
                   {t.pages.home === "Home" ? "Pages" : "Страницы"}
                 </span>
@@ -69,32 +67,6 @@ const MobileMenu: React.FC<MobileMenuProps> = React.memo(
                   </motion.div>
                 ))}
               </div>
-              
-              {/* Меню разделов (только на главной) */}
-              {currentPath === "/" && (
-                <>
-                  <span className="text-xs text-muted-foreground uppercase tracking-wide mb-1 block">
-                    {t.pages.home === "Home" ? "Sections" : "Разделы"}
-                  </span>
-                  {sectionItems.map((item, index) => (
-                    <motion.div
-                      key={item.href}
-                      custom={index + pageItems.length}
-                      variants={itemAnimation}
-                      initial="hidden"
-                      animate="visible"
-                    >
-                      <MobileMenuButton
-                        active={activeSection === item.href}
-                        onClick={() => onNavigate(item.href)}
-                        label={t.nav[item.labelKey]}
-                        variant="section"
-                        icon={item.icon}
-                      />
-                    </motion.div>
-                  ))}
-                </>
-              )}
             </div>
           </motion.nav>
         )}

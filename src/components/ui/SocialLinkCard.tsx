@@ -39,10 +39,8 @@ const SocialLinkCard: React.FC<SocialLinkCardProps> = ({
       onCopy();
     } else if (copyValue) {
       navigator.clipboard.writeText(copyValue);
-      toast({
-        title: t.gaming.nameCopied || "Copied",
+      toast.success(t.gaming.nameCopied || "Copied", {
         description: t.gaming.copiedToClipboard || "Value copied to clipboard",
-        duration: 2000,
       });
     }
   };

@@ -14,18 +14,15 @@ export const en = {
     setup: "My PC / Hardware",
   },
 
-  // Navigation - sections menu
+  // Navigation - section labels (used in sections if needed, but not in menu anymore)
   nav: {
     aboutMe: "About Me",
     telegram: "Telegram",
     vk: "VK",
     contacts: "Email",
     discord: "Discord",
-    youtube: "YouTube",
-    twitch: "Twitch",
     gamingPlatforms: "Gaming Platforms",
     authorCreations: "Author's Creations",
-    viewerInfo: "Viewer Information",
     projectSupport: "Support Projects",
   },
 

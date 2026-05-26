@@ -3,12 +3,11 @@ import { motion } from "framer-motion";
 import { useLocation } from "react-router-dom";
 import BrandLogo from "./navigation/BrandLogo";
 import MenuToggleButton from "./navigation/MenuToggleButton";
-import DesktopMenu from "./navigation/DesktopMenu";
 import MobileMenu from "./navigation/MobileMenu";
 import PagesMenu from "./navigation/PagesMenu";
 import LanguageSwitcher from "./LanguageSwitcher";
 import ThemeToggle from "./ThemeToggle";
-import { pageNavigationItems, sectionNavigationItems } from "../data/navigationItems";
+import { pageNavigationItems } from "../data/navigationItems";
 import { useNavigation } from "../hooks/useNavigation";
 import { cn } from "@/lib/utils";
 
@@ -66,9 +65,7 @@ const NavigationMenu: React.FC = memo(() => {
       {/* Выпадающее мобильное меню */}
       <MobileMenu 
         isOpen={isMenuOpen} 
-        sectionItems={[]}
         pageItems={pageNavigationItems}
-        activeSection={activeSection}
         currentPath={location.pathname}
         onNavigate={(href) => {
           handleNavigation(href);
