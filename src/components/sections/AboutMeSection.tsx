@@ -45,7 +45,7 @@ const AboutMeSection = () => {
   useEffect(() => {
     const id = setInterval(() => {
       setAvatarIndex((i) => (i + 1) % avatars.length);
-    }, 5000);
+    }, 30000);
     return () => clearInterval(id);
   }, []);
 
@@ -73,27 +73,20 @@ const AboutMeSection = () => {
           viewport={{ once: true }}
           className="lg:col-span-5 relative"
         >
-          <div className="relative aspect-[4/5] overflow-hidden rounded-[2.5rem] shadow-2xl">
-            <AnimatePresence mode="sync">
+          <div className="relative aspect-[4/5] overflow-hidden rounded-[2.5rem] shadow-2xl bg-background">
+            <AnimatePresence>
               <motion.img
                 key={avatars[avatarIndex]}
                 src={avatars[avatarIndex]}
                 alt={t.about.photoAlt}
                 loading="lazy"
                 className="absolute inset-0 w-full h-full object-cover"
-                initial={{ opacity: 0, scale: 1.25, filter: "blur(24px) hue-rotate(90deg) brightness(1.4)", clipPath: "circle(0% at 50% 50%)" }}
-                animate={{ opacity: 1, scale: 1, filter: "blur(0px) hue-rotate(0deg) brightness(1)", clipPath: "circle(140% at 50% 50%)" }}
-                exit={{ opacity: 0, scale: 0.85, filter: "blur(24px) hue-rotate(-90deg) brightness(0.6)", clipPath: "circle(0% at 50% 50%)" }}
-                transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
+                initial={{ opacity: 0, scale: 1.05 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 1.02 }}
+                transition={{ duration: 1.2, ease: "easeInOut" }}
               />
             </AnimatePresence>
-            <motion.div
-              key={`glow-${avatarIndex}`}
-              className="pointer-events-none absolute inset-0 rounded-[2.5rem]"
-              initial={{ opacity: 0.9, boxShadow: "inset 0 0 120px 40px hsl(var(--primary) / 0.6)" }}
-              animate={{ opacity: 0, boxShadow: "inset 0 0 0px 0px hsl(var(--primary) / 0)" }}
-              transition={{ duration: 1.4, ease: "easeOut" }}
-            />
           </div>
           <div className="absolute -bottom-8 -right-8 w-48 h-48 bg-green-600/10 rounded-full blur-3xl -z-10" />
         </motion.div>
