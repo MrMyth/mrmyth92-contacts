@@ -103,7 +103,6 @@ const AboutMeSection = () => {
                     key={item.id} 
                     label={item.label} 
                     value={item.value}
-                    icon={item.icon}
                   />
                 ))}
               </div>
