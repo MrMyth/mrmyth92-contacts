@@ -14,11 +14,9 @@ import { cn } from "@/lib/utils";
 const NavigationMenu: React.FC = memo(() => {
   const { 
     isMenuOpen, 
-    activeSection, 
     scrollPosition, 
     toggleMenu, 
     handleNavigation, 
-    scrollToTop 
   } = useNavigation();
   
   const location = useLocation();
