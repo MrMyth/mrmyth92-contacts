@@ -52,7 +52,8 @@ const HeroSection: React.FC = () => {
               alt={t.hero.gameScene} 
               className="w-full h-full object-cover" 
               loading="eager" 
-              fetchPriority="high" 
+              // @ts-expect-error - React expects lowercase attribute on DOM
+              fetchpriority="high"
               onLoad={handleImageLoad} 
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
