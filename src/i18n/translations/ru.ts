@@ -227,6 +227,7 @@ export const ru = {
       { command: "!help", description: "Способы отправки пожертвований." },
       { command: "!altcontect", description: "Список альтернативных платформ." },
       { command: "!images", description: "Авторские обои на рабочий стол." },
+      { command: "!music", description: "Получить ссылку на музыку со стримов." },
     ],
     copy: "Копировать",
     copied: "Скопировано",

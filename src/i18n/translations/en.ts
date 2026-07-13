@@ -227,6 +227,7 @@ export const en = {
       { command: "!help", description: "Ways to send donations." },
       { command: "!altcontect", description: "List of alternative platforms." },
       { command: "!images", description: "Author's desktop wallpapers." },
+      { command: "!music", description: "Get link to music from streams." },
     ],
     copy: "Copy",
     copied: "Copied",
