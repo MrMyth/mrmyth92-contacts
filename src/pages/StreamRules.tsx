@@ -104,11 +104,14 @@ const StreamRules = () => {
                 viewport={{ once: true }}
                 className="group flex items-center justify-between gap-4 bg-card border border-border/50 rounded-2xl p-6 hover:border-green-600/30 transition-all duration-300"
               >
-                <div className="flex flex-col gap-1">
-                  <code className="text-lg font-black tracking-tighter text-green-600 uppercase">
-                    {cmd.command}
-                  </code>
-                  <span className="text-sm text-muted-foreground font-medium">{cmd.description}</span>
+                <div className="flex items-center gap-4 flex-1 min-w-0">
+                  <span className="text-4xl font-black tracking-tighter text-muted-foreground/20 flex-shrink-0">0{index + 1}</span>
+                  <div className="flex flex-col gap-1 min-w-0">
+                    <code className="text-lg font-black tracking-tighter text-green-600 uppercase">
+                      {cmd.command}
+                    </code>
+                    <span className="text-sm text-muted-foreground font-medium">{cmd.description}</span>
+                  </div>
                 </div>
                 <Button 
                   variant="ghost" 
