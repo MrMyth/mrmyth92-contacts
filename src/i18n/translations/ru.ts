@@ -124,10 +124,9 @@ export const ru = {
 
   // YouTube Section
   youtube: {
-    title: "YouTube каналы",
-    subtitle: "Мои Youtube каналы",
-    divisionDesc: "Мой Youtube канал по франшизе The Division",
-    acDesc: "Мой Youtube канал по франшизе Assassin's Creed",
+    title: "YouTube канал",
+    subtitle: "Мой Youtube канал",
+    channelDesc: "Мой основной Youtube канал с контентом по играм",
     visitChannel: "Посетить канал",
     subscribe: "Подписаться",
   },

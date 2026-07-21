@@ -124,10 +124,9 @@ export const en = {
 
   // YouTube Section
   youtube: {
-    title: "YouTube Channels",
-    subtitle: "My YouTube channels",
-    divisionDesc: "My YouTube channel for The Division franchise",
-    acDesc: "My YouTube channel for Assassin's Creed franchise",
+    title: "YouTube Channel",
+    subtitle: "My YouTube channel",
+    channelDesc: "My main YouTube channel with gaming content",
     visitChannel: "Visit Channel",
     subscribe: "Subscribe",
   },
