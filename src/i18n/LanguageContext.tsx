@@ -11,7 +11,13 @@ interface LanguageContextType {
   t: Translations;
 }
 
-const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+declare global {
+  var __MRMYTH_LANGUAGE_CONTEXT__: React.Context<LanguageContextType | undefined> | undefined;
+}
+
+const LanguageContext =
+  globalThis.__MRMYTH_LANGUAGE_CONTEXT__ ??
+  (globalThis.__MRMYTH_LANGUAGE_CONTEXT__ = createContext<LanguageContextType | undefined>(undefined));
 
 const translations = { ru, en };
 
