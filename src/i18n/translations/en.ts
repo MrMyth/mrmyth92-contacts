@@ -36,7 +36,7 @@ export const en = {
     name: "Dmitry Starchikov",
     subtitle: "Gamer, streamer, content creator",
     imageDescription: "All images in the header are created by me and reflect the games I'm currently playing.",
-    updateNotice: "⚠️ Website updated: June 4, 2026, 18:00 (Moscow time)",
+    updateNotice: "⚠️ Website updated: July 21, 2026, 18:00 (Moscow time)",
     previousImage: "Previous image",
     nextImage: "Next image",
     goToImage: "Go to image",
