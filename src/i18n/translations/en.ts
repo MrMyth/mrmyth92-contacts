@@ -54,8 +54,8 @@ export const en = {
     birthDateValue: "September 11, 1992.",
     skillsTitle: "My Skills and Hobbies:",
     skills: [
-      "I have a significant physical disability due to a congenital condition. But I lead an active lifestyle. I love computer games and everything related to PCs. I run two YouTube channels for The Division & Assassin's Creed franchises.",
-      "I stream games from both franchises on one Twitch channel.",
+      "I have a significant physical disability due to a congenital condition. But I lead an active lifestyle. I love computer games and everything related to PCs. I run a YouTube channel with content about my favorite games.",
+      "I stream games on one Twitch channel.",
       "Additionally, everything is mirrored to my VK group.",
       "Professional Discord server setup.",
       "Professional work with graphic neural networks, creating original images.",
@@ -84,7 +84,7 @@ export const en = {
     goToGroup: "Go to Group",
     watchStreams: "Watch Streams",
     vkLive: "VK Live Channel",
-    vkLiveDesc: "Full mirror of both channels",
+    vkLiveDesc: "Full mirror of the YouTube channel",
     goToProfile: "VK Profile",
     group: "VK Group",
     video: "VK Video",
@@ -124,10 +124,9 @@ export const en = {
 
   // YouTube Section
   youtube: {
-    title: "YouTube Channels",
-    subtitle: "My YouTube channels",
-    divisionDesc: "My YouTube channel for The Division franchise",
-    acDesc: "My YouTube channel for Assassin's Creed franchise",
+    title: "YouTube Channel",
+    subtitle: "My YouTube channel",
+    channelDesc: "My main YouTube channel with gaming content",
     visitChannel: "Visit Channel",
     subscribe: "Subscribe",
   },
