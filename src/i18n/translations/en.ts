@@ -84,7 +84,7 @@ export const en = {
     goToGroup: "Go to Group",
     watchStreams: "Watch Streams",
     vkLive: "VK Live Channel",
-    vkLiveDesc: "Full mirror of both channels",
+    vkLiveDesc: "Full mirror of the YouTube channel",
     goToProfile: "VK Profile",
     group: "VK Group",
     video: "VK Video",

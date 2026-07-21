@@ -84,7 +84,7 @@ export const ru = {
     goToGroup: "Перейти в группу",
     watchStreams: "Смотреть стримы",
     vkLive: "VK Live канал",
-    vkLiveDesc: "Полное зеркало обоих каналов",
+    vkLiveDesc: "Полное зеркало Youtube канала",
     goToProfile: "Профиль VK",
     group: "Группа в VK",
     video: "VK Видео",
